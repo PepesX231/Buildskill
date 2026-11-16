@@ -10,4 +10,4 @@ The owner explicitly requested these standing rules on 17 November 2026:
 - If the owner removes visual filler, remove its rendered component. Do not replace it with new filler or merely hide it with CSS.
 
 - Remove institution/year eyebrow labels above proof card titles (for example HAMSTER HUB / 2024).
-- The navigation uses a minimal black bar, brand at left, centered links, and a light capsule contact button at right.
+- The navigation has no contrasting rectangular panel, border, shadow, or backdrop blur. Blend it into the hero background, with brand at left, centered links, and a light capsule contact button at right. Use readable menu text (16px desktop, 17px mobile menu), not tiny microcopy.
