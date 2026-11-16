@@ -67,10 +67,10 @@ export function CourseProvider({ children }: { children: ReactNode }) {
         {modal === "video" && <VideoContent />}
         {modal === "enroll" && <EnrollmentContent key={track} initialTrack={track} />}
         {modal === "quest" && <QuestContent track={track} />}
-        {modal === "parents" && <><p className="eyebrow">FOR PARENTS / COURSE SUMMARY</p><ParentSummary /><button className="btn primary" onClick={() => {
+        {modal === "parents" && <><ParentSummary /><button className="btn primary" onClick={() => {
           document.body.classList.add("parent-print");
           window.print();
-        }}>พิมพ์ / บันทึกเป็น PDF <span>↗</span></button></>}
+        }}>พิมพ์ / บันทึกเป็น PDF</button></>}
         {modal === "sources" && <SourcesContent />}
       </div>
     </dialog>
@@ -94,9 +94,9 @@ export function ModalButton({ children, kind, ...props }: ButtonProps & { kind: 
 }
 
 function VideoContent() {
-  return <><p className="eyebrow">PROJECT REEL / HAMSTER HUB</p><h2 id="modal-title">ดูว่าไอเดียไปได้ไกลแค่ไหน</h2>
+  return <><h2 id="modal-title">ดูว่าไอเดียไปได้ไกลแค่ไหน</h2>
     <iframe className="video-frame" src="https://www.youtube-nocookie.com/embed/LhUO186ZWG8?rel=0" title="คลิปตัวอย่างผลงาน Project Build Skill" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
-    <p className="modal-footnote">หากเล่นในหน้านี้ไม่ได้ <a className="text-link" href="https://youtu.be/LhUO186ZWG8" target="_blank" rel="noopener noreferrer">เปิดบน YouTube ↗</a></p></>;
+    <p className="modal-footnote">หากเล่นในหน้านี้ไม่ได้ <a className="text-link" href="https://youtu.be/LhUO186ZWG8" target="_blank" rel="noopener noreferrer">เปิดบน YouTube</a></p></>;
 }
 
 function EnrollmentContent({ initialTrack }: { initialTrack: TrackKey }) {
@@ -121,7 +121,7 @@ function EnrollmentContent({ initialTrack }: { initialTrack: TrackKey }) {
       notify("เลือกข้อความไว้แล้ว กดคัดลอกบนอุปกรณ์ของคุณ");
     }
   };
-  return <><p className="eyebrow">LET’S FIND YOUR FIRST BUILD.</p><h2 id="modal-title">เริ่มจากสิ่งที่น้องอยากสร้าง</h2>
+  return <><h2 id="modal-title">เริ่มจากสิ่งที่น้องอยากสร้าง</h2>
     <p className="modal-lead">เลือกจุดเริ่มต้น แล้วคัดลอกข้อความไปคุยกับทีม Hamster Hub เพื่อยืนยันตารางเรียน รายละเอียด และขั้นตอนสมัคร</p>
     <label htmlFor="interest">สายที่อยากทำ<select id="interest" value={interest} onChange={e => setInterest(e.target.value as TrackKey)}>
       {Object.entries(tracks).map(([key, value]) => <option key={key} value={key}>{value.name}</option>)}
@@ -130,14 +130,14 @@ function EnrollmentContent({ initialTrack }: { initialTrack: TrackKey }) {
       <option>ยังไม่มีผลงาน อยากเริ่มชิ้นแรก</option><option>มีผลงานแล้ว แต่อยากพัฒนาให้ดีขึ้น</option><option>เรียนเองมา อยากมีทีมและเส้นทางชัดเจน</option>
     </select></label>
     <div className="prepared-message" ref={messageRef}>{message}</div>
-    <button className="btn primary" onClick={copy}>คัดลอกข้อความไว้คุยกับทีม <span>⧉</span></button>
-    <a className="btn light" href={LINE_URL} target="_blank" rel="noopener noreferrer">คุยกับทีม Hamster Hub ทาง LINE <span>↗</span></a>
+    <button className="btn primary" onClick={copy}>คัดลอกข้อความไว้คุยกับทีม</button>
+    <a className="btn light" href={LINE_URL} target="_blank" rel="noopener noreferrer">คุยกับทีม Hamster Hub ทาง LINE</a>
     <p className="modal-footnote">หน้านี้ช่วยเตรียมข้อความเท่านั้น ยังไม่ได้ส่งข้อมูล สมัครเรียน หรือชำระเงิน</p>
   </>;
 }
 
 function QuestContent({ track }: { track: TrackKey }) {
-  return <><p className="eyebrow">YOUR FIRST QUEST / {tracks[track].name.toUpperCase()}</p><h2 id="modal-title">จากไอเดียหนึ่งเรื่อง<br />สู่ต้นแบบแรกของน้อง</h2>
+  return <><h2 id="modal-title">จากไอเดียหนึ่งเรื่อง<br />สู่ต้นแบบแรกของน้อง</h2>
     <p className="modal-lead">ตัวอย่างแนวทางทดลองทำสำหรับสาย {tracks[track].name} ลองทำก่อนตัดสินใจ หรือใช้เป็นเรื่องเริ่มต้นคุยกับทีม</p>
     <ol className="quest-steps">{tracks[track].quest.map(step => <li key={step}>{step}</li>)}</ol>
     <h3>สิ่งที่ควรเล่าให้ได้เมื่อทำเสร็จ</h3><p>กำลังแก้ปัญหาอะไร ทำส่วนไหนเอง ลองอะไรแล้วไม่ได้ผล และจะปรับอะไรเป็นอย่างต่อไป</p>
@@ -163,8 +163,8 @@ function SourcesContent() {
     ["https://www.nngroup.com/articles/homepage-design-principles/", "รีเสิร์ช UX: NN/g — Homepage Design Principles"],
     ["https://help.maven.com/en/articles/5597496-projects", "รีเสิร์ชรูปแบบคอร์ส: Maven — Projects"],
   ];
-  return <><p className="eyebrow">SOURCES & EDITORIAL NOTES</p><h2 id="modal-title">ข้อมูลที่ใช้ในหน้านี้</h2>
+  return <><h2 id="modal-title">ข้อมูลที่ใช้ในหน้านี้</h2>
     <p className="modal-lead">รายละเอียดหลักสูตรและราคาอ้างอิงจากข้อมูลที่ทีมให้มา โดยใช้ราคา 19,990 บาทตามข้อความล่าสุด ส่วนผลงานเป็นข้อมูลจากชุมชน Hamster Hub ไม่ใช่ผลงานของคอร์สรุ่นที่ยังไม่เริ่ม</p>
-    <div className="source-links">{links.map(([url, label]) => <a key={url} href={url} target="_blank" rel="noopener noreferrer">{label} ↗</a>)}</div>
+    <div className="source-links">{links.map(([url, label]) => <a key={url} href={url} target="_blank" rel="noopener noreferrer">{label}</a>)}</div>
     <p className="modal-footnote">ตัวอย่าง Quest และแนวคิดโปรเจกต์เป็นเนื้อหาประกอบสำหรับหน้านี้</p></>;
 }
