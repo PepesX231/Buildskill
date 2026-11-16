@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import { assetPath } from "@/lib/assets";
 import { tracks, type TrackKey } from "@/lib/course-data";
-import { EnrollButton, ModalButton, VideoButton, useCourse } from "./CourseProvider";
+import { EnrollButton, ModalButton, useCourse } from "./CourseProvider";
 
 const art = (name: string) => assetPath(`/assets/illustrations/${name}.webp`);
 
@@ -53,32 +53,28 @@ export function IllustratedRoadmap() {
   </div></section>;
 }
 
-const comparison = [
-  ["วางแผน", "เลือกและจัดทางเอง", "มีเป้าหมายแต่ละช่วง และคนช่วยคิด"],
-  ["พัฒนาทักษะ", "หาโจทย์และฝึกเอง", "ฝึกตาม Role ผ่านงานเดี่ยวและงานทีม"],
-  ["ลงสนาม", "หาเวทีและเตรียมเอง", "ช่วยเตรียมงานไปแข่งและฝึกพิตช์"],
-  ["ทำพอร์ต", "เรียบเรียงเรื่องราวเอง", "เชื่อมโปรเจกต์กับคณะที่เล็ง"],
+const supportStories = [
+  {image:"journey-solo",title:"วางแผนที่ทำจบ",text:"ช่วยเลือกโจทย์และขอบเขต ให้รู้ว่าจะลงมืออะไรต่อ",alt:"นักสร้างจิบิกับเจ้าหนูทดลองโปรเจกต์ชิ้นแรก"},
+  {image:"compare-mentor",title:"มีคนช่วยขัดงาน",text:"ฝึกทักษะตาม Role ผ่านงานจริง แล้วปรับจากฟีดแบ็ก",alt:"เพื่อนกับเจ้าหนูช่วยกันคิดทางออกขณะทำโปรเจกต์"},
+  {image:"journey-launch",title:"พร้อมพางานออกไป",text:"เตรียมลงแข่ง ฝึกพิตช์ และเล่าบทบาทของเราลงพอร์ต",alt:"จิบิกับเจ้าหนูพร้อมนำเสนอโปรเจกต์และเล่มพอร์ต"},
 ];
 export function IllustratedComparison() {
-  return <section className="illustrated-comparison" aria-labelledby="comparison-title"><div className="comparison-top wrap"><div><h2 id="comparison-title">เรียนเองก็ไปได้<br /><span>มีทีมช่วยให้ไปต่อ</span></h2><p>เพิ่มคนช่วยคิด ในวันที่ติด<br />เพิ่มเป้าหมาย ให้สิ่งที่เรียนกลายเป็นงาน</p></div><img src={art("compare-mentor")} width="1536" height="1024" alt="เพื่อนช่วยกันวางขั้นตอนแก้ปัญหา โดยมีเจ้าหนูช่วยประกอบไอเดีย" loading="lazy" /></div>
-    <div className="wrap comparison-scroll"><table className="simple-comparison"><caption className="sr-only">ทำโปรเจกต์เองเทียบกับ Project Build Skill</caption><thead><tr><th scope="col">ระหว่างทาง</th><th scope="col">ทำเอง</th><th scope="col">Project Build Skill</th></tr></thead><tbody>{comparison.map(([label,self,team])=><tr key={label}><th scope="row">{label}</th><td>{self}</td><td>{team}</td></tr>)}</tbody></table></div>
-  </section>;
+  return <section className="illustrated-comparison" aria-labelledby="comparison-title"><div className="wrap">
+    <div className="section-intro support-intro"><h2 id="comparison-title">มีทีมช่วยคิด<br /><span>งานยังเป็นของเรา</span></h2><p>น้องเป็นคนลงมือสร้าง<br />ทีมช่วยให้เส้นทางชัดขึ้น</p></div>
+    <div className="support-stories">{supportStories.map(story=><article key={story.title}><img className="support-picture" src={art(story.image)} width="650" height="650" alt={story.alt} loading="lazy" /><h3>{story.title}</h3><p>{story.text}</p></article>)}</div>
+  </div></section>;
 }
 
-const included = ["งานเดี่ยว + งานทีม และทักษะตาม Role", "โปรเจกต์หลัก เกม / แอป / IoT อย่างน้อย 1 ชิ้น", "ทดลองกับผู้ใช้ เตรียมลงแข่ง และฝึกพิตช์", "Business Idea + เล่มพอร์ตตรงคณะที่เล็ง"];
 export function IllustratedPackage() {
   return <section className="illustrated-package" id="pricing" aria-labelledby="package-title"><div className="wrap">
-    <div className="package-layout"><div className="package-offer"><h2 id="package-title">ปีนี้ ทำของที่<br /><span>ภูมิใจว่าเราสร้างเอง</span></h2><p className="package-course">Project Build Skill · 12 เดือน</p><p className="big-course-price">19,990 <span>บาท</span></p><p className="package-dates">1 ธ.ค. 2569 – 1 ธ.ค. 2570 · ราคาตลอดหลักสูตร</p><EnrollButton className="btn dark">คุยกับทีม / สมัครเรียน</EnrollButton><p className="package-confirm">วัน–เวลาเรียน รูปแบบเรียน และเงื่อนไขชำระเงิน<br />ยืนยันกับทีมก่อนสมัคร</p></div>
-      <div className="package-picture"><img src={art("package-finish")} width="1168" height="1344" alt="จิบิสองคนภูมิใจกับโปรเจกต์และเล่มพอร์ต พร้อมเจ้าหนูที่ให้กำลังใจ" loading="lazy" /></div>
+    <div className="package-layout"><div className="package-offer"><h2 id="package-title">ปีนี้ ทำของที่<br /><span>ภูมิใจว่าเราสร้างเอง</span></h2><p className="package-course">Project Build Skill · 12 เดือน</p><p className="package-outcome">โปรเจกต์หลักอย่างน้อย 1 ชิ้น<br />พร้อมเล่มพอร์ตที่เล่างานของเรา</p><p className="big-course-price">19,990 <span>บาท</span></p><p className="package-dates">1 ธ.ค. 2569 – 1 ธ.ค. 2570 · ราคาตลอดหลักสูตร</p><EnrollButton className="btn dark">คุยกับทีม / สมัครเรียน</EnrollButton><p className="package-confirm">ยืนยันวัน–เวลาเรียน รูปแบบ และเงื่อนไขกับทีมก่อนสมัคร</p><ModalButton kind="parents" className="quiet-link package-parent-link">สรุปให้ผู้ปกครอง</ModalButton></div>
+      <div className="package-picture"><img src={art("package-finish")} width="1168" height="1346" alt="จิบิสองคนภูมิใจกับโปรเจกต์และเล่มพอร์ต พร้อมเจ้าหนูที่ให้กำลังใจ" loading="lazy" /></div>
     </div>
-    <ul className="package-includes">{included.map(item=><li key={item}>{item}</li>)}</ul>
-    <div className="package-extra"><ModalButton kind="quest" className="quiet-link">ลองดูโจทย์แรก</ModalButton><ModalButton kind="parents" className="quiet-link">สรุปให้ผู้ปกครอง</ModalButton><VideoButton className="quiet-link">ดูคลิปตัวอย่างผลงาน</VideoButton></div>
-    <div className="package-faq" id="faq"><h3>ก่อนเริ่ม อยากรู้อะไร?</h3><div>
-      <details><summary>ยังไม่มีผลงาน เรียนได้ไหม?</summary><p>ได้ คอร์สออกแบบสำหรับ ม.ปลาย ทั้งคนที่ยังไม่มีงาน มีงานแต่ไม่มั่นใจ และเรียนเองมาแล้ว เดือนแรกเริ่มจากงานชิ้นเล็กที่ทำจบได้</p></details>
-      <details><summary>เลือกเกม แอป หรือ IoT ได้อย่างไร?</summary><p>เริ่มจากความสนใจและคณะที่เล็ง แล้วคุยกับทีมเพื่อเลือกขอบเขตโปรเจกต์และบทบาทที่เหมาะกับน้อง</p></details>
-      <details><summary>ใช้ AI ช่วยทำได้ไหม?</summary><p>ใช้ได้ แต่ต้องเข้าใจสิ่งที่สร้าง ทดสอบได้ แก้ปัญหาเองได้ และอธิบายบทบาทของตัวเองในงานได้</p></details>
-      <details><summary>การันตีรางวัลหรือติดมหาวิทยาลัยไหม?</summary><p>ไม่มีการรับประกันรางวัลหรือผลรับเข้า เป้าหมายคือพัฒนาทักษะ โปรเจกต์ และการเล่าเรื่องของน้อง การแข่งขันขึ้นอยู่กับเกณฑ์ของแต่ละเวที</p></details>
-      <details><summary>ราคาเรียนรวมค่าใช้จ่ายอะไรบ้าง?</summary><p>19,990 บาทเป็นราคาหลักสูตร 12 เดือน ส่วนอุปกรณ์ IoT ค่าสมัครแข่งขัน ค่าเดินทาง การผ่อนชำระ และเงื่อนไขคืนเงิน ให้ทีมยืนยันก่อนสมัคร</p></details>
+    <div className="package-faq" id="faq"><div className="faq-illustrated-intro"><h3>ยังสงสัยอยู่ไหม?</h3><img src={assetPath("/assets/illustrations/faq-hamster.png")} width="512" height="512" alt="เจ้าหนูเอียงศีรษะอย่างเป็นมิตร ถือสมุดกับดินสอพร้อมช่วยตอบคำถาม" loading="lazy" /></div><div className="faq-answers">
+      <details><summary>ไม่มีผลงาน เริ่มจากสายไหนดี?</summary><p>เริ่มได้ทั้งเกม แอป หรือ IoT เลือกจากสิ่งที่สนใจและคณะที่เล็ง แล้วคุยกับทีมเพื่อวางงานชิ้นเล็กที่ทำจบได้</p></details>
+      <details><summary>ใช้ AI ช่วยทำได้ไหม?</summary><p>ใช้ได้ แต่ต้องเข้าใจสิ่งที่สร้าง ทดสอบและแก้ปัญหาได้ พร้อมอธิบายบทบาทของตัวเองในงาน</p></details>
+      <details><summary>มีการันตีรางวัลหรือติดมหาวิทยาลัยไหม?</summary><p>ไม่มีการรับประกันผล เป้าหมายคือทักษะ โปรเจกต์ และพอร์ตของน้อง การแข่งขันและการรับเข้าขึ้นอยู่กับเกณฑ์ของแต่ละแห่ง</p></details>
+      <details><summary>เรียนวันไหน มีค่าใช้จ่ายเพิ่มไหม?</summary><p>19,990 บาทเป็นราคาหลักสูตร 12 เดือน ให้ทีมยืนยันวัน–เวลา รูปแบบเรียน ค่าอุปกรณ์ ค่าสมัครแข่งขันหรือเดินทาง และเงื่อนไขชำระเงิน/คืนเงินก่อนสมัคร</p></details>
     </div></div>
   </div></section>;
 }

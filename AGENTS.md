@@ -14,3 +14,6 @@ The owner explicitly requested these standing rules on 17 November 2026:
 
 - Use the five-section illustrated structure in DESIGN.md: Hero, Roadmap, Comparison, real-work carousel, Package. Keep explanations concise and let expandable details hold longer answers.
 - Use the original chibi-and-hamster illustration family. Generated explanatory art must never stand in for real project screenshots or student proof. See SOURCE_NOTES.md for checked references.
+
+- Make the price a prominent number above the hero enrollment action, with course duration and dates in separate smaller text.
+- Replace dense comparison tables and repetitive package bullet strips with concise illustrated explanations. Keep only useful actions and a compact illustrated FAQ.
