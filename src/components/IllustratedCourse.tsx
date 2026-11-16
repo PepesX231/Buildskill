@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { assetPath } from "@/lib/assets";
 import { tracks, type TrackKey } from "@/lib/course-data";
 import { EnrollButton, ModalButton, useCourse } from "./CourseProvider";
@@ -33,34 +33,70 @@ const phases = [
   {period:"เดือน 4–12", title:"พางานออกสู่โลกจริง", summary:"มีคนใช้ มีเรื่องให้พิตช์ มีผลงานใส่พอร์ต", image:"journey-launch", outcomes:["Startup Phase: ทดลองกับผู้ใช้จริง", "เตรียมลงแข่ง NSC / TICTA / TGS", "คิด Business Idea พิตช์ และทำเล่มพอร์ต"]},
 ];
 export function IllustratedRoadmap() {
-  const [selected,setSelected]=useState(0);
+  const [selected,setSelected]=useState<number|null>(null);
+  const [closing,setClosing]=useState(false);
+  const dialog=useRef<HTMLDialogElement>(null);
+  const timer=useRef<ReturnType<typeof setTimeout>|null>(null);
+  const trigger=useRef<HTMLElement|null>(null);
   const {track,setTrack}=useCourse();
+  const opened=selected!==null;
+  useEffect(()=>{
+    if(!opened)return;
+    const el=dialog.current;if(!el)return;
+    const overflow=document.body.style.overflow;
+    document.body.style.overflow="hidden";
+    el.showModal();
+    return ()=>{
+      if(timer.current)clearTimeout(timer.current);
+      el.close();
+      document.body.style.overflow=overflow;
+      trigger.current?.focus({preventScroll:true});
+    };
+  },[opened]);
+  const close=()=>{
+    if(closing)return;
+    setClosing(true);
+    const delay=window.matchMedia("(prefers-reduced-motion: reduce)").matches?0:180;
+    timer.current=setTimeout(()=>{dialog.current?.close();setSelected(null);setClosing(false);},delay);
+  };
   return <section className="illustrated-roadmap" id="roadmap" aria-labelledby="roadmap-title"><div className="wrap">
-    <div className="section-intro"><h2 id="roadmap-title">เริ่มทีละชิ้น<br /><span>แล้วไปให้ไกลกว่าเดิม</span></h2><p>12 เดือน มีเป้าหมายให้ลงมือ<br />มีทีมช่วยพางานไปต่อ</p></div>
+    <div className="section-intro"><h2 id="roadmap-title">เริ่มทีละชิ้น<br /><span>แล้วไปให้ไกลกว่าเดิม</span></h2><p>12 เดือน มีเป้าหมายให้ลงมือ<br />กดภาพเพื่อดูแต่ละช่วง</p></div>
     <div className="drawn-journey">
       <svg className="drawn-curve curve-wide" viewBox="0 0 1200 430" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M190 180 C360 180 395 310 600 310 S835 180 1010 180" /></svg>
       <svg className="drawn-curve curve-tall" viewBox="0 0 100 650" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M50 120 C-10 200 110 240 50 330 S-10 480 50 550" /></svg>
-      <ol>{phases.map((p,i)=><li key={p.period} className={`drawn-stop drawn-stop-${i} ${selected===i?"chosen":""}`}><button type="button" onClick={()=>setSelected(i)} aria-pressed={selected===i} aria-controls="learning-detail">
+      <ol>{phases.map((p,i)=><li key={p.period} className={`drawn-stop drawn-stop-${i}`}><button type="button" onClick={e=>{trigger.current=e.currentTarget;setSelected(i);}} aria-haspopup="dialog" aria-label={`ดูรายละเอียด ${p.period} ${p.title}`}>
         <span className="journey-drawing"><img src={art(p.image)} width="520" height="520" alt="" loading="lazy" /></span>
         <span className="journey-copy"><span className="learning-period">{p.period}</span><strong>{p.title}</strong><span>{p.summary}</span></span>
       </button></li>)}</ol>
     </div>
-    <div className="learning-detail" id="learning-detail">
-      <div className="learning-track" role="group" aria-label="เลือกสายที่สนใจ"><span>อยากสร้างอะไร?</span>{(Object.keys(tracks) as TrackKey[]).map(key=><button type="button" key={key} aria-pressed={track===key} onClick={()=>setTrack(key)}>{tracks[key].name}</button>)}</div>
-      <div className="learning-selected" aria-live="polite"><h3>{phases[selected].period} · {phases[selected].title}</h3><p>{tracks[track].examples[selected]}</p><ul>{phases[selected].outcomes.map(item=><li key={item}>{item}</li>)}</ul></div>
-    </div>
-    <p className="small-note">เลือกเวทีตามความเหมาะสมของงาน คุณสมบัติ และกำหนดการรับสมัคร</p>
+    <dialog ref={dialog} className={`phase-dialog ${closing?"is-closing":""}`} aria-labelledby="phase-title" onCancel={e=>{e.preventDefault();close();}} onClick={e=>{
+      if(e.target!==e.currentTarget)return;
+      const r=e.currentTarget.getBoundingClientRect();
+      if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)close();
+    }}>
+      <button type="button" className="phase-close" onClick={close} aria-label="ปิดรายละเอียด">ปิด</button>
+      {selected!==null&&<div className="phase-content" key={selected}>
+        <div className="phase-art"><img src={art(phases[selected].image)} width="650" height="650" alt="" /></div>
+        <div className="phase-copy"><p className="learning-period">{phases[selected].period}</p><h3 id="phase-title">{phases[selected].title}</h3><p>{phases[selected].summary}</p>
+          <ul>{phases[selected].outcomes.map(item=><li key={item}>{item}</li>)}</ul>
+          <div className="phase-tracks" role="group" aria-label="เลือกสายเพื่อดูตัวอย่าง">{(Object.keys(tracks) as TrackKey[]).map(key=><button type="button" key={key} aria-pressed={track===key} onClick={()=>setTrack(key)}>{tracks[key].name}</button>)}</div>
+          <p className="phase-example" aria-live="polite">{tracks[track].examples[selected]}</p>
+          {selected===2&&<p className="phase-note">เลือกเวทีตามความเหมาะสมของงาน คุณสมบัติ และกำหนดการรับสมัคร</p>}
+          <button className="phase-next" type="button" onClick={()=>setSelected((selected+1)%phases.length)}>{selected===2?"กลับไปดูเดือนแรก":"ดูช่วงถัดไป"}</button>
+        </div>
+      </div>}
+    </dialog>
   </div></section>;
 }
 
 const supportStories = [
   {image:"journey-solo",title:"วางแผนที่ทำจบ",text:"ช่วยเลือกโจทย์และขอบเขต ให้รู้ว่าจะลงมืออะไรต่อ",alt:"นักสร้างจิบิกับเจ้าหนูทดลองโปรเจกต์ชิ้นแรก"},
-  {image:"compare-mentor",title:"มีคนช่วยขัดงาน",text:"ฝึกทักษะตาม Role ผ่านงานจริง แล้วปรับจากฟีดแบ็ก",alt:"เพื่อนกับเจ้าหนูช่วยกันคิดทางออกขณะทำโปรเจกต์"},
+  {image:"journey-team",title:"มีคนช่วยขัดงาน",text:"ฝึกทักษะตาม Role ผ่านงานจริง แล้วปรับจากฟีดแบ็ก",alt:"เพื่อนกับเจ้าหนูช่วยกันคิดทางออกขณะทำโปรเจกต์"},
   {image:"journey-launch",title:"พร้อมพางานออกไป",text:"เตรียมลงแข่ง ฝึกพิตช์ และเล่าบทบาทของเราลงพอร์ต",alt:"จิบิกับเจ้าหนูพร้อมนำเสนอโปรเจกต์และเล่มพอร์ต"},
 ];
 export function IllustratedComparison() {
   return <section className="illustrated-comparison" aria-labelledby="comparison-title"><div className="wrap">
-    <div className="section-intro support-intro"><h2 id="comparison-title">มีทีมช่วยคิด<br /><span>งานยังเป็นของเรา</span></h2><p>น้องเป็นคนลงมือสร้าง<br />ทีมช่วยให้เส้นทางชัดขึ้น</p></div>
+    <div className="section-intro support-intro"><h2 id="comparison-title">เรียนเองก็ไปได้<br /><span>มีทีมช่วยให้ไปต่อ</span></h2><p>น้องเป็นคนลงมือสร้าง<br />ทีมช่วยให้เส้นทางชัดขึ้น</p></div>
     <div className="support-stories">{supportStories.map(story=><article key={story.title}><img className="support-picture" src={art(story.image)} width="650" height="650" alt={story.alt} loading="lazy" /><h3>{story.title}</h3><p>{story.text}</p></article>)}</div>
   </div></section>;
 }
