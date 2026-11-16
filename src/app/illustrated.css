@@ -249,3 +249,15 @@ body{background:#fff8ef}
 @media(max-width:600px){.studio-room{height:390px;margin-top:12px}.studio-posters{inset:10px 0 0}.studio-card{width:min(78vw,310px);top:15px;transform:translateX(calc(-50% + var(--slot)*84vw)) rotateY(calc(var(--slot)*-8deg))}.studio-poster{padding:0;border-radius:0;background:transparent;box-shadow:none}.studio-media{height:190px}.studio-controls{margin-top:0}}
 
 .studio-intro h2 span{display:inline;color:#a44d69}.studio-toolbar{justify-content:flex-start}
+
+/* Transform-only frame-synchronised reel: no stepped slide timer or CSS easing. */
+.flow-reel .studio-card{transition:none;will-change:transform;backface-visibility:hidden}
+.flow-reel .studio-poster{animation:none}
+.flow-reel .studio-room{height:520px}
+.studio-outcomes{display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:0;margin:15px 0 0;min-height:64px;align-content:flex-start}
+.studio-outcomes li{display:inline-flex;align-items:center;font-size:13px;line-height:1.5;font-weight:600;color:#713e24;background:#ffe8cb;border-radius:10px;padding:6px 10px;max-width:100%}
+.studio-outcomes li:nth-child(even){color:#51366f;background:#eae0f3}
+.studio-caption .studio-outcomes{justify-content:center;min-height:0;margin-top:17px}
+.flow-reel .studio-card-link{margin-top:9px}
+@media(max-width:900px){.flow-reel .studio-room{height:505px}}
+@media(max-width:600px){.flow-reel .studio-room{height:490px}.studio-outcomes li{font-size:12px}.studio-outcomes{gap:6px;min-height:66px}}

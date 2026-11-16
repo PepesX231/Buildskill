@@ -19,4 +19,6 @@ The owner explicitly requested these standing rules on 17 November 2026:
 - Replace dense comparison tables and repetitive package bullet strips with concise illustrated explanations. Keep only useful actions and a compact illustrated FAQ.
 
 - Keep the showcase heading as ให้ผลงานพูดแทน. Do not restore the removed 30-project promotional aside, support heading aside, roadmap heading aside, hero audience microcopy strip, or global หยุดหมุน / คลิป button.
-- The showcase advances automatically every four seconds when on screen. Mouse hover, focus and touch do not stop rotation. Preserve the system reduced-motion preference and suspend only when off screen or the browser tab is hidden.
+- The showcase drifts continuously using requestAnimationFrame and compositor transforms while on screen; do not restore a stepped interval timer. Mouse hover, focus and touch do not stop rotation. Preserve the system reduced-motion preference and suspend only when off screen or the browser tab is hidden.
+
+- Each project must show its reported awards/admission outcomes or concrete deliverable/event directly below the preview. Never invent a prize when the source only confirms participation or a prototype.

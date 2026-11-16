@@ -41,3 +41,135 @@ export const verifiedWork: Record<WorkCategory, WorkExample[]> = {
     {title:"โฟกัส · วิศวะคอม มหิดล",video:"https://pub-1edf364a5206483081ad6407a8739e13.r2.dev/profile-projects/563644358352568331/2026-05-25/video-100-Night-Fear-new-0e3a5e496d6b0e23.mp4",image:"https://img.itch.zone/aW1hZ2UvMzA1ODE1Mi8xODI4ODY1NC5wbmc=/original/3wFUY7.png",alt:"ภาพจากเกมสยองขวัญ Night Fear",by:"โปรเจกต์ Night Fear",description:"เกมสยองขวัญที่หยิบเรื่องเล่าไทยมาสร้างเป็นประสบการณ์ของผู้เล่น",href:"https://tanawatkhaitom.itch.io/night-fear",action:"ดูผลงาน",secondary:{label:"เปิดพอร์ตต้นฉบับ",href:"https://www.canva.com/design/DAGf5ocsJPI/b_HyNNE52GGcdXYQ2ukk4g/edit"}},
   ],
 };
+
+// Reported awards, admission paths and concrete project deliverables.
+export const workOutcomes: Record<string,string[]> = {
+  "StressStrike": [
+    "รางวัล OBEC Roboplayground",
+    "เข้ารอบสุดท้าย TICTA"
+  ],
+  "Eugation Strike": [
+    "เกมจากคอร์ส Hamster Hub",
+    "ผลงานปี 2569"
+  ],
+  "SLASH//SPEED": [
+    "เกมจากคอร์ส Hamster Hub",
+    "ผลงานปี 2569"
+  ],
+  "Apocalypis Building": [
+    "เกมจากคอร์ส Hamster Hub",
+    "ผลงานปี 2569"
+  ],
+  "Escape Rolling": [
+    "เกมจากคอร์ส Hamster Hub",
+    "ผลงานปี 2569"
+  ],
+  "Khao Yai Alert": [
+    "เว็บแจ้งไฟป่าและเหตุฉุกเฉิน",
+    "ระบุตำแหน่งด้วย GPS"
+  ],
+  "Melody Duel": [
+    "เว็บคาราโอเกะออนไลน์",
+    "โหมดแข่งขันร้องเพลง"
+  ],
+  "EcoEats Mas": [
+    "ต้นแบบตลาดอาหารส่วนเกิน",
+    "โปรเจกต์ลด Food Waste"
+  ],
+  "A Picturesque Breakfast": [
+    "โปรเจกต์ NSC 2026"
+  ],
+  "SOI 13": [
+    "ต้นแบบเกมสยองขวัญ",
+    "โปรเจกต์เล่าเรื่องและสำรวจ"
+  ],
+  "Big Yokai": [
+    "เกม Action Horror บน Roblox"
+  ],
+  "Fractured Sanity": [
+    "เกมสยองขวัญในโรงพยาบาล",
+    "ผลงานจากค่ายเกมผี"
+  ],
+  "Leukophobia": [
+    "เกม Psychological Horror",
+    "สร้างภายใน 3 วัน"
+  ],
+  "Deadsea": [
+    "เกมผจญภัย ล่องเรือ และสู้บอส"
+  ],
+  "Element Royal": [
+    "เกม Battle Royale พลังธาตุ",
+    "ผลงานจาก AI Camp"
+  ],
+  "EndlessNoon": [
+    "เกมจากเวที GameJam X",
+    "โจทย์เอาตัวรอดบนดาวร้อน"
+  ],
+  "Micro Immersive SIM initialize override protocol": [
+    "รองชนะเลิศ GameJam X",
+    "เกม Sci-fi มุมมองบุคคลที่หนึ่ง"
+  ],
+  "MythNight": [
+    "โปรเจกต์ NSC 2026",
+    "เกมสยองขวัญ Multiplayer"
+  ],
+  "Nampun": [
+    "เกมจากเวที GameJam X",
+    "สร้างใน 72 ชั่วโมง"
+  ],
+  "MEOW_LOSTSHIP": [
+    "ผลงานจากเวที GameJam X"
+  ],
+  "เมษาหน้าลาบ": [
+    "ต้นแบบเกมขายลาบ",
+    "ระบบร้านค้าและการเดินทาง"
+  ],
+  "Bewarefront": [
+    "เกมยิงมุมมองบุคคลที่หนึ่ง",
+    "โปรเจกต์ธีมสงครามโลกครั้งที่ 2"
+  ],
+  "Ghostly Prisoner[Demo]": [
+    "เดโมเกมหนีคุกร้าง",
+    "ผลงานจาก AI Camp"
+  ],
+  "Woven Citadel": [
+    "ระบบ Movement และ Gameplay",
+    "ผลงานจาก AI Camp"
+  ],
+  "Beat the Beat on Beach": [
+    "เกม Rhythm Karaoke",
+    "ร้องเพลงกับเพื่อนแบบ Realtime"
+  ],
+  "Night Fear": [
+    "เกมที่พัฒนาช่วง ม.6",
+    "เจ้าของผลงานต่อวิศวะคอม มหิดล"
+  ],
+  "Don’t Talk, I Need Coffee": [
+    "ผลงาน Thailand Summer Jam 2026",
+    "เกมการ์ดผสม 2.5D"
+  ],
+  "REVOICE": [
+    "NSC 2025 · Top 1 ประเภทแอป",
+    "เจ้าของผลงานต่อ IoT สจล."
+  ],
+  "COMMAND SELECT": [
+    "เดโมเกมบน Windows",
+    "ระบบยิงและแก้กลไกบอส"
+  ],
+  "Veggie Dash": [
+    "NSC 2024 · Top 3 ตามข้อมูลทีม",
+    "เจ้าของผลงานต่อ CEDT จุฬาฯ"
+  ],
+  "แมค · CEDT จุฬาฯ": [
+    "เส้นทางเรียน CEDT จุฬาฯ",
+    "NSC 2024 · Top 3 ตามข้อมูลทีม"
+  ],
+  "ไอดิน · IoT สจล.": [
+    "เส้นทางเรียน IoT สจล.",
+    "NSC 2025 · Top 1 ประเภทแอป"
+  ],
+  "โฟกัส · วิศวะคอม มหิดล": [
+    "เส้นทางเรียนวิศวะคอม มหิดล",
+    "สร้างเกม Night Fear ช่วง ม.6"
+  ]
+};

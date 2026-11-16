@@ -33,3 +33,11 @@ Checked against the owner's public Hamterco source on 17 November 2026.
 - Veggie Dash original presentation video: https://www.facebook.com/100000550526763/videos/oa.472066845627730/1420663515290339
 - Native clips request muted, looping inline autoplay while their cards are visible. Off-screen previews pause; a global pause control, native controls and fallback original links remain available. Third-party iframe autoplay depends on the hosting platform and browser.
 - Pinterest https://pin.it/6odjLOu7W could not be fetched. The supplied screenshot is the visual reference; its animation was not inspected.
+
+## Per-project outcomes and continuous movement
+- StressStrike award labels verified against the owner's current Hamterco/index.html hall-of-fame markup: OBEC Roboplayground award and TICTA finalist. No placement beyond those labels is inferred.
+- REVOICE and Veggie Dash retain the supplied team's NSC labels; admission paths retain the existing checked team record.
+- The Micro Immersive SIM GameJam X runner-up label comes from the owner's public AR archive description.
+- Remaining project labels describe the actual prototype, features, event participation, or development period in the source. They are not inferred awards.
+- All 33 project/admission entries have outcome labels.
+- Motion uses elapsed-time requestAnimationFrame at 38 CSS px/second. A numerical check at 60 Hz and 120 Hz produces the same 1,140 px displacement over 30 seconds (floating-point difference below 0.000001 px). Live browser frame rate has not been measured.
