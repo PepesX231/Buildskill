@@ -20,3 +20,16 @@ Checked 17 November 2026 (Asia/Bangkok).
 Privacy: only nicknames, project roles, project links, and relevant reported destinations are used. Do not publish the raw spreadsheet or copy private contact details from portfolio documents into the website.
 
 Illustrations are AI-generated explanatory art. Screenshots in the real-work section are from the original linked work, not generated recreations.
+
+## Floating studio update
+Checked against the owner's public Hamterco source on 17 November 2026.
+- Source: https://github.com/PepesX231/Hamterco/blob/main/index.html
+  - Five direct MP4 clips and project pages from the existing hall-of-fame work list: StressStrike, Eugation Strike, SLASH//SPEED, Apocalypis Building, Escape Rolling.
+- Source: https://github.com/PepesX231/Hamterco/blob/main/slime.html
+  - Public AR archive supplies 21 additional project titles, nicknames, descriptions, poster paths and original MP4 URLs. No award or admission outcome is inferred from these clips.
+  - Includes Khao Yai Alert, Melody Duel, EcoEats Mas, A Picturesque Breakfast, SOI 13, Big Yokai, Fractured Sanity, Leukophobia, Deadsea, Element Royal, EndlessNoon, Micro Immersive SIM initialize override protocol, MythNight, Nampun, MEOW_LOSTSHIP, เมษาหน้าลาบ, Bewarefront, Ghostly Prisoner, Woven Citadel, Beat the Beat on Beach and Night Fear.
+  - All 26 added posters and the brand logo exist in the source repository's img tree.
+- Original project embed IDs: DTINC 7zJeZsm_Dbo; COMMAND SELECT DtIPdelMho0, verified from the itch.io embed links.
+- Veggie Dash original presentation video: https://www.facebook.com/100000550526763/videos/oa.472066845627730/1420663515290339
+- Native clips request muted, looping inline autoplay while their cards are visible. Off-screen previews pause; a global pause control, native controls and fallback original links remain available. Third-party iframe autoplay depends on the hosting platform and browser.
+- Pinterest https://pin.it/6odjLOu7W could not be fetched. The supplied screenshot is the visual reference; its animation was not inspected.

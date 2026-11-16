@@ -172,32 +172,9 @@ body{background:#fff8ef}
 .drawn-stop button:hover .journey-open,.drawn-stop button:focus-visible .journey-open{background:#2771ce;transform:translateY(-3px);box-shadow:0 7px 0 #b7c7df}
 .drawn-stop button:active .journey-open{transform:translateY(2px);box-shadow:0 2px 0 #b7c7df}
 .drawn-journey{height:560px}
-.gallery-work{overflow:hidden;padding-top:65px}
-.gallery-intro{display:block;text-align:center}
-.gallery-intro>p{max-width:none;margin:18px auto 0;font-size:17px}
-.gallery-tabs{justify-content:center;gap:12px;margin:32px 0 12px}
-.gallery-tabs button{background:#eee5ed;color:#6b516d;min-height:46px;padding:10px 24px}
-.gallery-tabs button[aria-pressed=true]{background:#30233c;color:#fff8ef}
-.gallery-deck{position:relative;height:500px;isolation:isolate;touch-action:pan-y}
-.gallery-card{position:absolute;left:50%;top:50%;width:340px;height:420px;border:0;padding:0;border-radius:24px;overflow:hidden;background:#1d1929;box-shadow:0 18px 40px -16px #30233c55;transform:translate(calc(-50% + var(--card-offset)*245px),-50%) scale(var(--card-scale));transition:transform .6s cubic-bezier(.22,.8,.22,1),filter .6s,box-shadow .4s;filter:saturate(.7) brightness(.85);text-align:left}
-.gallery-card.is-active{filter:none;box-shadow:0 22px 50px -18px #30233c70}
-.gallery-card img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
-.gallery-card>span{position:absolute;bottom:0;left:0;right:0;padding:50px 22px 22px;background:linear-gradient(transparent,#181320e8);font-size:19px;font-weight:600;line-height:1.4;color:white}
-.gallery-card:not(.is-active):hover{filter:saturate(1) brightness(1)}
-.gallery-controls{display:flex;justify-content:center;gap:12px;margin-top:0}
-.gallery-controls button{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1px solid #88788b;color:#30233c;background:#fff8ef;transition:background .2s,transform .2s}
-.gallery-controls button:hover{background:#f7c88f;transform:translateY(-3px)}
-.gallery-controls button:active{transform:scale(.93)}
-.gallery-controls svg{width:22px;height:22px;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.gallery-caption{text-align:center;max-width:740px;margin:30px auto 0;min-height:230px;animation:gallery-caption-in .35s ease-out both}
-.gallery-caption .work-author{margin:0 0 8px!important}
-.gallery-caption h3{font-size:30px;margin-bottom:12px}
-.gallery-caption>p{font-size:16px}
-.gallery-caption .work-result{font-size:14px;color:#a34868;margin-top:12px}
-.gallery-caption .work-links{justify-content:center;gap:14px;margin-top:22px}
 @keyframes gallery-caption-in{from{opacity:0;translate:0 9px}to{opacity:1;translate:0 0}}
-@media(max-width:1100px){.hero-layout{padding-bottom:150px}.gallery-card{width:310px;height:390px;transform:translate(calc(-50% + var(--card-offset)*215px),-50%) scale(var(--card-scale))}}
-@media(max-width:900px){.journey-copy .journey-open{font-size:14px;padding:9px 19px}.gallery-card{width:290px;height:365px;transform:translate(calc(-50% + var(--card-offset)*195px),-50%) scale(var(--card-scale))}.gallery-deck{height:440px}}
+@media(max-width:1100px){.hero-layout{padding-bottom:150px}}
+@media(max-width:900px){.journey-copy .journey-open{font-size:14px;padding:9px 19px}}
 @media(max-width:600px){
 .hero-layout{padding-bottom:115px}.illustrated-hero::after{height:65px}
 .illustrated-roadmap{padding-top:35px}
@@ -205,14 +182,60 @@ body{background:#fff8ef}
 .curve-tall{height:760px}
 .journey-copy .journey-open{font-size:14px;min-height:42px;margin-top:13px;padding:8px 18px}
 .journey-copy>span:not(.learning-period):not(.journey-open){font-size:14px;margin-top:8px}
-.gallery-work{padding-top:42px}
-.gallery-intro>p{font-size:15px}
-.gallery-tabs{gap:9px;margin-top:25px}.gallery-tabs button{font-size:15px;padding:9px 19px}
-.gallery-deck{height:375px;margin-left:-20px;margin-right:-20px}
-.gallery-card{width:min(66vw,270px);height:320px;border-radius:20px;transform:translate(calc(-50% + var(--card-offset)*49vw),-50%) scale(var(--card-scale))}
-.gallery-card>span{font-size:17px;padding:45px 17px 19px}
-.gallery-caption{min-height:260px;margin-top:25px}
-.gallery-caption h3{font-size:27px}
-.gallery-caption>p{font-size:15px}
-.gallery-caption .work-links{gap:12px}
+}
+
+/* Floating project posters in the Hamster Hub creator studio. */
+.studio-work{overflow:hidden;padding-top:70px}
+.studio-intro{align-items:center}.studio-intro h2 span{color:#a44d69}
+.studio-toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:30px;flex-wrap:wrap}
+.studio-pause{font-size:14px;color:#6b516d;padding:10px 18px;min-height:44px;background:#eee4ef;border-radius:999px}
+.studio-room{position:relative;height:660px;isolation:isolate;margin:12px -40px 0;touch-action:pan-y}
+.studio-wall{position:absolute;z-index:-2;inset:0 -20%;background:radial-gradient(ellipse at 50% 45%,#e9def3b3,transparent 67%)}
+.studio-posters{position:absolute;inset:15px 0 190px;perspective:1400px;transform-style:preserve-3d}
+.studio-card{position:absolute;left:50%;top:28px;width:310px;transform:translateX(calc(-50% + var(--slot)*340px)) rotateY(calc(var(--slot)*-12deg)) translateZ(calc(var(--slot)*-5px));transition:transform .75s cubic-bezier(.2,.85,.2,1),opacity .5s;will-change:transform}
+.studio-poster{border-radius:22px;padding:20px 16px 16px;background:#fffdf8;box-shadow:0 24px 34px -16px #5b42604d,0 2px 4px #5b42600d;animation:studio-float 5s var(--delay) ease-in-out infinite}
+.studio-select{display:block;width:100%;text-align:left;padding:4px 4px 17px}
+.studio-select>span{display:block;color:#302139;font-size:23px;line-height:1.3;font-weight:700;overflow-wrap:anywhere}
+.studio-select small{display:block;color:#8c6d87;font-size:13px;line-height:1.6;margin-top:7px}
+.studio-media{height:185px;border-radius:13px;position:relative;overflow:hidden;background:#20192d}
+.studio-media>img,.studio-media video,.studio-media iframe{display:block;width:100%;height:100%;object-fit:contain;border:0}
+.studio-media-fallback{display:block;height:100%;position:relative}
+.studio-media-fallback img{width:100%;height:100%;object-fit:contain}
+.studio-media-fallback span,.studio-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#fff8ef;color:#302139;border-radius:999px;padding:10px 17px;font-size:14px;white-space:nowrap}
+.studio-card-link{display:inline-flex;align-items:center;min-height:42px;border-radius:999px;background:#f5dfc5;color:#633a2a;font-size:14px;font-weight:600;margin-top:15px;padding:8px 18px;transition:background .2s,transform .2s}
+.studio-card-link:hover{background:#ffba72;transform:translateY(-2px)}
+.studio-card:not(.is-active) .studio-select{cursor:pointer}
+.studio-card:not(.is-active):hover .studio-poster{box-shadow:0 28px 38px -14px #5b426075}
+.studio-floor{position:absolute;bottom:0;left:3%;right:3%;height:140px;border-radius:50%;background:radial-gradient(ellipse,#c7b6d740,transparent 70%);z-index:-1}
+.studio-creators{position:absolute;bottom:5px;left:50%;translate:-50% 0;display:block;width:465px;height:260px;object-fit:contain;pointer-events:none;filter:drop-shadow(0 15px 12px #684a6920);-webkit-mask-image:linear-gradient(#000 0 84%,transparent);mask-image:linear-gradient(#000 0 84%,transparent)}
+.studio-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:5px}
+.studio-controls button{display:grid;place-items:center;width:48px;height:48px;background:#fff8ef;border:1px solid #bba6bc;border-radius:50%;color:#302139;transition:transform .2s,background .2s}
+.studio-controls button:hover{transform:translateY(-3px);background:#ffd2a1}
+.studio-controls svg{width:22px;height:22px;stroke:currentColor;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+.studio-controls>span{font-size:14px;color:#795b7b;min-width:55px;text-align:center;font-variant-numeric:tabular-nums}
+.studio-caption{text-align:center;max-width:740px;margin:25px auto 0;min-height:210px;animation:studio-caption-in .35s ease-out both}
+.studio-caption h3{font-size:30px;margin-bottom:12px}.studio-caption>p{font-size:16px}
+.studio-caption .work-result{font-size:14px;color:#a34868;margin-top:12px}
+.studio-caption .work-links{justify-content:center;margin-top:22px}
+.studio-work.is-paused .studio-poster{animation-play-state:paused}
+@keyframes studio-float{0%,100%{translate:0 0}50%{translate:0 -9px}}
+@keyframes studio-caption-in{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
+/* Override the older last-child caption selector so every action stays legible. */
+.drawn-stop .journey-copy>span.journey-open{color:#2b1d32;background:#ffbd72;font-size:17px;font-weight:700;line-height:1.4;min-height:48px;padding:12px 26px;margin-top:18px;box-shadow:0 5px 0 #d58d4b;border:0}
+.drawn-stop button:hover .journey-copy>span.journey-open,.drawn-stop button:focus-visible .journey-copy>span.journey-open{color:#24192b;background:#ffd49d;transform:translateY(-3px);box-shadow:0 8px 0 #d58d4b}
+.drawn-stop button:active .journey-copy>span.journey-open{transform:translateY(3px);box-shadow:0 2px 0 #d58d4b}
+@media(max-width:900px){.studio-card{width:280px;transform:translateX(calc(-50% + var(--slot)*295px)) rotateY(calc(var(--slot)*-10deg))}.studio-room{margin-left:-28px;margin-right:-28px;height:640px}.studio-media{height:170px}.studio-select>span{font-size:21px}}
+@media(max-width:600px){
+.studio-work{padding-top:45px}.studio-toolbar{gap:10px;margin-top:24px}.studio-toolbar .work-tabs{gap:7px}
+.studio-toolbar .work-tabs button{font-size:14px;padding:9px 15px}
+.studio-pause{font-size:13px;margin-left:auto;min-height:42px}
+.studio-room{height:575px;margin:10px -20px 0}
+.studio-posters{inset:15px 0 180px}
+.studio-card{width:min(78vw,310px);top:15px;transform:translateX(calc(-50% + var(--slot)*84vw)) rotateY(calc(var(--slot)*-8deg))}
+.studio-poster{padding:17px 13px 14px;border-radius:20px}
+.studio-select>span{font-size:22px}.studio-select small{font-size:12px}
+.studio-media{height:170px}
+.studio-creators{bottom:0;width:345px;height:195px}
+.studio-caption{min-height:240px}.studio-caption h3{font-size:27px}.studio-caption>p{font-size:15px}
+.drawn-stop .journey-copy>span.journey-open{font-size:16px;min-height:46px;padding:11px 21px}
 }
