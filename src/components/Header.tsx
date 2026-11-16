@@ -1,17 +1,24 @@
 "use client";
-import { assetPath } from "@/lib/assets";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { EnrollButton } from "./CourseProvider";
+
+const links = [["#main", "หน้าหลัก"], ["#roadmap", "เส้นทางการเรียน"], ["#showcase", "ผลงาน"], ["#pricing", "รายละเอียดคอร์ส"], ["#faq", "คำถามที่พบบ่อย"]];
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    const close = (event: KeyboardEvent) => { if (event.key === "Escape") setMenuOpen(false); };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
   return <><a className="skip" href="#main">ข้ามไปเนื้อหา</a>
-    <div className="announcement">รุ่นเริ่ม 1 ธ.ค. 2569 <span className="announcement-divider">/</span>12 เดือน ที่จะมีผลงานเป็นของตัวเอง <a href="#pricing">ดูรายละเอียด</a></div>
-    <header className="header"><div className="nav wrap">
-      <a className="brand" href="#" aria-label="Hamster Hub หน้าหลัก"><span className="brand-symbol" aria-hidden="true"><img src={assetPath("/assets/logo.webp")} alt="" width="160" height="160" /></span><span>hamster<span className="brand-light">hub</span></span></a>
-      <nav aria-label="เมนูหลัก" id="navigation" className={menuOpen ? "open" : ""}>
-        {[["#roadmap", "เส้นทางการเรียน"], ["#showcase", "ผลงานจริง"], ["#faq", "คำถามที่พบบ่อย"]].map(([href,label]) => <a key={href} href={href} onClick={() => setMenuOpen(false)}>{label}</a>)}
+    <header className="site-header"><div className="site-nav">
+      <a className="site-wordmark" href="#main" aria-label="Hamster Hub หน้าหลัก" onClick={() => setMenuOpen(false)}>hamster<span>hub</span></a>
+      <nav aria-label="เมนูหลัก" id="navigation" className={`site-menu${menuOpen?" is-open":""}`}>
+        {links.map(([href,label]) => <a key={href} href={href} onClick={() => setMenuOpen(false)}>{label}</a>)}
       </nav>
-      <a className="btn small light enroll" href="#pricing">มาเริ่มโปรเจกต์กัน</a>
-      <button type="button" className="menu-toggle" aria-expanded={menuOpen} aria-controls="navigation" aria-label={menuOpen ? "ปิดเมนู" : "เปิดเมนู"} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? "✕" : "☰"}</button>
-    </div></header></>;
+      <EnrollButton className="site-contact">คุยกับทีม</EnrollButton>
+      <button type="button" className="site-menu-toggle" aria-expanded={menuOpen} aria-controls="navigation" aria-label={menuOpen?"ปิดเมนู":"เปิดเมนู"} onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button>
+    </div></header>
+  </>;
 }

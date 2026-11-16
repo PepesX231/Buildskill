@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 import "./product-journey.css";
+import "./navigation.css";
 
 export const metadata: Metadata = {
   title: "Project Build Skill | Hamster Hub",

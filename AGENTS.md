@@ -8,3 +8,6 @@ The owner explicitly requested these standing rules on 17 November 2026:
 - Do not restore the benefit strip between the hero and audience sections, the metadata row below the hero, or the small slogan/year strip at the bottom of the closing section.
 - Keep the actual course name, meaningful Thai headings, real course facts, and the user's original hamster artwork. Functional controls need clear labels.
 - If the owner removes visual filler, remove its rendered component. Do not replace it with new filler or merely hide it with CSS.
+
+- Remove institution/year eyebrow labels above proof card titles (for example HAMSTER HUB / 2024).
+- The navigation uses a minimal black bar, brand at left, centered links, and a light capsule contact button at right.
