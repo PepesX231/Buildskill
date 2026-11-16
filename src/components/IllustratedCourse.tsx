@@ -12,8 +12,8 @@ export function IllustratedHero() {
     <div className="hero-intro"><h1 id="course-title">Project<br /><span>Build Skill</span></h1>
       <p className="hero-message">ชอบคอมแล้ว<br />สร้างของที่เป็นเรา</p>
       <p className="hero-explain">คอร์ส 12 เดือน สำหรับ ม.ปลาย<br />พาทำเกม แอป หรือ IoT ให้จบ พร้อมลงสนามและทำพอร์ต</p>
+      <div className="hero-offer"><p className="hero-price"><strong>19,990</strong><span>บาท</span></p><p className="hero-price-term">ตลอดหลักสูตร 12 เดือน</p><p className="hero-price-dates">1 ธ.ค. 2569 – 1 ธ.ค. 2570</p></div>
       <div className="hero-enroll"><EnrollButton className="btn primary">เริ่มโปรเจกต์กับเรา</EnrollButton><a className="quiet-link" href="#showcase">ดูผลงานรุ่นพี่</a></div>
-      <p className="hero-course-facts">19,990 บาท ตลอดหลักสูตร<br /><span>1 ธ.ค. 2569 – 1 ธ.ค. 2570</span></p>
     </div>
     <div className="hero-drawing" ref={drawing} onPointerMove={e => {
       if (e.pointerType!=="mouse" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
