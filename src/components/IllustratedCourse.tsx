@@ -28,9 +28,9 @@ export function IllustratedHero() {
 }
 
 const phases = [
-  {period:"เดือน 1", title:"ทำชิ้นแรกให้จบ", summary:"ไอเดียเล็ก ๆ ที่ลงมือทำได้ด้วยตัวเอง", image:"journey-solo", outcomes:["วางโจทย์และขอบเขต", "สร้างต้นแบบแล้วทดสอบ", "จบงานที่เล่าได้ว่าทำอะไร"]},
+  {period:"เดือน 1", title:"ทำชิ้นแรกให้จบ", summary:"ไอเดียเล็ก ๆ ที่ลงมือทำได้ด้วยตัวเอง", image:"journey-solo", outcomes:["เข้าใจกระบวนการตั้งแต่ไอเดียจนจบงาน", "วางขอบเขต สร้างต้นแบบ และทดสอบ", "ได้พื้นฐานที่นำไปสร้างโปรเจกต์ต่อได้"]},
   {period:"เดือน 2–3", title:"สร้างเป็นทีม", summary:"เลือกบทบาท แล้วฝึกให้ลึกกับงานจริง", image:"journey-team", outcomes:["แบ่ง Role และวางแผนร่วมกัน", "Programmer ฝึก OOP / Art ฝึก Shader", "รวมงานเป็นโปรเจกต์ของทีม"]},
-  {period:"เดือน 4–12", title:"พางานออกสู่โลกจริง", summary:"มีคนใช้ มีเรื่องให้พิตช์ มีผลงานใส่พอร์ต", image:"journey-launch", outcomes:["Startup Phase: ทดลองกับผู้ใช้จริง", "เตรียมลงแข่ง NSC / TICTA / TGS", "คิด Business Idea พิตช์ และทำเล่มพอร์ต"]},
+  {period:"เดือน 4–12", title:"พางานออกสู่โลกจริง", summary:"มีคนใช้ มีเรื่องให้พิตช์ มีผลงานใส่พอร์ต", image:"journey-launch", outcomes:["Startup Phase: ทดลองกับผู้ใช้จริง", "พางานลงสนาม NSC / TICTA / TGS ที่เหมาะสม", "คิด Business Idea สำหรับขาย และพิตช์กับนักธุรกิจ", "ทำเล่มพอร์ตให้ตรงกับคณะที่เล็ง", "มีโอกาสให้นักลงทุนและอาจารย์มหาวิทยาลัยดูผลงานในแต่ละเดือน"]},
 ];
 export function IllustratedRoadmap() {
   const [selected,setSelected]=useState<number|null>(null);
@@ -86,7 +86,7 @@ export function IllustratedRoadmap() {
           <ul>{phases[selected].outcomes.map(item=><li key={item}>{item}</li>)}</ul>
           <div className="phase-tracks" role="group" aria-label="เลือกสายเพื่อดูตัวอย่าง">{(Object.keys(tracks) as TrackKey[]).map(key=><button type="button" key={key} aria-pressed={track===key} onClick={()=>setTrack(key)}>{tracks[key].name}</button>)}</div>
           <p className="phase-example" aria-live="polite">{tracks[track].examples[selected]}</p>
-          {selected===2&&<p className="phase-note">เลือกเวทีตามความเหมาะสมของงาน คุณสมบัติ และกำหนดการรับสมัคร</p>}
+          {selected===2&&<p className="phase-note">เลือกเวทีตามงาน คุณสมบัติ และกำหนดรับสมัคร โอกาสพบผู้ชมผลงานขึ้นอยู่กับการนัดหมายของแต่ละเดือน</p>}
           <button className="phase-next" type="button" onClick={()=>setSelected((selected+1)%phases.length)}>{selected===2?"กลับไปดูเดือนแรก":"ดูช่วงถัดไป"}</button>
         </div>
       </div>}
@@ -97,23 +97,23 @@ export function IllustratedRoadmap() {
 const supportStories = [
   {image:"journey-solo",title:"วางแผนที่ทำจบ",text:"ช่วยเลือกโจทย์และขอบเขต ให้รู้ว่าจะลงมืออะไรต่อ",alt:"นักสร้างจิบิกับเจ้าหนูทดลองโปรเจกต์ชิ้นแรก"},
   {image:"journey-team",title:"มีคนช่วยขัดงาน",text:"ฝึกทักษะตาม Role ผ่านงานจริง แล้วปรับจากฟีดแบ็ก",alt:"เพื่อนกับเจ้าหนูช่วยกันคิดทางออกขณะทำโปรเจกต์"},
-  {image:"journey-launch",title:"พร้อมพางานออกไป",text:"เตรียมลงแข่ง ฝึกพิตช์ และเล่าบทบาทของเราลงพอร์ต",alt:"จิบิกับเจ้าหนูพร้อมนำเสนอโปรเจกต์และเล่มพอร์ต"},
+  {image:"journey-launch",title:"สร้างให้ใช้จริง แล้วไปแข่ง",text:"ทำโปรเจกต์ที่มีคุณค่า แล้วเลือกเวทีให้เหมาะกับงาน ไม่จำเป็นต้องชนะเพื่อได้ประสบการณ์",alt:"จิบิกับเจ้าหนูพร้อมนำเสนอโปรเจกต์และเล่มพอร์ต"},
 ];
 export function IllustratedComparison() {
   return <section className="illustrated-comparison" aria-labelledby="comparison-title"><div className="wrap">
-    <div className="section-intro support-intro"><h2 id="comparison-title">เรียนเองก็ไปได้<br /><span>มีทีมช่วยให้ไปต่อ</span></h2><p>น้องเป็นคนลงมือสร้าง<br />ทีมช่วยให้เส้นทางชัดขึ้น</p></div>
+    <div className="section-intro support-intro"><h2 id="comparison-title">เรียนเองก็ไปได้<br /><span>มีทีมช่วยให้ไปต่อ</span></h2><p>ชอบคอม แต่ยังไม่รู้จะเก่งขึ้นยังไง?<br />มีเป้าหมายให้ฝึก และทีมช่วยขัดงาน</p></div>
     <div className="support-stories">{supportStories.map(story=><article key={story.title}><img className="support-picture" src={art(story.image)} width="650" height="650" alt={story.alt} loading="lazy" /><h3>{story.title}</h3><p>{story.text}</p></article>)}</div>
   </div></section>;
 }
 
 export function IllustratedPackage() {
   return <section className="illustrated-package" id="pricing" aria-labelledby="package-title"><div className="wrap">
-    <div className="package-layout"><div className="package-offer"><h2 id="package-title">ปีนี้ ทำของที่<br /><span>ภูมิใจว่าเราสร้างเอง</span></h2><p className="package-course">Project Build Skill · 12 เดือน</p><p className="package-outcome">โปรเจกต์หลักอย่างน้อย 1 ชิ้น<br />พร้อมเล่มพอร์ตที่เล่างานของเรา</p><p className="big-course-price">19,990 <span>บาท</span></p><p className="package-dates">1 ธ.ค. 2569 – 1 ธ.ค. 2570 · ราคาตลอดหลักสูตร</p><EnrollButton className="btn dark">คุยกับทีม / สมัครเรียน</EnrollButton><p className="package-confirm">ยืนยันวัน–เวลาเรียน รูปแบบ และเงื่อนไขกับทีมก่อนสมัคร</p><ModalButton kind="parents" className="quiet-link package-parent-link">สรุปให้ผู้ปกครอง</ModalButton></div>
+    <div className="package-layout"><div className="package-offer"><h2 id="package-title">ปีนี้ ทำของที่<br /><span>ภูมิใจว่าเราสร้างเอง</span></h2><p className="package-course">Project Build Skill · 12 เดือน</p><p className="package-outcome">เกม / แอป / IoT อย่างน้อย 1 โปรเจกต์ที่ใช้ได้จริง<br />พร้อมเล่มพอร์ตตรงคณะที่เล็ง และทักษะที่ทำเองได้</p><p className="big-course-price">19,990 <span>บาท</span></p><p className="package-dates">1 ธ.ค. 2569 – 1 ธ.ค. 2570 · ราคาตลอดหลักสูตร</p><EnrollButton className="btn dark">คุยกับทีม / สมัครเรียน</EnrollButton><p className="package-confirm">ยืนยันวัน–เวลาเรียน รูปแบบ และเงื่อนไขกับทีมก่อนสมัคร</p><div className="package-actions"><ModalButton kind="video" className="btn package-video">ดูคลิปตัวอย่างผลงาน</ModalButton><ModalButton kind="parents" className="btn package-parents">สรุปให้ผู้ปกครอง</ModalButton></div></div>
       <div className="package-picture"><img src={art("package-finish")} width="1168" height="1346" alt="จิบิสองคนภูมิใจกับโปรเจกต์และเล่มพอร์ต พร้อมเจ้าหนูที่ให้กำลังใจ" loading="lazy" /></div>
     </div>
     <div className="package-faq" id="faq"><div className="faq-illustrated-intro"><h3>ยังสงสัยอยู่ไหม?</h3><img src={assetPath("/assets/illustrations/faq-hamster.png")} width="512" height="512" alt="เจ้าหนูเอียงศีรษะอย่างเป็นมิตร ถือสมุดกับดินสอพร้อมช่วยตอบคำถาม" loading="lazy" /></div><div className="faq-answers">
       <details><summary>ไม่มีผลงาน เริ่มจากสายไหนดี?</summary><p>เริ่มได้ทั้งเกม แอป หรือ IoT เลือกจากสิ่งที่สนใจและคณะที่เล็ง แล้วคุยกับทีมเพื่อวางงานชิ้นเล็กที่ทำจบได้</p></details>
-      <details><summary>ใช้ AI ช่วยทำได้ไหม?</summary><p>ใช้ได้ แต่ต้องเข้าใจสิ่งที่สร้าง ทดสอบและแก้ปัญหาได้ พร้อมอธิบายบทบาทของตัวเองในงาน</p></details>
+      <details><summary>ใช้ AI ช่วยทำได้ไหม?</summary><p>ใช้ได้ โดยต้องเข้าใจโค้ดและสิ่งที่สร้าง ทดสอบ แก้ปัญหา และอธิบายบทบาทของตัวเองได้ เป้าหมายคืองานที่ใช้งานหรือเล่นได้จริง มีคุณภาพ และมีไอเดียของน้อง</p></details>
       <details><summary>มีการันตีรางวัลหรือติดมหาวิทยาลัยไหม?</summary><p>ไม่มีการรับประกันผล เป้าหมายคือทักษะ โปรเจกต์ และพอร์ตของน้อง การแข่งขันและการรับเข้าขึ้นอยู่กับเกณฑ์ของแต่ละแห่ง</p></details>
       <details><summary>เรียนวันไหน มีค่าใช้จ่ายเพิ่มไหม?</summary><p>19,990 บาทเป็นราคาหลักสูตร 12 เดือน ให้ทีมยืนยันวัน–เวลา รูปแบบเรียน ค่าอุปกรณ์ ค่าสมัครแข่งขันหรือเดินทาง และเงื่อนไขชำระเงิน/คืนเงินก่อนสมัคร</p></details>
     </div></div>
