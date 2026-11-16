@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
-import { assetPath } from "@/lib/assets";
 import { verifiedWork, type WorkCategory, type WorkExample } from "@/lib/verified-work";
 
 function WorkMedia({work,playing,controls}:{work:WorkExample;playing:boolean;controls:boolean}) {
@@ -25,6 +24,9 @@ export function RealWorkShowcase() {
   const [touch,setTouch]=useState<number|null>(null);
   const [visible,setVisible]=useState(false);
   const [paused,setPaused]=useState(false);
+  const [hovering,setHovering]=useState(false);
+  const [focused,setFocused]=useState(false);
+  const [pageVisible,setPageVisible]=useState(true);
   const stage=useRef<HTMLDivElement>(null);
   const works=verifiedWork[category];
   const work=works[index];
@@ -37,10 +39,21 @@ export function RealWorkShowcase() {
     if(motion.matches)setPaused(true);
     return ()=>observer.disconnect();
   },[]);
+  useEffect(()=>{
+    const update=()=>setPageVisible(!document.hidden);
+    update();
+    document.addEventListener("visibilitychange",update);
+    return ()=>document.removeEventListener("visibilitychange",update);
+  },[]);
+  useEffect(()=>{
+    if(paused||!visible||!pageVisible||hovering||focused||touch!==null)return;
+    const timer=window.setInterval(()=>setIndex(i=>(i+1)%works.length),5000);
+    return ()=>window.clearInterval(timer);
+  },[paused,visible,pageVisible,hovering,focused,touch,category,works.length]);
   return <section className={`real-work studio-work ${paused?"is-paused":""}`} id="showcase" aria-labelledby="work-title"><div className="wrap">
     <div className="section-intro studio-intro"><h2 id="work-title">งานที่มีให้ดู<br /><span>เรื่องที่มีให้เล่า</span></h2><p>{verifiedWork.projects.length} ผลงานจริงจากคอมมูนิตี้<br />ดูคลิป แล้วเปิดงานต้นฉบับได้เลย</p></div>
-    <div className="studio-toolbar"><div className="work-tabs" role="group" aria-label="เลือกหมวดผลงาน">{([["projects","ผลงานจริง"],["admissions","เส้นทางรุ่นพี่"]] as const).map(([key,label])=><button type="button" key={key} aria-pressed={category===key} onClick={()=>{setCategory(key);setIndex(0);}}>{label}</button>)}</div><button type="button" className="studio-pause" aria-pressed={paused} onClick={()=>setPaused(p=>!p)}>{paused?"เล่นคลิปอัตโนมัติ":"หยุดคลิป / แอนิเมชัน"}</button></div>
-    <div className="studio-room" ref={stage} role="region" aria-roledescription="carousel" aria-label="ผลงานบนโต๊ะนักสร้าง เลื่อนซ้ายขวาเพื่อดูงาน" tabIndex={0} onKeyDown={e=>{if(e.target instanceof HTMLVideoElement)return;if(e.key==="ArrowRight"){e.preventDefault();move(1);}if(e.key==="ArrowLeft"){e.preventDefault();move(-1);}}} onTouchStart={e=>setTouch(e.touches[0].clientX)} onTouchEnd={e=>{if(touch!==null){const delta=e.changedTouches[0].clientX-touch;if(Math.abs(delta)>60)move(delta<0?1:-1);}setTouch(null);}}>
+    <div className="studio-toolbar"><div className="work-tabs" role="group" aria-label="เลือกหมวดผลงาน">{([["projects","ผลงานจริง"],["admissions","เส้นทางรุ่นพี่"]] as const).map(([key,label])=><button type="button" key={key} aria-pressed={category===key} onClick={()=>{setCategory(key);setIndex(0);}}>{label}</button>)}</div><button type="button" className="studio-pause" aria-pressed={paused} onClick={()=>setPaused(p=>!p)}>{paused?"เล่นและหมุนอัตโนมัติ":"หยุดหมุน / คลิป"}</button></div>
+    <div className="studio-room" ref={stage} role="region" aria-roledescription="carousel" aria-label="ผลงานหมุนอัตโนมัติทุก 5 วินาที" onMouseEnter={()=>setHovering(true)} onMouseLeave={()=>setHovering(false)} onFocusCapture={()=>setFocused(true)} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node|null))setFocused(false);}} tabIndex={0} onKeyDown={e=>{if(e.target instanceof HTMLVideoElement)return;if(e.key==="ArrowRight"){e.preventDefault();move(1);}if(e.key==="ArrowLeft"){e.preventDefault();move(-1);}}} onTouchCancel={()=>setTouch(null)} onTouchStart={e=>setTouch(e.touches[0].clientX)} onTouchEnd={e=>{if(touch!==null){const delta=e.changedTouches[0].clientX-touch;if(Math.abs(delta)>60)move(delta<0?1:-1);}setTouch(null);}}>
       <div className="studio-wall" aria-hidden="true" />
       <div className="studio-posters">{works.map((item,i)=>{
         let offset=(i-index+works.length)%works.length;
@@ -54,8 +67,6 @@ export function RealWorkShowcase() {
           </div>
         </article>;
       })}</div>
-      <div className="studio-floor" aria-hidden="true" />
-      <img className="studio-creators" src={assetPath("/assets/illustrations/hero-build.webp")} width="1200" height="675" alt="" aria-hidden="true" loading="lazy" />
     </div>
     <div className="studio-controls"><button type="button" onClick={()=>move(-1)} aria-label="ผลงานก่อนหน้า"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 5-7 7 7 7" /></svg></button><span aria-live="polite">{index+1} / {works.length}</span><button type="button" onClick={()=>move(1)} aria-label="ผลงานถัดไป"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m10 5 7 7-7 7" /></svg></button></div>
     <div className="studio-caption" key={category+index} aria-live="polite"><h3>{work.title}</h3><p>{work.description}</p>{work.result&&<p className="work-result">{work.result}</p>}<div className="work-links"><a href={work.href} target="_blank" rel="noopener noreferrer">{work.action}</a>{work.secondary&&<a href={work.secondary.href} target="_blank" rel="noopener noreferrer">{work.secondary.label}</a>}</div></div>
