@@ -71,7 +71,7 @@ export function IllustratedRoadmap() {
       <svg className="drawn-curve curve-tall" viewBox="0 0 100 650" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M50 120 C-10 200 110 240 50 330 S-10 480 50 550" /></svg>
       <ol>{phases.map((p,i)=><li key={p.period} className={`drawn-stop drawn-stop-${i}`}><button type="button" onClick={e=>{trigger.current=e.currentTarget;setSelected(i);}} aria-haspopup="dialog" aria-label={`ดูรายละเอียด ${p.period} ${p.title}`}>
         <span className="journey-drawing"><img src={art(p.image)} width="520" height="520" alt="" loading="lazy" /></span>
-        <span className="journey-copy"><span className="learning-period">{p.period}</span><strong>{p.title}</strong><span>{p.summary}</span></span>
+        <span className="journey-copy"><span className="learning-period">{p.period}</span><strong>{p.title}</strong><span>{p.summary}</span><span className="journey-open">ดูรายละเอียด</span></span>
       </button></li>)}</ol>
     </div>
     <dialog ref={dialog} className={`phase-dialog ${closing?"is-closing":""}`} aria-labelledby="phase-title" onCancel={e=>{e.preventDefault();close();}} onClick={e=>{
