@@ -155,16 +155,14 @@ function ParentSummary({ print = false }: { print?: boolean }) {
 
 function SourcesContent() {
   const links = [
-    ["https://pepesx231.github.io/Hamterco/slime.html?v=137", "ภาพมาสคอต สี และภาพผลงาน: เว็บ Hamster Hub ที่ทีมให้มา"],
-    ["https://www.hamsterhub.co/", "แบรนด์และช่องทางติดต่อ: เว็บไซต์หลัก Hamster Hub"],
-    ["https://docs.google.com/spreadsheets/d/18DPvyBrXj0lxDD0A8W6DF6mdeUw2mpuPCeEjpo-yp_0/edit", "บันทึกเส้นทางผู้เรียน Xsearch"],
-    ["https://docs.google.com/spreadsheets/d/1IWzQUOJfaGaHw2P5zrXDcrrlBJbsV_pCJWw3tzz9xkE/edit", "รายการมหาวิทยาลัย Xsearch2"],
-    ["https://docs.google.com/spreadsheets/d/1eB-6lrVTdXQ8LRwiYjp0x6J8E1jpndy6d-hYZWgSvL0/edit", "ข้อมูล Hamster Hub: ผลงาน / มหาลัย 2024–2026"],
-    ["https://www.nngroup.com/articles/homepage-design-principles/", "รีเสิร์ช UX: NN/g — Homepage Design Principles"],
-    ["https://help.maven.com/en/articles/5597496-projects", "รีเสิร์ชรูปแบบคอร์ส: Maven — Projects"],
+    ["https://docs.google.com/spreadsheets/d/1eB-6lrVTdXQ8LRwiYjp0x6J8E1jpndy6d-hYZWgSvL0/edit", "ตารางผลงานและเส้นทางรุ่นพี่ที่ทีมให้มา"],
+    ["https://www.hamsterhub.co/", "เว็บไซต์ Hamster Hub"],
+    ["https://stangshinez.itch.io/dont-talk-i-need-coffee", "ต้นฉบับ: Don’t Talk, I Need Coffee"],
+    ["https://pepess1.itch.io/comand-select", "ต้นฉบับ: COMMAND SELECT"],
+    ["https://mmaxez.itch.io/veggie-dash", "ต้นฉบับ: Veggie Dash"],
+    ["https://tanawatkhaitom.itch.io/night-fear", "ต้นฉบับ: Night Fear"],
   ];
-  return <><h2 id="modal-title">ข้อมูลที่ใช้ในหน้านี้</h2>
-    <p className="modal-lead">รายละเอียดหลักสูตรและราคาอ้างอิงจากข้อมูลที่ทีมให้มา โดยใช้ราคา 19,990 บาทตามข้อความล่าสุด ส่วนผลงานเป็นข้อมูลจากชุมชน Hamster Hub ไม่ใช่ผลงานของคอร์สรุ่นที่ยังไม่เริ่ม</p>
-    <div className="source-links">{links.map(([url, label]) => <a key={url} href={url} target="_blank" rel="noopener noreferrer">{label}</a>)}</div>
-    <p className="modal-footnote">ตัวอย่าง Quest และแนวคิดโปรเจกต์เป็นเนื้อหาประกอบสำหรับหน้านี้</p></>;
+  return <><h2 id="modal-title">ข้อมูลและภาพที่ใช้</h2><p className="modal-lead">รายละเอียดคอร์สมาจากทีม Hamster Hub ผลงานและเส้นทางรุ่นพี่อ้างอิงจากตารางและหน้าโปรเจกต์ต้นฉบับ</p>
+    <div className="source-links">{links.map(([url,label])=><a key={url} href={url} target="_blank" rel="noopener noreferrer">{label}</a>)}</div>
+    <p className="modal-footnote">ภาพจิบิเป็นภาพประกอบที่สร้างใหม่สำหรับอธิบายคอร์ส ส่วนภาพในหมวดผลงานจริงมาจากงานต้นฉบับ ผลงานเหล่านี้ไม่ใช่ผลลัพธ์ของคอร์สรุ่นที่กำลังเปิด</p></>;
 }

@@ -11,3 +11,6 @@ The owner explicitly requested these standing rules on 17 November 2026:
 
 - Remove institution/year eyebrow labels above proof card titles (for example HAMSTER HUB / 2024).
 - The navigation has no contrasting rectangular panel, border, shadow, or backdrop blur. Blend it into the hero background, with brand at left, centered links, and a light capsule contact button at right. Use readable menu text (16px desktop, 17px mobile menu), not tiny microcopy.
+
+- Use the five-section illustrated structure in DESIGN.md: Hero, Roadmap, Comparison, real-work carousel, Package. Keep explanations concise and let expandable details hold longer answers.
+- Use the original chibi-and-hamster illustration family. Generated explanatory art must never stand in for real project screenshots or student proof. See SOURCE_NOTES.md for checked references.

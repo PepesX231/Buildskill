@@ -1,0 +1,16 @@
+import { assetPath } from "./assets";
+export type WorkCategory = "projects" | "admissions";
+export type WorkExample = { title: string; image: string; alt: string; by: string; description: string; result?: string; href: string; action: string; secondary?: { label: string; href: string } };
+export const verifiedWork: Record<WorkCategory, WorkExample[]> = {
+  projects: [
+    {title:"Don’t Talk, I Need Coffee",image:"https://img.itch.zone/aW1hZ2UvNDQ1Mzk1Ny8yOTg5NDQyMS5wbmc=/original/e93J8H.png",alt:"ภาพจากเกม Don’t Talk, I Need Coffee ของ ShineZ และ ZarNk",by:"สตางค์ / ShineZ และ ZarNk",description:"เกม 2.5D ใช้การ์ดเอาตัวรอดในออฟฟิศ จากโจทย์ REFRESHING",result:"Thailand Summer Jam 2026",href:"https://stangshinez.itch.io/dont-talk-i-need-coffee",action:"เปิดดูเดโม",secondary:{label:"ดูตัวอย่างเกม",href:"https://youtu.be/7zJeZsm_Dbo"}},
+    {title:"REVOICE",image:assetPath("/assets/sc-revoice.webp"),alt:"ไอดินกับแอป REVOICE จากเว็บไซต์ Hamster Hub",by:"ไอดิน · แอปพลิเคชัน",description:"โปรเจกต์แอปที่ต่อยอดเป็นผลงานแข่งขันและใช้เล่าในพอร์ต",result:"NSC 2025 · Top 1 ประเภทแอป",href:"https://www.facebook.com/100000550526763/videos/oa.1528925231792269/1754855858728388",action:"ดูคลิปผลงาน",secondary:{label:"ดูเอกสารผลงาน",href:"https://drive.google.com/file/d/11dIXJKebTWAA7UZPVJVEV17t3G-JHRTh/view"}},
+    {title:"COMMAND SELECT",image:"https://img.itch.zone/aW1hZ2UvNTA5OTU3OC8zMDUyOTY4NC5qcGc=/original/Ax1Q%2Fl.jpg",alt:"ภาพเกมยิงมุมมองบุคคลที่หนึ่ง COMMAND SELECT",by:"J / Pepess1 · เกมเดโม",description:"เกมยิง Boss Rush ที่ผสมการเคลื่อนไหว การอ่านสนาม และการแก้กลไกบอส",result:"เดโมเกมสำหรับ Windows",href:"https://pepess1.itch.io/comand-select",action:"ดูหน้าโปรเจกต์"},
+    {title:"Veggie Dash",image:"https://img.itch.zone/aW1nLzE3OTg2NTYwLnBuZw==/original/KSP9aP.png",alt:"ภาพเกมผจญภัยสามมิติ Veggie Dash",by:"แมคและทีม · เกม 3D Platformer",description:"ผจญภัยในโลกที่ผักให้พลังพิเศษ แบ่งงานทั้งโค้ด โมเดล ภาพ และเสียง",result:"NSC 2024 · Top 3 ตามข้อมูลทีม",href:"https://mmaxez.itch.io/veggie-dash",action:"ดูหน้าโปรเจกต์"},
+  ],
+  admissions: [
+    {title:"แมค · CEDT จุฬาฯ",image:"https://img.itch.zone/aW1nLzE2OTA3MDg1LnBuZw==/original/NpUSGJ.png",alt:"ภาพปกเกม Veggie Dash ผลงานของแมคและทีม",by:"โปรเจกต์ Veggie Dash",description:"รับบท Leader และร่วมพัฒนาเกม จนมีงานและกระบวนการให้เล่าต่อกรรมการ",href:"https://mmaxez.itch.io/veggie-dash",action:"ดูผลงาน",secondary:{label:"เปิดพอร์ตต้นฉบับ",href:"https://drive.google.com/file/d/1AYlNBAg8iUtVU332C9IpVHsOYEQ5iE7z/view"}},
+    {title:"ไอดิน · IoT สจล.",image:assetPath("/assets/sc-revoice.webp"),alt:"ไอดินกับผลงานแอป REVOICE",by:"โปรเจกต์ REVOICE",description:"ใช้โปรเจกต์แอปเล่าความสามารถ เส้นทางที่เลือกเรียนคือ IoT สจล.",href:"https://drive.google.com/file/d/11dIXJKebTWAA7UZPVJVEV17t3G-JHRTh/view",action:"ดูเอกสารผลงาน"},
+    {title:"โฟกัส · วิศวะคอม มหิดล",image:"https://img.itch.zone/aW1hZ2UvMzA1ODE1Mi8xODI4ODY1NC5wbmc=/original/3wFUY7.png",alt:"ภาพจากเกมสยองขวัญ Night Fear",by:"โปรเจกต์ Night Fear",description:"เกมสยองขวัญที่หยิบเรื่องเล่าไทยมาสร้างเป็นประสบการณ์ของผู้เล่น",href:"https://tanawatkhaitom.itch.io/night-fear",action:"ดูผลงาน",secondary:{label:"เปิดพอร์ตต้นฉบับ",href:"https://www.canva.com/design/DAGf5ocsJPI/b_HyNNE52GGcdXYQ2ukk4g/edit"}},
+  ],
+};
