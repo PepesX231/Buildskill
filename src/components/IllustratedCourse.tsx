@@ -45,6 +45,11 @@ export function IllustratedRoadmap() {
     const el=dialog.current;if(!el)return;
     const overflow=document.body.style.overflow;
     document.body.style.overflow="hidden";
+    const bounds=trigger.current?.getBoundingClientRect();
+    const startX=bounds?Math.max(-130,Math.min(130,bounds.left+bounds.width/2-window.innerWidth/2)):0;
+    const startY=bounds?Math.max(-90,Math.min(90,bounds.top+bounds.height/2-window.innerHeight/2)):30;
+    el.style.setProperty("--phase-start-x",startX+"px");
+    el.style.setProperty("--phase-start-y",startY+"px");
     el.showModal();
     return ()=>{
       if(timer.current)clearTimeout(timer.current);

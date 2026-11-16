@@ -105,7 +105,7 @@ main{background:transparent}
 .phase-copy .phase-example{margin-top:16px;font-size:16px;color:#69516d}
 .phase-copy .phase-note{font-size:13px;margin-top:15px}
 .phase-next{background:#2771ce;color:#fff;padding:10px 20px;min-height:45px;border-radius:999px;margin-top:22px;font-size:15px}
-@keyframes phase-open{from{opacity:0;transform:translateY(30px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes phase-open{from{opacity:0;transform:translate(var(--phase-start-x,0px),var(--phase-start-y,30px)) scale(.84)}to{opacity:1;transform:translate(0,0) scale(1)}}
 @keyframes phase-exit{to{opacity:0;transform:translateY(18px) scale(.97)}}
 @keyframes phase-content{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @keyframes backdrop-open{from{opacity:0}to{opacity:1}}
@@ -137,3 +137,16 @@ main{background:transparent}
 .phase-art img{height:180px}
 .phase-copy h3{font-size:28px}.phase-copy ul{margin:20px 0}
 }
+
+/* The supplied hero artwork ends in a flat crop. Feather only its lower edge. */
+.hero-drawing img{
+  -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 83%,#000b 90%,transparent 100%);
+  mask-image:linear-gradient(to bottom,#000 0%,#000 83%,#000b 90%,transparent 100%);
+  -webkit-mask-repeat:no-repeat;
+  mask-repeat:no-repeat
+}
+.phase-dialog[open]{animation-duration:.4s}
+.phase-art{animation:phase-art-reveal .48s cubic-bezier(.16,1,.3,1) both}
+.phase-copy{animation:phase-copy-reveal .4s .08s ease-out both}
+@keyframes phase-art-reveal{from{opacity:0;transform:translateY(18px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes phase-copy-reveal{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
