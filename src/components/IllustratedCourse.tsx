@@ -23,7 +23,6 @@ export function IllustratedHero() {
     }} onPointerLeave={()=>{drawing.current?.style.setProperty("--art-x","0px");drawing.current?.style.setProperty("--art-y","0px");}}>
       <img src={art("hero-build")} width="1672" height="941" alt="สองนักสร้างจิบิกับแฮมสเตอร์ ช่วยกันทำเกม แอป และทดลองอุปกรณ์ IoT" fetchPriority="high" />
     </div>
-    <p className="hero-for-who">ยังไม่มีงาน · มีงานแต่ไม่มั่นใจ · เรียนเองแล้วอยากไปต่อ</p>
   </div></section>;
 }
 
@@ -65,7 +64,7 @@ export function IllustratedRoadmap() {
     timer.current=setTimeout(()=>{dialog.current?.close();setSelected(null);setClosing(false);},delay);
   };
   return <section className="illustrated-roadmap" id="roadmap" aria-labelledby="roadmap-title"><div className="wrap">
-    <div className="section-intro"><h2 id="roadmap-title">เริ่มทีละชิ้น<br /><span>แล้วไปให้ไกลกว่าเดิม</span></h2><p>12 เดือน มีเป้าหมายให้ลงมือ<br />กดภาพเพื่อดูแต่ละช่วง</p></div>
+    <div className="section-intro"><h2 id="roadmap-title">เริ่มทีละชิ้น<br /><span>แล้วไปให้ไกลกว่าเดิม</span></h2></div>
     <div className="drawn-journey">
       <svg className="drawn-curve curve-wide" viewBox="0 0 1200 430" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M190 180 C360 180 395 310 600 310 S835 180 1010 180" /></svg>
       <svg className="drawn-curve curve-tall" viewBox="0 0 100 650" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M50 120 C-10 200 110 240 50 330 S-10 480 50 550" /></svg>
@@ -101,7 +100,7 @@ const supportStories = [
 ];
 export function IllustratedComparison() {
   return <section className="illustrated-comparison" aria-labelledby="comparison-title"><div className="wrap">
-    <div className="section-intro support-intro"><h2 id="comparison-title">เรียนเองก็ไปได้<br /><span>มีทีมช่วยให้ไปต่อ</span></h2><p>ชอบคอม แต่ยังไม่รู้จะเก่งขึ้นยังไง?<br />มีเป้าหมายให้ฝึก และทีมช่วยขัดงาน</p></div>
+    <div className="section-intro support-intro"><h2 id="comparison-title">เรียนเองก็ไปได้<br /><span>มีทีมช่วยให้ไปต่อ</span></h2></div>
     <div className="support-stories">{supportStories.map(story=><article key={story.title}><img className="support-picture" src={art(story.image)} width="650" height="650" alt={story.alt} loading="lazy" /><h3>{story.title}</h3><p>{story.text}</p></article>)}</div>
   </div></section>;
 }

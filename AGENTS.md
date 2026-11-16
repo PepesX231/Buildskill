@@ -17,3 +17,6 @@ The owner explicitly requested these standing rules on 17 November 2026:
 
 - Make the price a prominent number above the hero enrollment action, with course duration and dates in separate smaller text.
 - Replace dense comparison tables and repetitive package bullet strips with concise illustrated explanations. Keep only useful actions and a compact illustrated FAQ.
+
+- Keep the showcase heading as ให้ผลงานพูดแทน. Do not restore the removed 30-project promotional aside, support heading aside, roadmap heading aside, hero audience microcopy strip, or global หยุดหมุน / คลิป button.
+- The showcase advances automatically every four seconds when on screen. Mouse hover, focus and touch do not stop rotation. Preserve the system reduced-motion preference and suspend only when off screen or the browser tab is hidden.
