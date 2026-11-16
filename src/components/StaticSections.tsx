@@ -1,29 +1,6 @@
 import { assetPath } from "@/lib/assets";
 import { EnrollButton, VideoButton, ModalButton } from "./CourseProvider";
 
-export function Hero() { return (
-<section className="hero wrap">
-<div className="hero-copy"><p className="course-name">Project Build Skill</p>
-<h1>ชอบคอมแล้ว<br />สร้าง<span className="highlight">ของจริง</span><br />สักชิ้นกัน<span className="mint">.</span></h1>
-<p className="hero-description">12 เดือน จาก “อยากทำเป็น”<br />สู่โปรเจกต์ที่ใช้จริง ไปแข่งได้ และเล่าในพอร์ตได้เต็มปาก</p>
-<div className="hero-actions"><a className="btn primary" href="#roadmap">ดูเส้นทางของฉัน</a><VideoButton className="watch-link"><span className="play-icon">▶</span> ดูผลงานที่สร้างได้</VideoButton></div>
-
-</div>
-<div className="hero-art brand-scene">
-
-<div className="project-notebook">
-
-<div className="notebook-content"><h2>ไอเดียที่อยู่ในหัว<br /><span>ได้เวลาลองทำจริง</span></h2>
-<div className="notebook-checklist"><p>เริ่มจากเรื่องที่น้องชอบ</p><p>ค่อย ๆ สร้างให้เป็นชิ้นงาน</p><p>พาไปเจอผู้เล่นและผู้ใช้จริง</p></div>
-
-</div></div>
-<img className="hero-hamster" src={assetPath("/assets/crew27-peek.webp")} alt="มาสคอตแฮมสเตอร์สีขาวส้มของ Hamster Hub โผล่มาให้กำลังใจ" fetchPriority="high" />
-
-
-</div>
-</section>
-); }
-
 export function Audience() { return (
 <section className="intro section wrap"><div className="intro-heading"><img className="intro-hamster" src={assetPath("/assets/crew27-l-e.webp")} alt="" loading="lazy" /><h2>รู้ว่าชอบคอม<br />แต่ยังไม่รู้ว่า<span className="underline">จะไปต่อยังไง?</span></h2></div><div className="starting-points"><article><h3>ยังไม่มีผลงานเลย</h3><p>เรียนมาหลายอย่าง แต่พอจะทำโปรเจกต์ของตัวเอง ก็ไม่รู้จะเริ่มตรงไหน</p></article><article><h3>มีงานแล้ว แต่ยังไม่มั่นใจ</h3><p>ทำได้ระดับหนึ่ง แต่ยังไม่รู้ว่าดีพอไหม และควรพัฒนาส่วนไหนต่อ</p></article><article><h3>Self-learning มาเอง</h3><p>ติดปัญหาแล้ววนอยู่คนเดียว อยากมีทีม มีคนคุย และมีเป้าหมายให้ไปถึง</p></article></div></section>
 ); }
