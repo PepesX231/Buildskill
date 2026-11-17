@@ -10,3 +10,6 @@ The latest supplied wireframe and DESIGN.md override earlier page sequence, pale
 - Do not access the previously blocked original Drive portfolio until the user specifically authorizes that source. Do not try download or thumbnail endpoints as a workaround.
 - Every month phase must explain what is learned, completed and useful. Give the nine-month development phase adequate detail. Explain OOP and Shader in plain Thai.
 - Keep gameplay muted and inline, respect reduced motion, pause offscreen and when hidden. Slider controls must work and be keyboard accessible.
+
+- The owner confirmed business people and university lecturers are actually invited every month. State that clearly without inventing identities or exact dates.
+- Use the topic explorer grouped by month and selected track. Every available image must match the selected topic; do not substitute a game poster for an app, IoT, portfolio or expert-session image. See MISSING_MEDIA.md for requested assets.

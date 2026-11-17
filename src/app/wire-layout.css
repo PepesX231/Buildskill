@@ -394,3 +394,81 @@ body .course-footer{width:100%;max-width:none;margin:0;background:#e6e6e8;paddin
 body .course-footer{padding:30px 20px;gap:20px}
 }
 @media(prefers-reduced-motion:reduce){.proof-deck{transition:none;will-change:auto}}
+
+/* Topic explorer: real media is attached only to the matching topic. */
+.wire-hero-heading h1{font-size:clamp(36px,4.5vw,64px);line-height:1.2}
+.learning-explorer{padding-top:115px}
+.learning-explorer .route-intro h2{font-size:clamp(34px,3.9vw,52px)}
+.explorer-hint{font-size:14px!important;color:#8e8e9b!important;margin-top:17px}
+.explorer-shell{display:grid;grid-template-columns:330px minmax(0,1fr);gap:32px;align-items:start;margin-top:35px;border:1px solid #2d2d32;border-radius:27px;padding:29px 26px;background:#030304}
+.explorer-topics{max-height:820px;overflow:auto;padding-right:13px;scrollbar-width:thin;scrollbar-color:#3d3d45 transparent}
+.explorer-phase+.explorer-phase{margin-top:29px;padding-top:23px;border-top:1px solid #292930}
+.explorer-phase>h3{font-size:16px;color:#95bde0;line-height:1.5;margin-bottom:5px}
+.explorer-phase>p{font-size:14px!important;color:#9d9da7!important;line-height:1.7;margin-bottom:16px}
+.explorer-phase>button{display:flex;align-items:center;gap:11px;padding:12px 14px;background:#1a1a20;border:1px solid transparent;border-radius:16px;width:100%;text-align:left;color:#c3c3ce;font-size:14px;line-height:1.6;min-height:47px}
+.explorer-phase>button+button{margin-top:8px}
+.explorer-phase>button:hover{background:#252531}
+.explorer-phase>button[aria-pressed=true]{background:#203247;color:#e5f3ff;border-color:#456d96}
+.topic-indicator{border:1px solid #8d8d9b;border-radius:50%;width:18px;height:18px;display:grid;place-items:center;font:400 14px/1 var(--en);flex-shrink:0}
+.explorer-phase>button[aria-pressed=true] .topic-indicator{background:#8bc7fb;color:#0a1928;border-color:#8bc7fb}
+.explorer-detail{position:sticky;top:90px;min-width:0}
+.explorer-detail-inner{animation:wire-appear .28s ease both;min-height:660px;display:flex;flex-direction:column}
+.explorer-media{margin:0;width:100%;min-width:0}
+.explorer-media>.demonstration-video{height:310px;width:100%;aspect-ratio:auto;border-radius:16px;background:#0a0a0e}
+.explorer-media>.demonstration-video>img,.explorer-media video{height:100%;width:100%;object-fit:cover}
+.explorer-media>img{display:block;width:100%;height:310px;object-fit:contain;background:#0c0c12;border-radius:16px}
+.explorer-media-team>img{object-fit:cover}
+.explorer-media-poster>img{height:370px}
+.explorer-media figcaption{font-size:11px;line-height:1.7;color:#898996;margin-top:11px}
+.explorer-topic-copy{padding:27px 8px 12px}
+.explorer-topic-copy.without-topic-media{padding:65px 28px 40px;background:linear-gradient(150deg,#10131b,#050506);border-radius:19px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.explorer-period{color:#8eb7d8!important;font-size:14px;margin-bottom:12px}
+.explorer-topic-copy h3{font-size:30px;line-height:1.4;margin-bottom:20px}
+.explorer-topic-copy ul{padding-left:19px;color:#b5b5c2;font-size:16px;line-height:1.85}
+.explorer-topic-copy li+li{margin-top:8px}
+.explorer-output{border-top:1px solid #2c2d37;padding-top:20px;margin-top:25px}
+.explorer-output>span{display:block;font-size:12px;color:#8a9aab;margin-bottom:9px}
+.explorer-output>strong{display:block;font-size:20px;line-height:1.6;color:#d9ebfa;font-weight:500}
+.explorer-support{font-size:12px!important;color:#80808e!important;line-height:1.8;margin-top:20px}
+.explorer-back{display:none}
+.expert-section{padding-top:105px;padding-bottom:90px}
+.expert-section .wire-centered-heading h2{font-size:clamp(30px,3.4vw,47px);line-height:1.35}
+.expert-perspectives{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:42px;border:1px solid #292931;border-radius:24px;overflow:hidden;background:#08080b}
+.expert-perspectives article{padding:43px 37px}
+.expert-perspectives article+article{border-left:1px solid #292931;background:#0b0e14}
+.expert-perspectives article>p{color:#8ca9c9;font-size:14px}
+.expert-perspectives h3{font-size:32px;line-height:1.4;margin-top:18px;margin-bottom:25px}
+.expert-perspectives ul{color:#9c9ca9;font-size:16px;line-height:1.9;padding-left:18px}
+.expert-perspectives li+li{margin-top:8px}
+.expert-note{text-align:center;font-size:12px!important;color:#7f7f8b!important;line-height:1.8;margin-top:20px}
+@media(max-width:1000px){.explorer-shell{grid-template-columns:280px minmax(0,1fr);gap:22px;padding:24px 20px}.explorer-phase>button{font-size:13px;padding:11px}.explorer-topic-copy h3{font-size:26px}.explorer-topic-copy.without-topic-media{padding:35px 23px}.explorer-media>.demonstration-video,.explorer-media>img{height:265px}.explorer-media-poster>img{height:340px}}
+@media(max-width:700px){
+.wire-hero-heading h1{font-size:34px}
+.wire-hero-heading>span{max-width:300px}
+.learning-explorer{padding-top:70px}
+.learning-explorer .route-intro h2{font-size:34px}
+.explorer-hint{font-size:12px!important;line-height:1.8}
+.explorer-shell{display:block;padding:19px 16px;border-radius:21px;margin-top:25px}
+.explorer-topics{max-height:430px;padding-right:9px;scroll-margin-top:95px}
+.explorer-phase>h3{font-size:16px}.explorer-phase>p{font-size:13px!important}
+.explorer-phase>button{font-size:14px;min-height:48px}
+.explorer-detail{position:static;scroll-margin-top:86px;border-top:1px solid #33333b;margin-top:23px;padding-top:17px}
+.explorer-back{display:inline-flex;color:#8ab9df;font-size:13px;margin-bottom:19px;border-bottom:1px solid #34516d;padding-bottom:5px}
+.explorer-detail-inner{min-height:0}
+.explorer-media>.demonstration-video,.explorer-media>img{height:220px;border-radius:12px}
+.explorer-media-poster>img{height:340px}
+.explorer-media figcaption{font-size:10px}
+.explorer-topic-copy{padding:23px 4px 10px}
+.explorer-topic-copy.without-topic-media{padding:28px 20px}
+.explorer-period{font-size:12px}
+.explorer-topic-copy h3{font-size:26px}
+.explorer-topic-copy ul{font-size:15px;line-height:1.8}
+.explorer-output>strong{font-size:18px}
+.expert-section{padding-top:70px;padding-bottom:50px}
+.expert-section .wire-centered-heading h2{font-size:28px}
+.expert-perspectives{grid-template-columns:1fr;gap:0;margin-top:28px;border-radius:20px}
+.expert-perspectives article{padding:30px 25px}
+.expert-perspectives article+article{border-left:0;border-top:1px solid #292931}
+.expert-perspectives h3{font-size:28px}.expert-perspectives ul{font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){.explorer-detail-inner{animation:none}}
