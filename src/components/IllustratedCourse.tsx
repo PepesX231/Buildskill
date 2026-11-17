@@ -27,9 +27,9 @@ export function IllustratedHero() {
 }
 
 const phases = [
-  {period:"เดือน 1", title:"ทำชิ้นแรกให้จบ", summary:"ไอเดียเล็ก ๆ ที่ลงมือทำได้ด้วยตัวเอง", image:"journey-solo", outcomes:["เข้าใจกระบวนการตั้งแต่ไอเดียจนจบงาน", "วางขอบเขต สร้างต้นแบบ และทดสอบ", "ได้พื้นฐานที่นำไปสร้างโปรเจกต์ต่อได้"]},
-  {period:"เดือน 2–3", title:"สร้างเป็นทีม", summary:"เลือกบทบาท แล้วฝึกให้ลึกกับงานจริง", image:"journey-team", outcomes:["แบ่ง Role และวางแผนร่วมกัน", "Programmer ฝึก OOP / Art ฝึก Shader", "รวมงานเป็นโปรเจกต์ของทีม"]},
-  {period:"เดือน 4–12", title:"พางานออกสู่โลกจริง", summary:"มีคนใช้ มีเรื่องให้พิตช์ มีผลงานใส่พอร์ต", image:"journey-launch", outcomes:["Startup Phase: ทดลองกับผู้ใช้จริง", "พางานลงสนาม NSC / TICTA / TGS ที่เหมาะสม", "คิด Business Idea สำหรับขาย และพิตช์กับนักธุรกิจ", "ทำเล่มพอร์ตให้ตรงกับคณะที่เล็ง", "มีโอกาสให้นักลงทุนและอาจารย์มหาวิทยาลัยดูผลงานในแต่ละเดือน"]},
+  {period:"เดือน 1",title:"ทำโปรเจกต์เดี่ยวให้จบ",summary:"เริ่มจากโจทย์เล็ก ๆ ฝึกคิด ลงมือทำ และทดสอบให้ครบ",deliverable:"โปรเจกต์เดี่ยวที่ทำจบด้วยตัวเอง",image:"journey-solo",outcomes:["เข้าใจกระบวนการตั้งแต่ไอเดียจนจบงาน","วางขอบเขต สร้างต้นแบบ และทดสอบ","ได้พื้นฐานที่นำไปสร้างโปรเจกต์ต่อได้"]},
+  {period:"เดือน 2–3",title:"ทำโปรเจกต์เป็นทีม",summary:"แบ่งหน้าที่ ฝึกเขียนโปรแกรมหรือทำภาพให้ลึกขึ้นตามบทบาท",deliverable:"โปรเจกต์ทีม + ทักษะตามบทบาท",image:"journey-team",outcomes:["แบ่ง Role และวางแผนร่วมกัน","สายเขียนโปรแกรม: OOP ฝึกจัดโค้ดให้เป็นระบบ","สายภาพ: Shader ฝึกทำแสง สี และวัสดุ","รวมงานแต่ละคนเป็นโปรเจกต์ของทีม"]},
+  {period:"เดือน 4–12",title:"ต่อยอด ใช้จริง และลงแข่ง",summary:"พัฒนางานให้คนลองใช้ เตรียมแข่งขัน และฝึกนำเสนอ",deliverable:"โปรเจกต์หลักอย่างน้อย 1 ชิ้น + เล่มพอร์ต",image:"journey-launch",outcomes:["Startup Phase: ทดลองกับผู้ใช้จริงแล้วปรับปรุงงาน","พางานลงสนาม NSC / TICTA / TGS ที่เหมาะสม","คิด Business Idea สำหรับขาย และพิตช์กับนักธุรกิจ","ทำเล่มพอร์ตให้ตรงกับคณะที่เล็ง","มีโอกาสให้นักลงทุนและอาจารย์มหาวิทยาลัยดูผลงานในแต่ละเดือน"]},
 ];
 export function IllustratedRoadmap() {
   const [selected,setSelected]=useState<number|null>(null);
@@ -64,13 +64,12 @@ export function IllustratedRoadmap() {
     timer.current=setTimeout(()=>{dialog.current?.close();setSelected(null);setClosing(false);},delay);
   };
   return <section className="illustrated-roadmap" id="roadmap" aria-labelledby="roadmap-title"><div className="wrap">
-    <div className="section-intro"><h2 id="roadmap-title">เริ่มทีละชิ้น<br /><span>แล้วไปให้ไกลกว่าเดิม</span></h2></div>
+    <div className="section-intro"><h2 id="roadmap-title">เส้นทาง 12 เดือน<br /><span>แต่ละช่วง ทำอะไรบ้าง?</span></h2></div>
     <div className="drawn-journey">
-      <svg className="drawn-curve curve-wide" viewBox="0 0 1200 430" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M190 180 C360 180 395 310 600 310 S835 180 1010 180" /></svg>
-      <svg className="drawn-curve curve-tall" viewBox="0 0 100 650" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M50 120 C-10 200 110 240 50 330 S-10 480 50 550" /></svg>
+      <svg className="drawn-curve curve-wide" viewBox="0 0 1200 430" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M190 185 C360 220 430 185 600 185 S835 220 1010 185" /></svg>
       <ol>{phases.map((p,i)=><li key={p.period} className={`drawn-stop drawn-stop-${i}`}><button type="button" onClick={e=>{trigger.current=e.currentTarget;setSelected(i);}} aria-haspopup="dialog" aria-label={`ดูรายละเอียด ${p.period} ${p.title}`}>
         <span className="journey-drawing"><img src={art(p.image)} width="520" height="520" alt="" loading="lazy" /></span>
-        <span className="journey-copy"><span className="learning-period">{p.period}</span><strong>{p.title}</strong><span>{p.summary}</span><span className="journey-open">ดูรายละเอียด</span></span>
+        <span className="journey-copy"><span className="learning-period">{p.period}</span><strong>{p.title}</strong><span className="journey-task">{p.summary}</span><span className="journey-result"><b>จบช่วงนี้ได้</b><span>{p.deliverable}</span></span><span className="journey-open">ดูแผนช่วงนี้</span></span>
       </button></li>)}</ol>
     </div>
     <dialog ref={dialog} className={`phase-dialog ${closing?"is-closing":""}`} aria-labelledby="phase-title" onCancel={e=>{e.preventDefault();close();}} onClick={e=>{
@@ -81,7 +80,7 @@ export function IllustratedRoadmap() {
       <button type="button" className="phase-close" onClick={close} aria-label="ปิดรายละเอียด">ปิด</button>
       {selected!==null&&<div className="phase-content" key={selected}>
         <div className="phase-art"><img src={art(phases[selected].image)} width="650" height="650" alt="" /></div>
-        <div className="phase-copy"><p className="learning-period">{phases[selected].period}</p><h3 id="phase-title">{phases[selected].title}</h3><p>{phases[selected].summary}</p>
+        <div className="phase-copy"><p className="learning-period">{phases[selected].period}</p><h3 id="phase-title">{phases[selected].title}</h3><p>{phases[selected].summary}</p><p className="phase-deliverable"><strong>จบช่วงนี้ได้</strong> {phases[selected].deliverable}</p>
           <ul>{phases[selected].outcomes.map(item=><li key={item}>{item}</li>)}</ul>
           <div className="phase-tracks" role="group" aria-label="เลือกสายเพื่อดูตัวอย่าง">{(Object.keys(tracks) as TrackKey[]).map(key=><button type="button" key={key} aria-pressed={track===key} onClick={()=>setTrack(key)}>{tracks[key].name}</button>)}</div>
           <p className="phase-example" aria-live="polite">{tracks[track].examples[selected]}</p>

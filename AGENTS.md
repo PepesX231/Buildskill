@@ -24,3 +24,5 @@ The owner explicitly requested these standing rules on 17 November 2026:
 - Each project must show its reported awards/admission outcomes or concrete deliverable/event directly below the preview. Never invent a prize when the source only confirms participation or a prototype.
 
 - Background art follows the owner's flat graphic poster references: bold cobalt/coral planes, precise silhouettes and plum/ivory characters. Keep the central reading area clear and retain the frameless navigation and proof reel. Do not restore rejected glowing or softly rendered murals.
+
+- Roadmap clarity: readers must see what they do and what they finish with in each month range before opening a dialog. Use plain Thai for the overview; explain OOP and Shader inside details. Keep three desktop columns in reading order and use naturally flowing vertical steps on mobile.

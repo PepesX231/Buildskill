@@ -27,3 +27,6 @@ Original coral/cobalt creator portraits and orange-white hamster are used as dec
 Five chapter canvases share the cream base and connected sweeping silhouettes. Distant pale fields, bright middle ribbons and portrait fragments move at different restrained rates on scroll. Middle content stays clear. Backgrounds do not take pointer events.
 A single passive scroll scheduler updates only visible canvases and does not run an idle animation loop. Reduced motion and viewports below 900px keep the background still. Decorative images are hidden from assistive technology.
 The atlas is a single 130,225-byte JPEG, shared and cached across all chapters.
+
+## Roadmap clarity revision
+The owner supplied feedback that the page looks good and desktop works, but the learning path is hard to understand. Show an explicit activity and concrete deliverable for every phase without requiring a click. Month 1 is a solo project, months 2–3 are a team project with deeper role skills, months 4–12 develop a real-use main project and portfolio while preparing competitions and pitches. Keep detailed role explanations and eligibility in the animated dialog. Desktop phases share one baseline; mobile phases flow vertically in natural document layout, with no fixed heights or overlapping content. Avoid decorative section indices and restored promotional asides.

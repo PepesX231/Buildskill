@@ -261,3 +261,39 @@ body{background:#fff8ef}
 .flow-reel .studio-card-link{margin-top:9px}
 @media(max-width:900px){.flow-reel .studio-room{height:505px}}
 @media(max-width:600px){.flow-reel .studio-room{height:490px}.studio-outcomes li{font-size:12px}.studio-outcomes{gap:6px;min-height:66px}}
+
+/* Readable month-by-month route: visible activity and deliverable before expansion. */
+.illustrated-roadmap .drawn-journey{height:auto;margin:34px 0 0;position:relative}
+.illustrated-roadmap .drawn-journey ol{position:relative;inset:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:35px}
+.illustrated-roadmap .drawn-stop{position:relative;inset:auto;width:auto;text-align:center}
+.illustrated-roadmap .drawn-stop button{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0;width:100%;border-radius:22px}
+.illustrated-roadmap .journey-drawing{width:215px;height:205px}
+.illustrated-roadmap .drawn-curve.curve-wide{height:225px}
+.illustrated-roadmap .journey-copy{max-width:350px;width:100%;align-items:center;padding:0}
+.illustrated-roadmap .learning-period{font-size:17px;color:#9a4962;margin:8px 0 7px;padding:0;font-weight:600}
+.illustrated-roadmap .journey-copy strong{font-size:26px;line-height:1.45;min-height:76px;display:flex;align-items:center;justify-content:center}
+.illustrated-roadmap .journey-copy>span.journey-task{color:#69566c;font-size:17px;line-height:1.75;margin-top:8px;min-height:90px;max-width:310px}
+.illustrated-roadmap .journey-copy>span.journey-result{display:flex;flex-direction:column;align-items:center;color:#382744;font-size:17px;line-height:1.7;margin-top:16px;min-height:100px;max-width:315px}
+.journey-result b{font-weight:600;color:#98613f;font-size:15px;margin-bottom:6px}
+.journey-result>span{font-weight:600}
+.illustrated-roadmap .journey-copy>span.journey-open{margin-top:18px;font-size:16px}
+.phase-copy .phase-deliverable{font-size:17px;line-height:1.75;color:#43304e;margin-top:18px}
+.phase-deliverable strong{color:#9a4962;margin-right:8px}
+@media(max-width:1100px){.illustrated-roadmap .drawn-journey ol{gap:25px}.illustrated-roadmap .journey-drawing{width:185px;height:185px}.illustrated-roadmap .journey-copy strong{font-size:23px;min-height:70px}.illustrated-roadmap .journey-copy>span.journey-task{font-size:16px;min-height:112px}.illustrated-roadmap .journey-copy>span.journey-result{font-size:16px;min-height:110px}}
+@media(max-width:760px){
+.illustrated-roadmap .drawn-journey{margin-top:30px}
+.illustrated-roadmap .drawn-journey ol{display:grid;grid-template-columns:minmax(0,1fr);gap:36px}
+.illustrated-roadmap .drawn-curve.curve-wide{display:none}
+.illustrated-roadmap .drawn-stop{text-align:left}
+.illustrated-roadmap .drawn-stop:not(:last-child)::before{content:"";position:absolute;left:60px;top:105px;bottom:-125px;width:3px;background:#e8a461;z-index:0;border-radius:2px}
+.illustrated-roadmap .drawn-stop button{position:relative;z-index:1;display:grid;grid-template-columns:120px minmax(0,1fr);align-items:start;text-align:left;gap:14px;min-height:0}
+.illustrated-roadmap .journey-drawing{width:120px;height:150px;margin-top:6px;background:#fff8ef;border-radius:55%}
+.illustrated-roadmap .journey-copy{align-items:flex-start;max-width:none;padding:0}
+.illustrated-roadmap .learning-period{font-size:17px;margin:0 0 7px}
+.illustrated-roadmap .journey-copy strong{font-size:24px;min-height:0;justify-content:flex-start}
+.illustrated-roadmap .journey-copy>span.journey-task{font-size:16px;line-height:1.7;min-height:0;margin-top:12px;max-width:none}
+.illustrated-roadmap .journey-copy>span.journey-result{font-size:16px;line-height:1.7;align-items:flex-start;min-height:0;margin-top:16px;max-width:none}
+.journey-result b{font-size:15px;margin-bottom:4px}
+.illustrated-roadmap .journey-copy>span.journey-open{margin-top:18px;padding:11px 20px;min-height:46px;font-size:16px}
+}
+@media(max-width:360px){.illustrated-roadmap .drawn-stop button{grid-template-columns:94px minmax(0,1fr);gap:12px}.illustrated-roadmap .journey-drawing{width:94px;height:130px}.illustrated-roadmap .drawn-stop:not(:last-child)::before{left:47px}.illustrated-roadmap .journey-copy strong{font-size:22px}}
