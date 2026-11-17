@@ -261,3 +261,136 @@ body{background:#000}
 .course-footer{padding-bottom:50px}
 }
 @media(prefers-reduced-motion:reduce){.wire-lesson-copy,.wire-lesson-visual,.wire-phase-activities li{animation:none}}
+
+/* Outcome-first refinement from the owner's annotated references. */
+.proof-highlights{padding-top:90px;--card-width:min(1260px,calc(100vw - 104px));--card-gap:24px}
+.proof-highlights h2{font-size:clamp(32px,3.6vw,50px);margin-bottom:42px;line-height:1.3}
+.proof-gallery{margin-left:max(52px,calc((100vw - 1260px)/2));outline-offset:8px}
+.proof-deck{display:flex;gap:var(--card-gap);transform:translate3d(calc(var(--slide) * (var(--card-width) + var(--card-gap)) * -1),0,0);transition:transform .8s cubic-bezier(.25,.8,.25,1);will-change:transform}
+.proof-slide{flex:0 0 var(--card-width);height:570px;min-width:0;position:relative;isolation:isolate;border:1px solid #353538;border-radius:28px;overflow:hidden;background:#000;display:flex;align-items:center}
+.proof-slide-copy{position:relative;z-index:2;width:44%;padding:45px 15px 45px 45px;pointer-events:none}
+.proof-slide-copy h3{font-size:clamp(25px,2.4vw,35px);line-height:1.38;margin-bottom:25px;text-wrap:balance}
+.proof-slide-copy h3>span{display:block}
+.proof-slide-copy p{font-size:17px;line-height:1.85;color:#a3a3ab;max-width:380px}
+.proof-slide-copy strong{display:block;font-size:15px;line-height:1.8;color:#b9d9ed;max-width:380px;margin-top:24px;font-weight:500}
+.proof-slide-media{position:absolute;inset:0 0 0 42%;margin:0;display:flex;align-items:center;justify-content:center;z-index:0}
+.proof-slide-media::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#000 0%,transparent 23%),linear-gradient(0deg,#000c,transparent 25%)}
+.proof-slide-media>.demonstration-video{width:100%;height:100%;aspect-ratio:auto;border-radius:0}
+.proof-slide-media>.demonstration-video>img,.proof-slide-media video{width:100%;height:100%;object-fit:cover;object-position:60% center}
+.proof-slide-media>img{width:100%;height:100%;object-fit:cover;object-position:center}
+.proof-slide-team .proof-slide-media{inset:30px 0 0 42%}
+.proof-slide-team .proof-slide-media>img{filter:saturate(.8)}
+.proof-slide-presentation .proof-slide-media{inset:35px 0 0 44%;background:radial-gradient(ellipse at center,#17251f,#000 70%)}
+.proof-slide-presentation .proof-slide-media>img{width:83%;height:106%;object-fit:contain;transform:rotate(5deg) translateY(18px)}
+.proof-slide-media figcaption{position:absolute;bottom:20px;left:35px;right:24px;color:#a2a2ac;font-size:11px;line-height:1.7;z-index:2}
+.proof-slide .demo-toggle{right:20px;bottom:62px;z-index:3}
+.proof-highlights .wire-gallery-controls{position:relative;margin-top:-22px;z-index:3;gap:12px}
+.proof-highlights .wire-gallery-controls>div{height:54px;padding:0 15px;background:#242426}
+.proof-highlights .wire-play{height:54px;width:54px;padding:17px}
+.gallery-arrow{width:44px;height:44px;border-radius:50%;background:#171719;border:1px solid #303034;display:grid;place-items:center}
+.gallery-arrow svg{width:20px;height:20px;fill:none;stroke:#d5d5dc;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.gallery-arrow:hover{background:#303036}
+.route-intro{display:flex;gap:60px;align-items:flex-end;justify-content:space-between;margin-bottom:45px}
+.route-intro h2{font-size:clamp(34px,3.8vw,52px);line-height:1.28}
+.route-intro>p{font-size:17px;line-height:1.9;max-width:480px;padding-bottom:5px}
+.route-selector{display:flex;align-items:center;gap:28px;border-top:1px solid #28282c;padding-top:30px}
+.route-selector>span{font-size:18px;font-weight:500}
+.route-track-options{display:flex;gap:9px}
+.route-track-options>button{font-size:16px;color:#ababba;padding:12px 25px;border:1px solid #3a3a43;border-radius:999px;min-height:47px}
+.route-track-options>button[aria-pressed=true]{background:#f3f3f6;color:#19191e;border-color:#f3f3f6}
+.route-example-note{font-size:13px!important;color:#898995!important;margin-top:17px}
+.learning-journey{display:grid;grid-template-columns:1fr 1fr 1.35fr;gap:18px;margin-top:32px}
+.journey-phase{border-top:3px solid #6489b9;border-radius:0 0 20px 20px;background:linear-gradient(145deg,#15151b,#09090c);padding:30px 26px;display:flex;flex-direction:column;min-width:0}
+.journey-phase-2{border-color:#54b4ee;background:linear-gradient(145deg,#0c2335,#080e16)}
+.journey-period{font-size:15px;color:#8eb3d6!important;margin-bottom:20px}
+.journey-phase h3{font-size:27px;line-height:1.45;min-height:80px}
+.journey-work{padding:23px 0 21px}
+.journey-work>span,.journey-takeaway>span{font-size:12px;color:#9195a4}
+.journey-work>strong{display:block;font-size:18px;line-height:1.8;margin-top:10px;font-weight:500;color:#f2f2f7}
+.journey-phase ul{padding-left:18px;margin:0 0 25px;color:#989ca9;font-size:15px;line-height:1.85}
+.journey-phase li+li{margin-top:10px}
+.journey-takeaway{border-top:1px solid #ffffff17;padding-top:20px;margin-top:auto}
+.journey-takeaway p{font-size:17px;line-height:1.7;color:#c0ddf0!important;margin-top:8px}
+.journey-more{align-self:flex-start;font-size:14px;line-height:1.6;color:#9ecdf0;background:#15314a;border:1px solid #294b68;border-radius:999px;padding:11px 17px;min-height:44px;margin-top:23px;text-align:left}
+.journey-more:hover{background:#235173;color:#fff}
+.route-support{display:grid;grid-template-columns:1fr 1fr;gap:55px;padding:35px 4px 0}
+.route-support h3{font-size:22px;margin-bottom:12px}
+.route-support p{font-size:16px;line-height:1.9;color:#9898a3}
+.course-investment{margin-top:42px;padding:52px 0 48px;border-top:1px solid #c5c5cb;display:grid;grid-template-columns:1.2fr 1fr;gap:85px;align-items:start}
+.investment-story>p:first-child{font:500 18px var(--en);color:#64646e;margin-bottom:15px}
+.wire-why .investment-story h2{font-size:clamp(30px,3.2vw,43px);line-height:1.3;margin:0 0 23px}
+.investment-story>p{font-size:17px;line-height:1.85;color:#666670}
+.investment-story ul{list-style:none;margin:25px 0 0;padding:0}
+.investment-story li{font-size:15px;line-height:1.8;border-top:1px solid #cfcfd4;padding:12px 0;color:#4e4e59}
+.investment-action{background:#f7f7fa;border-radius:23px;padding:33px 34px;display:flex;flex-direction:column;align-items:flex-start}
+.investment-action>p:first-child{font-size:15px;color:#686871}
+.investment-action>strong{font:600 64px/1.25 var(--en);letter-spacing:-.06em;margin-top:10px}
+.investment-action>strong small{font:500 22px var(--font);letter-spacing:0}
+.investment-action>span{font-size:14px;color:#686871;margin-top:10px}
+.investment-action>.wire-blue-button{width:100%;margin-top:27px;font-size:16px;min-height:50px}
+.investment-help{font-size:13px!important;line-height:1.8;color:#777780!important;margin:17px 0 15px}
+.investment-action .wire-parent-summary{font-size:14px;color:#4e6077}
+body .course-footer{width:100%;max-width:none;margin:0;background:#e6e6e8;padding:35px max(48px,calc((100% - 1160px)/2));border-top:1px solid #d0d0d5;min-height:0;box-sizing:border-box}
+@media(min-width:1600px){.proof-gallery{margin-left:calc((100vw - 1260px)/2)}}
+@media(max-width:1100px){
+.proof-highlights{--card-width:calc(100vw - 80px)}
+.proof-gallery{margin-left:40px}
+.proof-slide{height:535px}
+.proof-slide-copy{padding-left:32px;width:45%}
+.proof-slide-copy h3{font-size:28px}
+.proof-slide-copy p{font-size:16px}
+.learning-journey{grid-template-columns:1fr 1fr}
+.journey-phase-2{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;column-gap:36px}
+.journey-phase-2 .journey-period{grid-column:1/-1}
+.journey-phase-2 h3{grid-column:1;min-height:0}
+.journey-phase-2 .journey-work{grid-column:1;grid-row:3}
+.journey-phase-2 ul{grid-column:2;grid-row:2/4}
+.journey-phase-2 .journey-takeaway{grid-column:1}
+.journey-phase-2 .journey-more{grid-column:2;justify-self:start;align-self:end}
+.route-intro{gap:30px}
+.course-investment{gap:40px}
+}
+@media(max-width:700px){
+.proof-highlights{padding-top:55px;--card-width:calc(100vw - 44px);--card-gap:14px}
+.proof-highlights h2{margin-bottom:28px}
+.proof-gallery{margin-left:22px}
+.proof-slide{height:650px;border-radius:22px;align-items:flex-start}
+.proof-slide-copy{width:100%;padding:30px 25px 0}
+.proof-slide-copy h3{font-size:27px;line-height:1.35;margin-bottom:16px}
+.proof-slide-copy p{font-size:15px;line-height:1.8;max-width:none}
+.proof-slide-copy strong{font-size:13px;line-height:1.8;margin-top:15px;max-width:none}
+.proof-slide-media,.proof-slide-team .proof-slide-media,.proof-slide-presentation .proof-slide-media{inset:310px 0 0}
+.proof-slide-media::after{background:linear-gradient(#000,transparent 25%,transparent 70%,#000c)}
+.proof-slide-media figcaption{font-size:10px;left:22px;bottom:30px}
+.proof-slide-presentation .proof-slide-media>img{height:110%;transform:rotate(4deg) translateY(16px)}
+.proof-slide .demo-toggle{bottom:76px;font-size:11px}
+.proof-highlights .wire-gallery-controls{margin-top:20px;gap:8px}
+.proof-highlights .wire-gallery-controls>div{height:48px;padding-inline:10px}
+.proof-highlights .wire-play{width:48px;height:48px;padding:15px}
+.gallery-arrow{width:38px;height:38px}
+.route-intro{display:block;margin-bottom:32px}
+.route-intro h2{font-size:36px}
+.route-intro>p{font-size:16px;line-height:1.9;margin-top:23px}
+.route-selector{display:block;padding-top:25px}
+.route-selector>span{font-size:17px;display:block;margin-bottom:18px}
+.route-track-options>button{font-size:15px;padding:10px 21px}
+.route-example-note{font-size:12px!important;line-height:1.8}
+.learning-journey{grid-template-columns:1fr;gap:22px;margin-top:24px}
+.journey-phase,.journey-phase-2{display:flex;grid-column:auto;padding:27px 25px}
+.journey-period{font-size:14px}
+.journey-phase h3{min-height:0;font-size:27px}
+.journey-work{padding-top:21px}
+.journey-phase ul{font-size:15px}
+.journey-phase-2 .journey-more{align-self:flex-start}
+.route-support{grid-template-columns:1fr;gap:30px;padding-top:32px}
+.route-support h3{font-size:21px}
+.route-support p{font-size:15px}
+.course-investment{grid-template-columns:1fr;gap:28px;padding-top:35px;margin-top:30px}
+.wire-why .investment-story h2{font-size:32px}
+.investment-story>p{font-size:16px}
+.investment-story li{font-size:14px}
+.investment-action{padding:27px 25px;border-radius:20px}
+.investment-action>strong{font-size:60px}
+body .course-footer{padding:30px 20px;gap:20px}
+}
+@media(prefers-reduced-motion:reduce){.proof-deck{transition:none;will-change:auto}}
