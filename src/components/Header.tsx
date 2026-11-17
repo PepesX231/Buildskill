@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { assetPath } from "@/lib/assets";
 import { EnrollButton } from "./CourseProvider";
 
-const links = [["#highlights", "สิ่งที่จะได้"], ["#roadmap", "แผนเรียน"], ["#showcase", "ผลงาน"], ["#pricing", "รายละเอียดคอร์ส"], ["#faq", "คำถามที่พบบ่อย"]];
+const links = [["#highlights", "สิ่งที่จะได้"], ["#roadmap", "แผนเรียน"], ["#mentors", "ดูแลผลงาน"], ["#pricing", "รายละเอียดคอร์ส"], ["#faq", "คำถามที่พบบ่อย"]];
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);

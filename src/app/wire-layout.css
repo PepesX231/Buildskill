@@ -1,0 +1,263 @@
+/* Layout supplied by the owner: cinematic hero, learning gallery, route, detail pair,
+   monthly review scene, and a light M.5 reasons strip. */
+body{background:#000}
+.site-header{background:#000}
+.site-header .site-nav{height:64px}
+.site-header .site-menu.is-open{top:64px;background:#080809}
+.wire-course{background:#000;color:#f5f5f7;--wire-blue:#149add;--wire-muted:#98989f;overflow:hidden}
+.wire-course p{color:var(--wire-muted)}
+.wire-course h1,.wire-course h2,.wire-course h3{letter-spacing:-.035em}
+.wire-wrap{width:min(1160px,calc(100% - 96px));margin-inline:auto}
+.wire-hero{position:relative;isolation:isolate;height:clamp(540px,calc(100svh - 64px),820px);overflow:hidden;background:#090710}
+.wire-hero .wire-hero-film{position:absolute;inset:0;height:100%;aspect-ratio:auto;z-index:-2}
+.wire-hero-film>img,.wire-hero-film>video{width:100%;height:100%;object-fit:cover;object-position:55% center}
+.wire-hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(#000c,transparent 36%,transparent 65%,#000 100%)}
+.wire-hero .demo-toggle{right:24px;bottom:25px;z-index:5;background:#242427b8;font-size:12px;border-color:#ffffff22;opacity:.65}
+.wire-hero .demo-toggle:hover,.wire-hero .demo-toggle:focus-visible{opacity:1}
+.wire-hero-heading{position:relative;text-align:center;padding:37px 24px 0;pointer-events:none}
+.wire-hero-heading>p{color:#f5f5f7;font:500 23px/1.4 var(--en);margin-bottom:6px}
+.wire-hero-heading h1{font-size:clamp(38px,4.8vw,68px);line-height:1.17;color:#fff;font-weight:700;text-wrap:balance}
+.wire-hero-heading>span{display:block;color:#c7c3d0;font-size:16px;margin-top:15px}
+.wire-hero-bottom{position:absolute;left:20px;right:20px;bottom:28px;text-align:center}
+.wire-offer-pill{display:inline-flex;gap:27px;align-items:center;background:#26262bbf;border:1px solid #ffffff10;backdrop-filter:blur(18px);padding:9px 10px 9px 24px;border-radius:999px;color:#e8e8ed}
+.wire-offer-pill>span{font-size:15px}
+.wire-offer-pill strong{font-weight:500}
+.wire-offer-pill>button,.wire-blue-button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 23px;border-radius:999px;border:0;color:#fff;background:#128ed0;font-size:15px;font-weight:500;transition:background .2s,transform .2s}
+.wire-offer-pill>button:hover,.wire-blue-button:hover{background:#27a9ec;transform:translateY(-2px)}
+.wire-hero-bottom>p{font-size:11px;color:#77737f;margin-top:13px}
+.wire-lessons{padding-top:85px}
+.wire-lessons>h2{font-size:clamp(31px,3.4vw,48px);line-height:1.25;margin-bottom:32px}
+.wire-lesson-card{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);min-height:490px;border:1px solid #252527;border-radius:24px;overflow:hidden;align-items:center;background:#020203}
+.wire-lesson-copy{padding:55px 38px 55px 50px;animation:wire-appear .45s ease both;min-width:0}
+.wire-lesson-copy h3{font-size:clamp(25px,2.7vw,37px);line-height:1.34;margin-bottom:25px;text-wrap:balance}
+.wire-lesson-copy h3 span{display:block}
+.wire-lesson-copy>p{font-size:18px;line-height:1.85}
+.wire-lesson-copy>strong{display:block;font-size:16px;font-weight:500;line-height:1.8;color:#badcf0;margin-top:23px}
+.wire-lesson-visual{align-self:stretch;display:grid;place-items:center;padding:36px 28px 28px 8px;min-width:0;animation:wire-appear .45s ease both}
+.wire-lesson-visual figure{width:100%;margin:0}
+.wire-lesson-visual img{display:block;width:100%;height:330px;object-fit:contain;border-radius:10px}
+.wire-lesson-visual figcaption{font-size:12px;color:#797981;line-height:1.7;margin-top:15px}
+.lesson-game img{object-fit:cover}
+.lesson-team img{object-fit:cover;filter:saturate(.85)}
+.lesson-presentation img{height:365px}
+.wire-portfolio-map{width:100%;display:grid;grid-template-columns:1fr;gap:11px;max-width:390px;padding:10px 15px}
+.wire-portfolio-map>span{padding:17px 20px;border:1px solid #303038;border-radius:9px;background:#111116;color:#d7d7e0;font-size:18px}
+.wire-portfolio-map>span:nth-child(2){margin-left:13px}.wire-portfolio-map>span:nth-child(3){margin-left:26px}.wire-portfolio-map>span:nth-child(4){margin-left:39px}
+.wire-portfolio-map small{color:#73737e;font-size:12px;margin-top:10px}
+.wire-gallery-controls{display:flex;justify-content:center;align-items:center;gap:13px;margin-top:28px}
+.wire-gallery-controls>div{display:flex;align-items:center;background:#222224;border-radius:999px;padding:0 10px;height:43px}
+.wire-gallery-controls>div>button{height:43px;width:32px;display:grid;place-items:center;padding:7px}
+.wire-gallery-controls>div>button span{width:6px;height:6px;display:block;background:#77777b;border-radius:99px;transition:width .3s,background .3s}
+.wire-gallery-controls>div>button[aria-pressed=true]{width:47px}
+.wire-gallery-controls>div>button[aria-pressed=true] span{width:32px;background:#f5f5f7}
+.wire-play{width:43px;height:43px;display:grid;place-items:center;border-radius:50%;background:#222224;padding:12px}
+.wire-play svg{width:18px;height:18px;fill:#eeeef1}
+.wire-play:hover{background:#36363a}
+.wire-route{padding-top:120px}
+.wire-centered-heading{text-align:center}
+.wire-centered-heading>p{font-size:15px;color:#86868d;line-height:1.8;margin-bottom:8px}
+.wire-centered-heading h2{font-size:clamp(31px,3.5vw,49px);line-height:1.3;text-wrap:balance}
+.wire-centered-heading>span{display:block;color:#777780;font-size:15px;line-height:1.8;max-width:650px;margin:18px auto 0}
+.wire-route-panel{position:relative;border:1px solid #202025;border-radius:26px;min-height:520px;margin-top:42px;padding:45px 40px 90px 160px;background:linear-gradient(150deg,#08080c,#020203 70%);display:flex;align-items:center;justify-content:center}
+.wire-route-tracks{position:absolute;left:30px;top:55px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.wire-route-tracks button{min-height:41px;padding:8px 18px;font-size:14px;line-height:1.4;border:1px solid #404046;border-radius:999px;color:#b0b0b9;background:#18181c}
+.wire-route-tracks [aria-pressed=true]{background:#efeff2;color:#17171e;border-color:#efeff2}
+.wire-route-map{width:100%;min-width:0;text-align:center}
+.wire-track-symbol{margin:0 auto 10px;width:170px;height:100px}
+.wire-track-symbol svg{width:100%;height:100%;stroke:#84b8ec;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;fill:#0b1c30}
+.wire-route-map .wire-track-direction{font-size:21px;line-height:1.5;color:#dedee7;max-width:650px;margin:0 auto 36px}
+.wire-route-stages{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.wire-route-stages::before{content:"";position:absolute;left:15%;right:15%;top:44px;height:1px;background:linear-gradient(90deg,#3f607f,#91c8f4,#396384);pointer-events:none}
+.wire-route-stages button{position:relative;z-index:1;padding:0 5px;text-align:center}
+.wire-route-stages button>span{font-size:14px;color:#a3b2ca;display:block;margin-bottom:31px}
+.wire-route-stages button>strong{font-size:19px;font-weight:600;line-height:1.5;display:block}
+.wire-route-stages button>small{display:block;color:#747985;font-size:13px;line-height:1.6;margin-top:8px}
+.wire-route-stages button>i{display:block;position:absolute;left:calc(50% - 6px);top:38px;width:12px;height:12px;border-radius:50%;background:#71b2ec;box-shadow:0 0 0 7px #080c13}
+.wire-route-stages button:hover>i{background:#fff;box-shadow:0 0 0 9px #142c49}
+.wire-route-output{font-size:14px;color:#717786!important;margin:27px auto 0;max-width:650px;line-height:1.8}
+.route-detail-button{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:14px;padding:9px 23px}
+.route-detail-button:hover{transform:translateX(-50%) translateY(-2px)}
+.wire-detail-pair{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:70px}
+.wire-detail-pair>article{min-width:0;border:1px solid #242428;border-radius:19px;overflow:hidden}
+.wire-detail-pair>article>div:last-child{padding:27px 28px 29px}
+.wire-detail-pair h3{font-size:23px;line-height:1.4;margin-bottom:13px}
+.wire-detail-pair p{font-size:16px;line-height:1.85}
+.wire-text-button{display:inline-flex;margin-top:20px;font-size:14px;color:#7fbae6;padding:5px 0;border-bottom:1px solid #345370}
+.wire-role-art{height:300px;position:relative;display:flex;align-items:center;justify-content:center;gap:18px;padding:35px 25px 70px;background:#0a0a10}
+.wire-role-art::after{content:"";position:absolute;width:42%;height:30px;border:1px solid #3a465d;border-top:0;left:29%;bottom:64px;border-radius:0 0 12px 12px}
+.wire-role-art>span:not(.wire-role-result){display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;max-width:230px;font-size:13px;color:#7d8aa1;padding:22px 13px;border:1px solid #2d3546;border-radius:12px;background:#101521}
+.wire-role-art strong{font:500 32px/1.4 var(--en);color:#c2d6f5;margin:7px 0}
+.wire-role-art small{font-size:11px;color:#7b8497}
+.wire-role-art .wire-role-artwork{background:#1a1224!important;border-color:#42324d!important}
+.wire-role-artwork strong{color:#dbc5ea}
+.wire-role-result{position:absolute;bottom:28px;left:0;right:0;text-align:center;color:#9cabc3;font-size:13px}
+.wire-build-art{height:300px;display:grid;grid-template-columns:1fr 1fr;align-content:center;gap:16px;padding:40px 28px;background:#090c13;position:relative}
+.wire-build-art>span{padding:18px 10px;text-align:center;border:1px solid #263951;background:#0c1522;border-radius:9px;font-size:16px;color:#95b4db}
+.wire-build-art>span:nth-child(2){border-color:#496484}.wire-build-art>span:nth-child(3){border-color:#496484}
+.wire-build-art>i{position:absolute;inset:28px;border:1px dashed #1b2b43;border-radius:20px;pointer-events:none}
+.wire-mentors{padding-top:110px;padding-bottom:95px}
+.wire-review-scene{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:65px;align-items:center;border:1px solid #28282e;border-radius:22px;background:#08090d;padding:45px 65px;margin-top:40px;min-height:540px}
+.wire-review-scene figure{text-align:center;margin:0;min-width:0}
+.wire-review-scene figure img{height:410px;max-width:100%;object-fit:contain;display:block;margin:auto}
+.wire-review-scene figcaption{color:#656570;font-size:11px;margin-top:17px}
+.wire-review-notes>span{color:#73849c;font-size:14px}
+.wire-review-notes h3{font-size:clamp(27px,3.2vw,44px);line-height:1.35;margin:17px 0 23px;color:#e7edf7}
+.wire-review-notes p{font-size:17px;line-height:1.85;max-width:470px}
+.wire-review-notes a{display:inline-block;margin-top:23px;font-size:14px;color:#74b3e5;border-bottom:1px solid #2b4c68;padding-bottom:5px}
+.wire-why{padding:65px 0 40px;background:#e6e6e8;color:#1d1d1f}
+.wire-why h2{font-size:clamp(28px,3vw,39px);line-height:1.35;margin-bottom:34px}
+.wire-reasons{display:flex;gap:20px;overflow-x:auto;position:relative;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 3px 15px;overscroll-behavior-x:contain}
+.wire-reasons::-webkit-scrollbar{display:none}
+.wire-reasons>article{flex:0 0 29%;min-width:270px;background:#fff;border-radius:17px;padding:26px 25px 29px;scroll-snap-align:start}
+.wire-reasons article>span{font-size:13px;color:#83838b;display:block}
+.wire-reasons h3{font-size:23px;line-height:1.4;margin-bottom:15px}
+.wire-reasons p{font-size:16px;line-height:1.85;color:#77777e}
+.wire-reason-graphic{height:155px;margin:16px 0 20px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;align-content:center}
+.wire-reason-graphic b{font-size:13px;font-weight:500;padding:13px 15px;border-radius:999px;background:#eef3fb;color:#4f6c96;border:1px solid #d7e3f3}
+.reason-graphic-1{align-items:flex-start;flex-direction:column;padding-left:20px;gap:5px}.reason-graphic-1 b{border-radius:7px;padding:7px 17px;background:#f2f0f7;color:#7c6c92;border-color:#e5dff0}
+.reason-graphic-1 b:nth-child(2){margin-left:15px}.reason-graphic-1 b:nth-child(3){margin-left:30px}
+.reason-graphic-2 b:last-child{background:#516f9c;color:#fff;border-color:#516f9c}
+.reason-graphic-3{flex-direction:column;gap:7px}.reason-graphic-3 b{padding:6px 20px;border-radius:6px;min-width:140px;text-align:center}
+.wire-reason-dots{display:flex;justify-content:flex-end;gap:3px;margin-top:5px}
+.wire-reason-dots button{width:28px;height:35px;padding:9px;display:grid;place-items:center}
+.wire-reason-dots span{width:6px;height:6px;border-radius:50%;background:#a1a1a7;display:block}
+.wire-reason-dots [aria-pressed=true] span{background:#25252b}
+.wire-final-offer{display:flex;justify-content:space-between;gap:40px;align-items:center;padding:40px 0 30px;border-top:1px solid #c9c9ce;margin-top:35px}
+.wire-final-offer>div:first-child{display:flex;flex-direction:column;align-items:flex-start}
+.wire-final-offer p{font-size:15px;color:#72727a}
+.wire-final-offer strong{font:600 59px/1.3 var(--en);letter-spacing:-.055em;margin-top:8px}
+.wire-final-offer strong>small{font:500 20px var(--font);letter-spacing:0}
+.wire-final-offer span{font-size:14px;color:#72727a;margin-top:8px}
+.wire-final-offer>div:last-child{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.wire-parent-summary{font-size:14px;color:#5f6572;padding:7px 0;border-bottom:1px solid #a5a8b0}
+.wire-practical{border-top:1px solid #c9c9ce}
+.wire-practical summary{font-size:16px;font-weight:500;cursor:pointer;line-height:1.7;padding:23px 0}
+.wire-practical>div{max-width:870px;padding-bottom:20px}
+.wire-practical p{font-size:15px;line-height:1.9;color:#707078;margin-bottom:15px}
+.course-footer{background:#e6e6e8}
+.wire-phase-dialog{width:min(850px,calc(100% - 32px));background:#111115;color:#f5f5f7;border:1px solid #42424b;padding:60px 44px 35px;border-radius:24px;box-shadow:0 25px 100px #000b}
+.wire-phase-dialog::backdrop{background:#000b;backdrop-filter:blur(12px)}
+.wire-dialog-close{position:absolute;right:18px;top:15px;padding:7px 15px;border-radius:999px;background:#303036;color:#dddde5;font-size:13px}
+.wire-dialog-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:27px}
+.wire-dialog-tabs button{font-size:14px;padding:8px 16px;background:#24242b;border-radius:999px;color:#a7a7b4;min-height:40px}
+.wire-dialog-tabs [aria-pressed=true]{background:#e8e8ee;color:#17171e}
+.wire-dialog-period{font-size:15px;color:#80add2;margin-bottom:10px}
+.wire-phase-dialog h2{font-size:35px;line-height:1.35;letter-spacing:-.035em}
+.wire-dialog-lead{color:#bdbdc9;font-size:18px;line-height:1.8;margin-top:15px}
+.wire-phase-activities{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:25px 0;padding:0;list-style:none}
+.wire-phase-activities li{font-size:16px;line-height:1.75;padding:17px 18px;background:#1c1c24;border-radius:10px;animation:wire-appear .3s calc(var(--item-order)*.03s) ease both}
+.wire-dialog-result{border-left:3px solid #2397d6;padding-left:18px;margin-top:26px}
+.wire-dialog-result>span{font-size:13px;color:#789bb8;display:block;margin-bottom:8px}
+.wire-dialog-result strong{font-size:22px;line-height:1.55}
+.wire-dialog-support{font-size:16px;line-height:1.9;color:#b1a9bd;margin-top:22px}
+.wire-dialog-note{font-size:12px;line-height:1.8;color:#747480;margin-top:20px}
+@keyframes wire-appear{from{opacity:0;translate:0 10px}to{opacity:1;translate:0 0}}
+@media(max-width:1100px){
+.wire-wrap{width:calc(100% - 64px)}
+.wire-lesson-card{min-height:450px}
+.wire-lesson-copy{padding:38px 27px 38px 34px}.wire-lesson-copy h3{font-size:30px}.wire-lesson-copy>p{font-size:17px}
+.wire-lesson-visual{padding:28px 25px 25px 0}.wire-lesson-visual img{height:300px}.lesson-presentation img{height:335px}
+.wire-route-panel{padding-left:145px;padding-right:28px}
+.wire-route-stages{gap:15px}.wire-route-stages button>strong{font-size:17px}
+.wire-detail-pair{grid-template-columns:1fr 1fr}
+.wire-role-art{gap:12px;padding-inline:20px}
+.wire-role-art strong{font-size:28px}
+.wire-review-scene{padding:38px 40px;gap:40px}
+.wire-reasons>article{flex-basis:33%;min-width:270px}
+}
+@media(max-width:800px){
+.site-header .site-nav{height:64px}
+.wire-hero{height:650px}
+.wire-hero-heading{padding-top:35px}.wire-hero-heading h1{font-size:47px}
+.wire-hero-heading>p{font-size:21px}
+.wire-hero-heading>span{font-size:15px}
+.wire-lessons{padding-top:58px}
+.wire-lesson-card{grid-template-columns:1fr;min-height:0}
+.wire-lesson-copy{padding:31px 32px 20px}.wire-lesson-copy h3{font-size:31px;margin-bottom:18px}.wire-lesson-copy>strong{margin-top:17px}
+.wire-lesson-visual{padding:10px 32px 30px;width:100%}
+.wire-lesson-visual img{height:260px}.lesson-presentation img{height:300px}
+.wire-lesson-visual figcaption{font-size:11px}
+.wire-portfolio-map{max-width:470px;padding:0}
+.wire-portfolio-map>span{font-size:16px;padding:13px 18px}
+.wire-route{padding-top:80px}
+.wire-route-panel{padding:28px 26px 90px;display:block}
+.wire-route-tracks{position:static;flex-direction:row;gap:8px;justify-content:center;margin-bottom:27px}
+.wire-route-map .wire-track-direction{font-size:19px;margin-bottom:29px}
+.wire-route-stages{gap:9px}.wire-route-stages button>strong{font-size:17px}.wire-route-stages button>small{font-size:12px}
+.wire-route-stages button>span{font-size:13px}
+.wire-detail-pair{margin-top:40px;gap:18px}
+.wire-role-art,.wire-build-art{height:265px}.wire-role-art{gap:10px;padding-inline:12px}
+.wire-role-art>span:not(.wire-role-result){padding:17px 8px}.wire-role-art strong{font-size:24px}.wire-role-art small{font-size:10px}
+.wire-build-art{gap:10px;padding:35px 18px}.wire-build-art>span{font-size:14px;padding:13px 6px}
+.wire-detail-pair>article>div:last-child{padding:22px 22px 25px}.wire-detail-pair h3{font-size:21px}.wire-detail-pair p{font-size:15px}
+.wire-mentors{padding-top:75px;padding-bottom:65px}
+.wire-review-scene{min-height:0;padding:30px;gap:30px}
+.wire-review-scene figure img{height:340px}.wire-review-notes h3{font-size:29px}.wire-review-notes p{font-size:16px}
+.wire-review-notes a{font-size:12px}
+.wire-why{padding-top:45px}
+.wire-reasons>article{flex-basis:45%;min-width:280px}
+.wire-final-offer{gap:24px}.wire-final-offer>div:last-child{flex-direction:column;align-items:flex-start;gap:14px}
+}
+@media(max-width:520px){
+.wire-wrap{width:calc(100% - 40px)}
+.wire-hero{height:620px;max-height:calc(100svh - 64px);min-height:520px}
+.wire-hero-film>img,.wire-hero-film>video{object-position:57% center}
+.wire-hero-heading{padding:30px 18px 0}.wire-hero-heading>p{font-size:18px;margin-bottom:8px}
+.wire-hero-heading h1{font-size:35px}
+.wire-hero-heading>span{font-size:13px;line-height:1.7;max-width:280px;margin:13px auto 0}
+.wire-hero-bottom{bottom:25px;left:15px;right:15px}
+.wire-offer-pill{gap:18px;padding:8px 8px 8px 17px}
+.wire-offer-pill>span{font-size:13px}.wire-offer-pill>button{font-size:13px;padding:9px 17px;min-height:40px}
+.wire-hero-bottom>p{font-size:9px;max-width:250px;margin:12px auto 0}
+.wire-hero .demo-toggle{right:13px;bottom:115px;font-size:10px;min-height:35px;padding:7px 12px}
+.wire-lessons{padding-top:45px}.wire-lessons>h2{font-size:31px;margin-bottom:25px}
+.wire-lesson-card{border-radius:20px}
+.wire-lesson-copy{padding:27px 24px 17px}
+.wire-lesson-copy h3{font-size:27px;line-height:1.38}
+.wire-lesson-copy>p{font-size:16px;line-height:1.85}
+.wire-lesson-copy>strong{font-size:14px}
+.wire-lesson-visual{padding:8px 20px 25px}.wire-lesson-visual img{height:215px}.lesson-presentation img{height:265px}
+.wire-gallery-controls{margin-top:21px}
+.wire-route{padding-top:65px}
+.wire-centered-heading>p{font-size:12px}
+.wire-centered-heading h2{font-size:30px;line-height:1.3}
+.wire-centered-heading>span{font-size:13px;margin-top:16px}
+.wire-route-panel{border-radius:20px;padding:23px 19px 85px;margin-top:28px;min-height:0}
+.wire-route-tracks{gap:7px;margin-bottom:25px}.wire-route-tracks button{padding:8px 15px;font-size:13px}
+.wire-track-symbol{width:150px;height:90px}
+.wire-route-map .wire-track-direction{font-size:19px;line-height:1.6;margin-bottom:20px}
+.wire-route-stages{display:grid;grid-template-columns:1fr;gap:22px;padding:5px 0 0 20px;text-align:left}
+.wire-route-stages::before{top:12px;bottom:20px;height:auto;width:1px;left:6px;right:auto;background:linear-gradient(#3f607f,#91c8f4,#396384)}
+.wire-route-stages button{text-align:left;padding-left:10px}
+.wire-route-stages button>span{font-size:13px;margin-bottom:5px}.wire-route-stages button>strong{font-size:19px}.wire-route-stages button>small{font-size:12px;margin-top:4px}
+.wire-route-stages button>i{left:-19px;top:8px;width:10px;height:10px;box-shadow:0 0 0 5px #080c13}
+.wire-route-output{font-size:12px;text-align:left;padding-left:30px;margin-top:23px}
+.route-detail-button{font-size:13px;min-height:41px;white-space:nowrap}
+.wire-detail-pair{grid-template-columns:1fr;gap:23px;margin-top:30px}
+.wire-role-art,.wire-build-art{height:245px}.wire-role-art{padding-inline:25px}.wire-role-art strong{font-size:29px}
+.wire-detail-pair>article>div:last-child{padding:23px 25px 27px}
+.wire-detail-pair h3{font-size:23px}
+.wire-mentors{padding-top:65px;padding-bottom:50px}
+.wire-review-scene{grid-template-columns:1fr;gap:25px;padding:27px 24px;margin-top:28px;border-radius:19px}
+.wire-review-scene figure{order:1}.wire-review-scene figure img{height:310px}
+.wire-review-notes{order:0}.wire-review-notes>span{font-size:12px}.wire-review-notes h3{font-size:30px;line-height:1.4;margin-top:13px}
+.wire-review-notes p{font-size:15px}.wire-review-notes a{font-size:12px}
+.wire-why{padding-top:38px}.wire-why h2{font-size:27px;line-height:1.4;margin-bottom:26px}
+.wire-reasons{gap:14px}.wire-reasons>article{flex-basis:85%;min-width:0;padding:24px}
+.wire-reasons h3{font-size:24px}.wire-reasons p{font-size:16px}
+.wire-reason-graphic{height:140px}
+.wire-final-offer{display:block;margin-top:25px;padding-top:30px}
+.wire-final-offer>div:last-child{margin-top:24px}
+.wire-final-offer strong{font-size:55px}
+.wire-final-offer span{font-size:12px}
+.wire-practical summary{font-size:15px}.wire-practical p{font-size:14px}
+.wire-phase-dialog{padding:57px 24px 28px;border-radius:21px}
+.wire-dialog-tabs{gap:6px;margin-bottom:22px}.wire-dialog-tabs button{font-size:12px;padding:8px 13px}
+.wire-dialog-period{font-size:13px}.wire-phase-dialog h2{font-size:28px}
+.wire-dialog-lead{font-size:16px;line-height:1.85}
+.wire-phase-activities{grid-template-columns:1fr;gap:10px;margin-top:20px}
+.wire-phase-activities li{font-size:15px;padding:14px 16px}
+.wire-dialog-result strong{font-size:19px}.wire-dialog-support{font-size:15px}.wire-dialog-note{font-size:11px}
+.course-footer{padding-bottom:50px}
+}
+@media(prefers-reduced-motion:reduce){.wire-lesson-copy,.wire-lesson-visual,.wire-phase-activities li{animation:none}}
