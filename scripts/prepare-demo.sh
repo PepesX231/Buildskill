@@ -4,6 +4,20 @@ if ! command -v ffmpeg >/dev/null 2>&1; then
   sudo apt-get update -qq
   sudo apt-get install -y -qq ffmpeg
 fi
+# Reuse the same verified gameplay excerpt already published by this repository.
+# A content-only deployment should not depend on fetching the 32 MB source again.
+mkdir -p public/assets/demo
+if curl --fail --location --connect-timeout 10 --max-time 25 \
+    https://pepesx231.github.io/Buildskill/assets/demo/slash-gameplay.mp4 \
+    --output public/assets/demo/slash-gameplay.mp4 &&
+   curl --fail --location --connect-timeout 10 --max-time 20 \
+    https://pepesx231.github.io/Buildskill/assets/demo/slash-gameplay.webp \
+    --output public/assets/demo/slash-gameplay.webp &&
+   ffprobe -v error -select_streams v:0 -show_entries stream=width,height \
+    -of csv=p=0 public/assets/demo/slash-gameplay.mp4 | grep -qx '1280,650' &&
+   ffprobe -v error public/assets/demo/slash-gameplay.webp >/dev/null; then
+  exit 0
+fi
 source_file="$(mktemp --suffix=.mp4)"
 trap 'rm -f "$source_file"' EXIT
 curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 \
