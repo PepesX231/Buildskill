@@ -41,3 +41,17 @@ Checked against the owner's public Hamterco source on 17 November 2026.
 - Remaining project labels describe the actual prototype, features, event participation, or development period in the source. They are not inferred awards.
 - All 33 project/admission entries have outcome labels.
 - Motion uses elapsed-time requestAnimationFrame at 38 CSS px/second. A numerical check at 60 Hz and 120 Hz produces the same 1,140 px displacement over 30 seconds (floating-point difference below 0.000001 px). Live browser frame rate has not been measured.
+
+## Demonstrated-value revision — 18 November 2026
+- Public original gameplay: https://www.hamsterhub.co/godang/hall-of-fame/videos/slash-speed.mp4
+  - Inspected in browser: actual first-person movement and combat. Source 1280×720, duration 132.633333 seconds, 31,897,881 bytes. SHA-256 36ab46417dfb516082249d171e6ab49703bc4d3369c1658447b44007f4487068.
+  - Build trims seconds 5–25 and crops the window/taskbar. The demonstration is from a past community project, not the future course cohort.
+- Public community classroom photograph: Hamterco/img/photo-class.webp. Inspected visually; teacher and learners in an existing community activity. Do not label it as the upcoming course class.
+- https://mmaxez.itch.io/veggie-dash inspected in browser.
+  - Public credits distinguish programming, 3D/animation, character art, VFX and lighting.
+  - Public player comments discuss camera occlusion and graphics/performance. Summaries retain this meaning, do not fabricate a subsequent fix or present the comments as course testimonials.
+  - Public NSC presentation poster: https://img.itch.zone/aW1nLzE4NTI1OTg1LnBuZw==/original/td7IEw.png . This is a poster, not a portfolio page.
+  - Actual gameplay screenshot: https://img.itch.zone/aW1hZ2UvMjgyMjIzNy8xNzk4NjU0NS5wbmc=/original/RV6h7b.png .
+- REVOICE public project description and 27-second explanation: Hamterco/slime.html and img/story-nsc.mp4. A speech-practice app developed in Unity. Show the app UI for this claim; link the developer explanation as such.
+- Automatic approval review rejected opening the original Drive portfolio due to missing file-specific permission. Do not access it, retry through download/thumbnail endpoints, or substitute a different private source. The page explicitly shows a portfolio content diagram pending an authorized original.
+- The 30-work reel, decorative wave wrappers and portrait-based closing image are no longer rendered.

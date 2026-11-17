@@ -1,20 +1,25 @@
-# Project Build Skill — real-work course presentation
+# Project Build Skill — demonstrated value
+
+## Owner's correction, 18 November 2026
+The Apple reference demonstrates exactly what is being sold. The previous build used carrot gameplay to illustrate teamwork, a face to illustrate a portfolio, and 30 projects that diluted attention.
+
+## Sequence
+- Compact course identity and a dominant 20-second actual gameplay demonstration. Identify it as a student-created game.
+- Four anchor links to actual work learners do, with no additional moving gallery.
+- Month 1 explains completion as a full workflow using a labelled diagram.
+- Months 2–3 explain roles with a genuine community classroom photo. Programmer and Art selectors explain OOP and Shader with explicitly illustrative diagrams.
+- Months 4–12 get the largest curriculum section: nine months iterating a main project. Six explorable workstreams show scope, prototype, users, revise, show/pitch/compete, document. This is a cycle, not invented calendar milestones.
+- One Veggie Dash case ties its actual game, published role credits, real player feedback and public NSC poster together. A poster stays labelled as a poster. A second app example explains what REVOICE does, focuses on the phone UI and links to the developer's public short explanation.
+- Portfolio section explicitly shows a content structure to practice. It is a diagram, not a fake portfolio. Automatic review rejected access to an original Drive portfolio without file-specific authorization. Do not bypass this with alternative endpoints or another private file.
+- Close with course deliverables, total price, dates, parent summary and contact. No unrelated face or project poster beside the price.
+
+## Media
+scripts/prepare-demo.sh downloads the owner's public original SLASH//SPEED recording, verifies its SHA-256, trims seconds 5–25 and crops the window bar and desktop taskbar. It exports a fast-start H.264 clip and WebP poster during the Pages build. No fictional gameplay.
+Other images use verified public URLs. Classroom imagery is from existing community activities, not the future cohort. The public Veggie Dash poster comes from its developer's itch.io page.
 
 ## Direction
-The owner requested a complete sales-layout redesign inspired by the Apple Thai MacBook Pro page, while keeping the existing cream / ink / orange / cobalt / coral visual theme. Communicate using real project images, actual clips and original documents. Keep the mascot in the brand; do not use generated character scenes to explain course benefits or learning phases.
+Keep ink, cream, cobalt and restrained orange. Backgrounds frame each demonstration: ink for gameplay and the development phase, warm paper for evidence, pale plum for the portfolio structure. Remove the old wave/portrait wrappers from the rendered page.
+Motion explains the subject: actual gameplay, completion sequence, development cycle and brief transitions. Respect reduced motion and pause video offscreen/when hidden.
 
-The reference's useful sequence is product demonstration, concise benefit highlights, detailed capability explanations, supporting proof, and a clear purchase decision. Reinterpret that sequence for a course. Do not copy Apple assets, text, branding or device mockups.
-
-## Page order
-1. Real-work hero: actual course name, concrete skill/project outcome, a native gameplay clip plus real app and team-game screenshots. Identify all examples and link to originals. Prominent total-course price and enrollment action.
-2. Outcome highlights: four large scroll-snap panels. Each pairs one course benefit with real supporting imagery: complete project, practical/team skills, portfolio with process evidence, and real users/competitions/pitching. Named community examples are not presented as products of the upcoming cohort.
-3. Learning path: visible month ranges, explicit skills practiced, deliverables, why each stage helps, and mentor support. Game/app/IoT controls change illustrative project directions; the plan is visible without opening a modal. Do not invent a weekly timetable or unconfirmed software stack. Label examples as examples.
-4. Existing 30-project / 3-admissions reel: preserve continuous requestAnimationFrame movement, genuine project outcomes and original source links. Respect reduced motion and suspend off screen.
-5. Offer and FAQ: real project/document image, 19,990 baht total price, 12-month dates, parent summary, practical questions and contact. No fake portfolio covers, classroom photos, testimonials, guarantees, installment plans, lesson schedules or invented awards.
-
-## Interactions and accessibility
-Native clips are muted, looping and inline while visible. Pause offscreen and when hidden, respect reduced motion, retain posters and a direct source link if media cannot play. Highlights advance every eight seconds only while visible, with explicit selection and pause controls. The existing proof reel remains independent and continuously drifting.
-Highlight controls, track controls and enrollment dialogs support keyboard use, visible focus and descriptive labels. Base content is available without motion. Narrow layouts flow in natural document order; no fixed-height learning steps.
-
-## Source and claims
-Course facts come from the owner's brief. Community proof uses src/lib/verified-work.ts and original source links. Game/app/IoT project directions are illustrative, tailored with the team according to starting ability. Competitions depend on eligibility and dates; investor/lecturer feedback depends on scheduling. No guarantee of awards or university admission.
+## Accuracy
+12 months, 1 Dec 2569–1 Dec 2570, 19,990 THB. Months 4–12 are nine months inclusive. Do not invent lesson hours, weekly sessions, monthly milestones, teacher ratios, awards or admission guarantees. Competitions depend on eligibility/dates; investor/lecturer reviews depend on scheduling.

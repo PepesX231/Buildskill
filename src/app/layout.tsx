@@ -5,6 +5,7 @@ import "./illustrated.css";
 import "./navigation.css";
 import "./background-art.css";
 import "./product.css";
+import "./experience.css";
 
 export const metadata: Metadata = {
   title: "Project Build Skill | Hamster Hub",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     description: "1 ธ.ค. 2569 – 1 ธ.ค. 2570 · 12 เดือน · Hamster Hub",
     locale: "th_TH",
     type: "website",
-    images: [{ url: "https://pepesx231.github.io/Buildskill/assets/sc-revoice.webp", width: 1200, height: 675, alt: "ผลงานจริง REVOICE จากคอมมูนิตี้ Hamster Hub" }],
+    images: [{ url: "https://pepesx231.github.io/Buildskill/assets/demo/slash-gameplay.webp", width: 1280, height: 650, alt: "เกม SLASH//SPEED ที่นักเรียนในคอมมูนิตี้ Hamster Hub สร้าง" }],
   },
 };
 
