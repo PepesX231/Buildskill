@@ -27,9 +27,9 @@ export function IllustratedHero() {
 }
 
 const phases = [
-  {period:"เดือน 1",title:"ทำงานเดี่ยวให้จบ",summary:"ฝึกคิดโจทย์ สร้างต้นแบบ และทดสอบโปรเจกต์เล็ก ๆ",deliverable:"โปรเจกต์เดี่ยวที่ทำจบได้เอง",image:"journey-solo",outcomes:["เข้าใจกระบวนการตั้งแต่ไอเดียจนจบงาน","วางขอบเขต สร้างต้นแบบ และทดสอบ","ได้พื้นฐานที่นำไปสร้างโปรเจกต์ต่อได้"]},
-  {period:"เดือน 2–3",title:"ทำงานเป็นทีม",summary:"แบ่งหน้าที่ ฝึกเขียนโปรแกรมหรือทำภาพให้ลึกขึ้นตามบทบาท",deliverable:"โปรเจกต์ทีม + ทักษะตามบทบาท",image:"journey-team",outcomes:["แบ่ง Role และวางแผนร่วมกัน","สายเขียนโปรแกรม: OOP ฝึกจัดโค้ดให้เป็นระบบ","สายภาพ: Shader ฝึกทำแสง สี และวัสดุ","รวมงานแต่ละคนเป็นโปรเจกต์ของทีม"]},
-  {period:"เดือน 4–12",title:"ใช้จริง แข่ง ทำพอร์ต",summary:"พัฒนางานให้คนลองใช้ เตรียมแข่งขัน และฝึกนำเสนอ",deliverable:"โปรเจกต์หลัก 1 ชิ้น + เล่มพอร์ต",image:"journey-launch",outcomes:["Startup Phase: ทดลองกับผู้ใช้จริงแล้วปรับปรุงงาน","พางานลงสนาม NSC / TICTA / TGS ที่เหมาะสม","คิด Business Idea สำหรับขาย และพิตช์กับนักธุรกิจ","ทำเล่มพอร์ตให้ตรงกับคณะที่เล็ง","มีโอกาสให้นักลงทุนและอาจารย์มหาวิทยาลัยดูผลงานในแต่ละเดือน"]},
+  {period:"เดือน 1",title:"ทำงานเดี่ยวให้จบ",summary:"ฝึกคิดโจทย์ สร้างต้นแบบ และทดสอบโปรเจกต์เล็ก ๆ",deliverable:"โปรเจกต์เดี่ยวที่ทำจบได้เอง",image:"journey-solo",support:{"title":"วางแผนที่ทำจบ","text":"ช่วยเลือกโจทย์และขอบเขต ให้รู้ว่าจะลงมืออะไรต่อ"},outcomes:["เข้าใจกระบวนการตั้งแต่ไอเดียจนจบงาน","วางขอบเขต สร้างต้นแบบ และทดสอบ","ได้พื้นฐานที่นำไปสร้างโปรเจกต์ต่อได้"]},
+  {period:"เดือน 2–3",title:"ทำงานเป็นทีม",summary:"แบ่งหน้าที่ ฝึกเขียนโปรแกรมหรือทำภาพให้ลึกขึ้นตามบทบาท",deliverable:"โปรเจกต์ทีม + ทักษะตามบทบาท",image:"journey-team",support:{"title":"มีคนช่วยขัดงาน","text":"ฝึกทักษะตาม Role ผ่านงานจริง แล้วปรับจากฟีดแบ็ก"},outcomes:["แบ่ง Role และวางแผนร่วมกัน","สายเขียนโปรแกรม: OOP ฝึกจัดโค้ดให้เป็นระบบ","สายภาพ: Shader ฝึกทำแสง สี และวัสดุ","รวมงานแต่ละคนเป็นโปรเจกต์ของทีม"]},
+  {period:"เดือน 4–12",title:"ใช้จริง แข่ง ทำพอร์ต",summary:"พัฒนางานให้คนลองใช้ เตรียมแข่งขัน และฝึกนำเสนอ",deliverable:"โปรเจกต์หลัก 1 ชิ้น + เล่มพอร์ต",image:"journey-launch",support:{"title":"สร้างให้ใช้จริง แล้วไปแข่ง","text":"ทำโปรเจกต์ที่มีคุณค่า แล้วเลือกเวทีให้เหมาะกับงาน ไม่จำเป็นต้องชนะเพื่อได้ประสบการณ์"},outcomes:["Startup Phase: ทดลองกับผู้ใช้จริงแล้วปรับปรุงงาน","พางานลงสนาม NSC / TICTA / TGS ที่เหมาะสม","คิด Business Idea สำหรับขาย และพิตช์กับนักธุรกิจ","ทำเล่มพอร์ตให้ตรงกับคณะที่เล็ง","มีโอกาสให้นักลงทุนและอาจารย์มหาวิทยาลัยดูผลงานในแต่ละเดือน"]},
 ];
 export function IllustratedRoadmap() {
   const [selected,setSelected]=useState<number|null>(null);
@@ -64,7 +64,7 @@ export function IllustratedRoadmap() {
     timer.current=setTimeout(()=>{dialog.current?.close();setSelected(null);setClosing(false);},delay);
   };
   return <section className="illustrated-roadmap" id="roadmap" aria-labelledby="roadmap-title"><div className="wrap">
-    <div className="section-intro"><h2 id="roadmap-title">เส้นทาง 12 เดือน<br /><span>แต่ละช่วง ทำอะไรบ้าง?</span></h2></div>
+    <div className="section-intro"><h2 id="roadmap-title">12 เดือน<br /><span>จากไอเดียสู่ผลงานจริง</span></h2></div>
     <div className="drawn-journey">
       <svg className="drawn-curve curve-wide" viewBox="0 0 1200 430" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M190 185 C360 220 430 185 600 185 S835 220 1010 185" /></svg>
       <ol>{phases.map((p,i)=><li key={p.period} className={`drawn-stop drawn-stop-${i}`}><button type="button" onClick={e=>{trigger.current=e.currentTarget;setSelected(i);}} aria-haspopup="dialog" aria-label={`ดูรายละเอียด ${p.period} ${p.title}`}>
@@ -82,6 +82,7 @@ export function IllustratedRoadmap() {
         <div className="phase-art"><img src={art(phases[selected].image)} width="650" height="650" alt="" /></div>
         <div className="phase-copy"><p className="learning-period">{phases[selected].period}</p><h3 id="phase-title">{phases[selected].title}</h3><p>{phases[selected].summary}</p><p className="phase-deliverable"><strong>จบช่วงนี้ได้</strong> {phases[selected].deliverable}</p>
           <ul>{phases[selected].outcomes.map(item=><li key={item}>{item}</li>)}</ul>
+          <div className="phase-support"><h4>{phases[selected].support.title}</h4><p>{phases[selected].support.text}</p></div>
           <div className="phase-tracks" role="group" aria-label="เลือกสายเพื่อดูตัวอย่าง">{(Object.keys(tracks) as TrackKey[]).map(key=><button type="button" key={key} aria-pressed={track===key} onClick={()=>setTrack(key)}>{tracks[key].name}</button>)}</div>
           <p className="phase-example" aria-live="polite">{tracks[track].examples[selected]}</p>
           {selected===2&&<p className="phase-note">เลือกเวทีตามงาน คุณสมบัติ และกำหนดรับสมัคร โอกาสพบผู้ชมผลงานขึ้นอยู่กับการนัดหมายของแต่ละเดือน</p>}
@@ -89,18 +90,6 @@ export function IllustratedRoadmap() {
         </div>
       </div>}
     </dialog>
-  </div></section>;
-}
-
-const supportStories = [
-  {image:"journey-solo",title:"วางแผนที่ทำจบ",text:"ช่วยเลือกโจทย์และขอบเขต ให้รู้ว่าจะลงมืออะไรต่อ",alt:"นักสร้างจิบิกับเจ้าหนูทดลองโปรเจกต์ชิ้นแรก"},
-  {image:"journey-team",title:"มีคนช่วยขัดงาน",text:"ฝึกทักษะตาม Role ผ่านงานจริง แล้วปรับจากฟีดแบ็ก",alt:"เพื่อนกับเจ้าหนูช่วยกันคิดทางออกขณะทำโปรเจกต์"},
-  {image:"journey-launch",title:"สร้างให้ใช้จริง แล้วไปแข่ง",text:"ทำโปรเจกต์ที่มีคุณค่า แล้วเลือกเวทีให้เหมาะกับงาน ไม่จำเป็นต้องชนะเพื่อได้ประสบการณ์",alt:"จิบิกับเจ้าหนูพร้อมนำเสนอโปรเจกต์และเล่มพอร์ต"},
-];
-export function IllustratedComparison() {
-  return <section className="illustrated-comparison" aria-labelledby="comparison-title"><div className="wrap">
-    <div className="section-intro support-intro"><h2 id="comparison-title">เรียนเองก็ไปได้<br /><span>มีทีมช่วยให้ไปต่อ</span></h2></div>
-    <div className="support-stories">{supportStories.map(story=><article key={story.title}><img className="support-picture" src={art(story.image)} width="650" height="650" alt={story.alt} loading="lazy" /><h3>{story.title}</h3><p>{story.text}</p></article>)}</div>
   </div></section>;
 }
 

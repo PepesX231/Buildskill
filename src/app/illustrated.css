@@ -343,3 +343,8 @@ body{background:#fff8ef}
 .package-layout{grid-template-columns:minmax(0,1fr)}
 .package-picture img{height:280px;margin:auto}
 }
+
+/* Mentor support lives with the phase it helps. */
+.phase-support{margin:22px 0 24px}
+.phase-support h4{font-size:19px;line-height:1.5;color:#9a4962;margin-bottom:7px}
+.phase-support p{font-size:16px;line-height:1.75;color:#69566c}

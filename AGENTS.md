@@ -12,7 +12,7 @@ The owner explicitly requested these standing rules on 17 November 2026:
 - Remove institution/year eyebrow labels above proof card titles (for example HAMSTER HUB / 2024).
 - The navigation has no contrasting rectangular panel, border, shadow, or backdrop blur. Blend it into the hero background, with brand at left, centered links, and a light capsule contact button at right. Use readable menu text (16px desktop, 17px mobile menu), not tiny microcopy.
 
-- Use the five-section illustrated structure in DESIGN.md: Hero, Roadmap, Comparison, real-work carousel, Package. Keep explanations concise and let expandable details hold longer answers.
+- Use the four-section illustrated structure in DESIGN.md: Hero, Roadmap, real-work carousel, Package. Keep explanations concise and let expandable details hold longer answers.
 - Use the original chibi-and-hamster illustration family. Generated explanatory art must never stand in for real project screenshots or student proof. See SOURCE_NOTES.md for checked references.
 
 - Make the price a prominent number above the hero enrollment action, with course duration and dates in separate smaller text.
@@ -26,3 +26,5 @@ The owner explicitly requested these standing rules on 17 November 2026:
 - Background art follows the owner's flat graphic poster references: bold cobalt/coral planes, precise silhouettes and plum/ivory characters. Keep the central reading area clear and retain the frameless navigation and proof reel. Do not restore rejected glowing or softly rendered murals.
 
 - Roadmap clarity: readers must see what they do and what they finish with in each month range before opening a dialog. Use plain Thai for the overview; explain OOP and Shader inside details. Keep three desktop columns in reading order and use naturally flowing vertical steps on mobile.
+
+- Merge the former เรียนเองก็ไปได้ / มีทีมช่วยให้ไปต่อ section into the corresponding phase dialogs. Roadmap has one section heading: 12 เดือน จากไอเดียสู่ผลงานจริง. Do not render a separate support section or repeat the three journey illustrations below it.
