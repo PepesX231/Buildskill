@@ -164,5 +164,5 @@ function SourcesContent() {
   ];
   return <><h2 id="modal-title">ข้อมูลและภาพที่ใช้</h2><p className="modal-lead">รายละเอียดคอร์สมาจากทีม Hamster Hub ผลงานและเส้นทางรุ่นพี่อ้างอิงจากตารางและหน้าโปรเจกต์ต้นฉบับ</p>
     <div className="source-links">{links.map(([url,label])=><a key={url} href={url} target="_blank" rel="noopener noreferrer">{label}</a>)}</div>
-    <p className="modal-footnote">ภาพจิบิเป็นภาพประกอบที่สร้างใหม่สำหรับอธิบายคอร์ส ส่วนภาพในหมวดผลงานจริงมาจากงานต้นฉบับ ผลงานเหล่านี้ไม่ใช่ผลลัพธ์ของคอร์สรุ่นที่กำลังเปิด</p></>;
+    <p className="modal-footnote">ภาพและคลิปในหน้าเว็บมาจากผลงานต้นฉบับของคอมมูนิตี้ Hamster Hub ใช้แสดงตัวอย่างระดับงานและเส้นทางรุ่นพี่ ไม่ใช่ผลลัพธ์ของคอร์สรุ่นที่กำลังเปิด หรือการรับประกันผลลัพธ์รายบุคคล</p></>;
 }

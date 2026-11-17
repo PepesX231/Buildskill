@@ -1,11 +1,9 @@
 "use client";
 import { useEffect, type ReactNode } from "react";
-import { assetPath } from "@/lib/assets";
 
 type Variant = "hero" | "roadmap" | "support" | "showcase" | "pricing";
 
 export function BackgroundChapter({ variant, children }: { variant: Variant; children: ReactNode }) {
-  const atlas = assetPath("/assets/background/creator-atlas.jpg");
   return <div className={`art-chapter art-chapter-${variant}`}>
     <div className="art-canvas" aria-hidden="true">
       <svg className="art-wave art-wave-far" viewBox="0 0 1600 1000" preserveAspectRatio="none">
@@ -17,8 +15,6 @@ export function BackgroundChapter({ variant, children }: { variant: Variant; chi
         <path d="M1770 250C1430 170 1340 380 1520 550S1660 780 1400 900L1580 1090C1900 800 1430 550 1770 250Z" fill="var(--art-coral)" />
       </svg>
       <div className="art-paper art-paper-left" /><div className="art-paper art-paper-right" />
-      {(variant === "roadmap" || variant === "pricing") && <div className="art-portrait art-portrait-boy" style={{ backgroundImage: `url("${atlas}")` }} />}
-      {(variant === "hero" || variant === "support" || variant === "pricing") && <div className="art-portrait art-portrait-girl" style={{ backgroundImage: `url("${atlas}")` }} />}
     </div>
     {children}
   </div>;

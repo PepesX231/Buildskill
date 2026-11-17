@@ -1,36 +1,20 @@
-# Project Build Skill: illustrated course page
+# Project Build Skill — real-work course presentation
 
-The page has four sections, in the owner's requested order. Keep the frameless navigation, readable text, no decorative section indices, no stars, no English eyebrow filler, and no arrow suffixes on controls.
+## Direction
+The owner requested a complete sales-layout redesign inspired by the Apple Thai MacBook Pro page, while keeping the existing cream / ink / orange / cobalt / coral visual theme. Communicate using real project images, actual clips and original documents. Keep the mascot in the brand; do not use generated character scenes to explain course benefits or learning phases.
 
-1. Hero: the actual course name and offer, one short outcome, and an original chibi creator scene with the orange-white hamster. The illustration explains the course; it is not presented as a real student's work.
-2. Roadmap: three generated story scenes connected by the curved journey the owner requested. Clicking an illustrated phase opens an animated, accessible native dialog with its outcomes. Game/app/IoT selection and phase examples live inside this dialog; there is no detail panel beneath the timeline. Escape, backdrop click, and the close control dismiss it and restore focus; reduced motion is respected.
-3. Real work: frameless floating project previews with soft depth and continuous frame-synchronised horizontal drift at 38 CSS pixels per second. No rectangular poster backing and no creator illustration beneath the reel. Keep real project videos, titles, original links, 30 community projects and the admissions tab. Transform-only requestAnimationFrame updates follow elapsed time, with no React state updates per frame. React updates only when the nearest project changes. Rotation continues during hover, focus and touch. Suspend rotation when off-screen or the browser tab is hidden; reduced motion starts paused. There is no global pause button; native clip controls remain. Clips remain muted, looping and inline when visible.
-4. Package: prominent price and dates, a concise project-and-portfolio outcome, the celebratory illustration, and a parent-summary action. An attentive hamster introduces four expandable practical questions. No repetitive inclusion strip or duplicate video/quest actions; no invented lesson times, prize guarantees, refund terms, or payment plans.
+The reference's useful sequence is product demonstration, concise benefit highlights, detailed capability explanations, supporting proof, and a clear purchase decision. Reinterpret that sequence for a course. Do not copy Apple assets, text, branding or device mockups.
 
-Art direction: original chibi characters with oversized heads, graphic silhouettes, dark plum hair, ivory/cobalt/coral styling, and the hamster. Inspired by the owner's supplied visual reference; no reference poster lettering, signatures, or credits are copied.
+## Page order
+1. Real-work hero: actual course name, concrete skill/project outcome, a native gameplay clip plus real app and team-game screenshots. Identify all examples and link to originals. Prominent total-course price and enrollment action.
+2. Outcome highlights: four large scroll-snap panels. Each pairs one course benefit with real supporting imagery: complete project, practical/team skills, portfolio with process evidence, and real users/competitions/pitching. Named community examples are not presented as products of the upcoming cohort.
+3. Learning path: visible month ranges, explicit skills practiced, deliverables, why each stage helps, and mentor support. Game/app/IoT controls change illustrative project directions; the plan is visible without opening a modal. Do not invent a weekly timetable or unconfirmed software stack. Label examples as examples.
+4. Existing 30-project / 3-admissions reel: preserve continuous requestAnimationFrame movement, genuine project outcomes and original source links. Respect reduced motion and suspend off screen.
+5. Offer and FAQ: real project/document image, 19,990 baht total price, 12-month dates, parent summary, practical questions and contact. No fake portfolio covers, classroom photos, testimonials, guarantees, installment plans, lesson schedules or invented awards.
 
-Backgrounds: a consistent cream canvas continues through the content and footer. The dark hero meets it through a broad curved cream silhouette. Do not restore the grey fade or hard horizontal colour bands. Roadmap illustrations have visible, tactile ดูรายละเอียด actions and animated native dialogs.
+## Interactions and accessibility
+Native clips are muted, looping and inline while visible. Pause offscreen and when hidden, respect reduced motion, retain posters and a direct source link if media cannot play. Highlights advance every eight seconds only while visible, with explicit selection and pause controls. The existing proof reel remains independent and continuously drifting.
+Highlight controls, track controls and enrollment dialogs support keyboard use, visible focus and descriptive labels. Base content is available without motion. Narrow layouts flow in natural document order; no fixed-height learning steps.
 
-Palette: ink #261d31, hero #0c0d16, cream #fff8ef, cobalt #277fe8, coral/pink #ffe0e7, orange #f79b45. Body text is generally 15–17px; headings are 34–54px. Images are supplemental to short, readable copy.
-
-Generated PNG illustrations are converted to WebP with transparency for delivery. Real proof images retain their original appearance and link back to their project pages.
-
-Brand navigation uses the original mascot logo next to the exact text Hamster Hub. Roadmap action text must stay high contrast on its orange surface; override the generic final-child caption selector.
-
-The showcase heading is ให้ผลงานพูดแทน. Keep section headings without their removed promotional asides. Do not restore the hero audience microcopy strip.
-
-Outcome labels are visible on every project. Awards and admission paths come from team records; projects without an award record show concrete deliverables or participation. Native preview count is limited to the visible viewport to reduce video decoding load. Browser FPS has not been measured in this environment.
-
-## Layered flat graphic background
-Original coral/cobalt creator portraits and orange-white hamster are used as decorative background artwork. They are clipped into the outer gutters, without poster borders or captions, and never stand in for student proof.
-Four chapter canvases share the cream base and connected sweeping silhouettes. Distant pale fields, bright middle ribbons and portrait fragments move at different restrained rates on scroll. Middle content stays clear. Backgrounds do not take pointer events.
-A single passive scroll scheduler updates only visible canvases and does not run an idle animation loop. Reduced motion and viewports below 900px keep the background still. Decorative images are hidden from assistive technology.
-The atlas is a single 130,225-byte JPEG, shared and cached across all chapters.
-
-## Roadmap clarity revision
-The owner supplied feedback that the page looks good, the learning path is hard to understand, and desktop has problems. Review both desktop and mobile rather than treating desktop as already approved. Show an explicit activity and concrete deliverable for every phase without requiring a click. Month 1 is a solo project, months 2–3 are a team project with deeper role skills, months 4–12 develop a real-use main project and portfolio while preparing competitions and pitches. Keep detailed role explanations and eligibility in the animated dialog. Desktop phases share one baseline; mobile phases flow vertically in natural document layout, with no fixed heights or overlapping content. Avoid decorative section indices and restored promotional asides.
-
-Browser review: the 390px mobile route uses natural vertical flow; the first phase dialog opens and exposes its outcome and track examples. At 1440px the page's scroll width equals its client width. Shorten phase titles to avoid isolated Thai words and tighten desktop whitespace. These observations do not establish that every viewport or device is issue-free.
-
-## Unified learning path
-One section heading, 12 เดือน จากไอเดียสู่ผลงานจริง, introduces the three phases. The former support stories are part of the corresponding phase dialogs: project scoping in month 1, role practice and feedback in months 2–3, and preparing meaningful work for suitable competitions in months 4–12. Remove the separate support section and its repeated artwork.
+## Source and claims
+Course facts come from the owner's brief. Community proof uses src/lib/verified-work.ts and original source links. Game/app/IoT project directions are illustrative, tailored with the team according to starting ability. Competitions depend on eligibility and dates; investor/lecturer feedback depends on scheduling. No guarantee of awards or university admission.

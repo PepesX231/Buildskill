@@ -1,14 +1,19 @@
 import { CourseProvider, EnrollButton } from "@/components/CourseProvider";
 import { BackgroundChapter, BackgroundMotion } from "@/components/BackgroundArt";
 import { Header } from "@/components/Header";
-import { IllustratedHero, IllustratedRoadmap, IllustratedPackage, CourseFooter } from "@/components/IllustratedCourse";
+import { ProductHero, CourseHighlights, LearningPath } from "@/components/ProductCourse";
+import { IllustratedPackage, CourseFooter } from "@/components/IllustratedCourse";
 import { RealWorkShowcase } from "@/components/RealWorkShowcase";
 
 export default function Home() {
-  return <CourseProvider>
-    <Header />
-    <BackgroundMotion />
-    <main id="main"><BackgroundChapter variant="hero"><IllustratedHero /></BackgroundChapter><BackgroundChapter variant="roadmap"><IllustratedRoadmap /></BackgroundChapter><BackgroundChapter variant="showcase"><RealWorkShowcase /></BackgroundChapter><BackgroundChapter variant="pricing"><IllustratedPackage /></BackgroundChapter></main>
+  return <CourseProvider><Header /><BackgroundMotion />
+    <main id="main">
+      <BackgroundChapter variant="hero"><ProductHero /></BackgroundChapter>
+      <BackgroundChapter variant="roadmap"><CourseHighlights /></BackgroundChapter>
+      <BackgroundChapter variant="support"><LearningPath /></BackgroundChapter>
+      <BackgroundChapter variant="showcase"><RealWorkShowcase /></BackgroundChapter>
+      <BackgroundChapter variant="pricing"><IllustratedPackage /></BackgroundChapter>
+    </main>
     <CourseFooter />
     <div className="mobile-cta"><div><b>19,990 บาท</b><span>12 เดือน · เริ่ม 1 ธ.ค. 69</span></div><EnrollButton className="btn primary small">สนใจสมัคร</EnrollButton></div>
   </CourseProvider>;
