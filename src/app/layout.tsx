@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import "./base.css";
 import "./illustrated.css";
 import "./navigation.css";
+import "./background-art.css";
 
 export const metadata: Metadata = {
   title: "Project Build Skill | Hamster Hub",

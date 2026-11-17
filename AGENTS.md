@@ -22,3 +22,5 @@ The owner explicitly requested these standing rules on 17 November 2026:
 - The showcase drifts continuously using requestAnimationFrame and compositor transforms while on screen; do not restore a stepped interval timer. Mouse hover, focus and touch do not stop rotation. Preserve the system reduced-motion preference and suspend only when off screen or the browser tab is hidden.
 
 - Each project must show its reported awards/admission outcomes or concrete deliverable/event directly below the preview. Never invent a prize when the source only confirms participation or a prototype.
+
+- Background art follows the owner's flat graphic poster references: bold cobalt/coral planes, precise silhouettes and plum/ivory characters. Keep the central reading area clear and retain the frameless navigation and proof reel. Do not restore rejected glowing or softly rendered murals.

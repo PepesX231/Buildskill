@@ -1,0 +1,45 @@
+/* Flat editorial artwork arranged on independent depth planes. */
+.art-chapter{position:relative;isolation:isolate;--art-drift:0px;--art-wash:#edf0ff;--art-wash-right:#ffe6eb;--art-cobalt:#2159f5;--art-coral:#ff4d82;--portrait-width:clamp(260px,23vw,380px);--edge-space:max(38px,calc((100vw - 1280px)/2))}
+.art-chapter>section{position:relative;z-index:2;background:transparent}
+.art-canvas{position:absolute;inset:-55px 0;z-index:0;overflow:clip;pointer-events:none;user-select:none}
+.art-wave{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.art-wave-far{transform:translate3d(0,calc(var(--art-drift)*.3),0)}
+.art-wave-mid{transform:translate3d(0,calc(var(--art-drift)*.75),0)}
+.art-paper{position:absolute;width:360px;height:540px;background:var(--art-coral);pointer-events:none}
+.art-paper-left{left:-300px;top:32%;clip-path:polygon(0 0,100% 12%,75% 100%,0 88%);transform:translate3d(0,calc(var(--art-drift)*-1.2),0) rotate(-9deg)}
+.art-paper-right{right:-300px;top:45%;background:var(--art-cobalt);clip-path:polygon(20% 0,100% 8%,100% 100%,0 82%);transform:translate3d(0,var(--art-drift),0) rotate(9deg)}
+.art-portrait{position:absolute;width:var(--portrait-width);height:calc(var(--portrait-width)*1.25);background-size:200% 100%;background-repeat:no-repeat;pointer-events:none;transform:translate3d(0,calc(var(--art-drift)*-1),0)}
+.art-portrait-boy{left:calc(var(--edge-space) - var(--portrait-width) - 30px);top:24%;background-position:left center;clip-path:ellipse(70% 50% at 28% 50%)}
+.art-portrait-girl{right:calc(var(--edge-space) - var(--portrait-width) - 30px);top:10%;background-position:right center;clip-path:ellipse(70% 50% at 72% 50%)}
+.art-chapter-hero{background:#0c0d16;--art-wash:#141c38;--art-wash-right:#271a36;--art-coral:#ad235c;--art-cobalt:#1841ba}
+.art-chapter-hero .art-canvas{inset:0 0 30px}
+.art-chapter-hero .illustrated-hero{background:transparent}
+.art-chapter-hero .art-wave-mid{opacity:.8}
+.art-chapter-hero .art-portrait-girl{top:18%;opacity:.4}
+.art-chapter-hero .art-paper-left{top:60%}
+.art-chapter-roadmap .art-canvas{inset:-65px 0 -100px}
+.art-chapter-roadmap .art-portrait-boy{top:30%}
+.art-chapter-roadmap .illustrated-roadmap{padding-bottom:45px}
+.art-chapter-support{--art-wash:#eee5fa;--art-wash-right:#ffe4ed}
+.art-chapter-support .art-wave-far{transform:scaleX(-1) translateY(calc(var(--art-drift)*.3))}
+.art-chapter-support .art-wave-mid{transform:scaleX(-1) translateY(calc(var(--art-drift)*.75))}
+.art-chapter-support .art-portrait-girl{top:30%}
+.art-chapter-support .art-paper-left{top:12%;left:-270px}
+.art-chapter-showcase{--art-wash:#e8efff;--art-wash-right:#fff0db}
+.art-chapter-showcase .art-wave-mid{opacity:.65}
+.art-chapter-showcase .art-paper-left{top:5%;left:-325px}
+.art-chapter-showcase .art-paper-right{top:65%;right:-325px}
+.art-chapter-showcase .studio-wall{background:none}
+.art-chapter-pricing{--art-wash:#ffe5ed;--art-wash-right:#eee5fa}
+.art-chapter-pricing .art-portrait-boy{top:14%}
+.art-chapter-pricing .art-portrait-girl{top:62%}
+.art-chapter-pricing .art-paper-left{top:72%}
+.art-chapter-pricing .art-canvas{bottom:0}
+.art-chapter-pricing .package-faq details{background:#fff8efed}
+.art-chapter-pricing .package-faq details[open]{background:#fffcf6}
+@media(min-width:1800px){.art-paper-left{left:-220px}.art-paper-right{right:-220px}}
+@media(max-width:1600px){.art-wave-mid{width:calc(100% + 180px);left:-90px}.art-paper-left{left:-325px}.art-paper-right{right:-325px}}
+@media(max-width:1100px){.art-wave-mid{width:calc(100% + 250px);left:-125px}.art-chapter-hero .art-portrait-girl{opacity:.25}}
+@media(max-width:900px){.art-canvas{inset:-35px 0}.art-portrait,.art-wave,.art-paper{transform:none!important}.art-paper{width:280px}.art-paper-left{left:-255px}.art-paper-right{right:-255px}}
+@media(max-width:600px){.art-wave-mid{width:calc(100% + 300px);left:-150px;opacity:.6}.art-wave-far{width:calc(100% + 70px);left:-35px}.art-chapter{--portrait-width:180px}.art-chapter-hero .art-portrait-girl{display:none}.art-chapter-support .art-portrait-girl{top:50%}.art-paper-left{left:-270px}.art-paper-right{right:-270px}.art-chapter-showcase .art-paper-left{left:-280px}.art-chapter-showcase .art-paper-right{right:-280px}}
+@media(prefers-reduced-motion:reduce){.art-portrait,.art-wave,.art-paper{transform:none!important}}

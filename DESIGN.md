@@ -21,3 +21,9 @@ Brand navigation uses the original mascot logo next to the exact text Hamster Hu
 The showcase heading is ให้ผลงานพูดแทน. Keep section headings without their removed promotional asides. Do not restore the hero audience microcopy strip.
 
 Outcome labels are visible on every project. Awards and admission paths come from team records; projects without an award record show concrete deliverables or participation. Native preview count is limited to the visible viewport to reduce video decoding load. Browser FPS has not been measured in this environment.
+
+## Layered flat graphic background
+Original coral/cobalt creator portraits and orange-white hamster are used as decorative background artwork. They are clipped into the outer gutters, without poster borders or captions, and never stand in for student proof.
+Five chapter canvases share the cream base and connected sweeping silhouettes. Distant pale fields, bright middle ribbons and portrait fragments move at different restrained rates on scroll. Middle content stays clear. Backgrounds do not take pointer events.
+A single passive scroll scheduler updates only visible canvases and does not run an idle animation loop. Reduced motion and viewports below 900px keep the background still. Decorative images are hidden from assistive technology.
+The atlas is a single 130,225-byte JPEG, shared and cached across all chapters.
