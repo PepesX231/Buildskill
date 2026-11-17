@@ -32,7 +32,7 @@ export function RealPreview({work,play=true,controls=false,eager=false}:{work:Wo
 }
 
 export function ProductHero(){
-  const game=findWork("Woven Citadel"),app=findWork("REVOICE"),team=findWork("Veggie Dash");
+  const game=findWork("Nampun"),app=findWork("REVOICE"),team=findWork("Veggie Dash");
   return <section className="product-hero" aria-labelledby="product-title">
     <div className="product-opening wrap">
       <h1 id="product-title"><span>Project Build Skill</span>สร้างของที่ใช้ได้จริง<br /><em>แล้วเล่าได้ว่า เราทำเอง</em></h1>
@@ -48,7 +48,7 @@ export function ProductHero(){
 }
 
 const highlights=[
-  {title:"โปรเจกต์หลัก 1 ชิ้น\nที่เปิดให้คนลองได้จริง",text:"เลือกเกม แอป หรือ IoT ให้ตรงกับสิ่งที่สนใจ ฝึกทำให้จบ ทดสอบ และปรับจนพร้อมนำเสนอ",work:"Woven Citadel",evidence:"ตัวอย่างระบบ Movement และ Gameplay จาก Woven Citadel",link:"ดูคลิปต้นฉบับ"},
+  {title:"โปรเจกต์หลัก 1 ชิ้น\nที่เปิดให้คนลองได้จริง",text:"เลือกเกม แอป หรือ IoT ให้ตรงกับสิ่งที่สนใจ ฝึกทำให้จบ ทดสอบ และปรับจนพร้อมนำเสนอ",work:"Nampun",evidence:"ตัวอย่างเกมจาก GameJam X: Nampun ของวิน",link:"ดูคลิปต้นฉบับ"},
   {title:"ทักษะที่ใช้ทำงาน\nและทำงานร่วมกับคนอื่น",text:"เริ่มจากงานเดี่ยว ก่อนแบ่งหน้าที่ในโปรเจกต์ทีม ลงลึกตามบทบาท ทั้งการจัดโค้ดแบบ OOP และงานภาพด้วย Shader",work:"Veggie Dash",evidence:"ตัวอย่างโปรเจกต์ทีม: Veggie Dash โดยแมคและทีม",link:"เปิดหน้าโปรเจกต์"},
   {title:"เล่มพอร์ตที่มีทั้งผลงาน\nและกระบวนการให้เล่า",text:"รวบรวมโจทย์ วิธีคิด บทบาทของตัวเอง และผลการทดสอบ ให้มีหลักฐานประกอบการยื่นคณะที่เล็ง",work:"REVOICE",evidence:"ตัวอย่างเอกสารผลงานจริง: REVOICE ของไอดิน",link:"ดูเอกสารผลงาน"},
   {title:"พางานไปเจอคนใช้\nและเวทีที่เหมาะกับงาน",text:"ฝึกคิด Business Idea พิตช์ และเตรียมลงสนาม NSC, TICTA หรือ TGS ตามคุณสมบัติและกำหนดรับสมัคร",work:"StressStrike",evidence:"ตัวอย่างจากคอมมูนิตี้: StressStrike เข้ารอบสุดท้าย TICTA",link:"ดูผลงานต้นฉบับ"}
