@@ -297,3 +297,11 @@ body{background:#fff8ef}
 .illustrated-roadmap .journey-copy>span.journey-open{margin-top:18px;padding:11px 20px;min-height:46px;font-size:16px}
 }
 @media(max-width:360px){.illustrated-roadmap .drawn-stop button{grid-template-columns:94px minmax(0,1fr);gap:12px}.illustrated-roadmap .journey-drawing{width:94px;height:130px}.illustrated-roadmap .drawn-stop:not(:last-child)::before{left:47px}.illustrated-roadmap .journey-copy strong{font-size:22px}}
+
+/* Keep the summary compact on desktop and avoid isolated Thai words. */
+.illustrated-roadmap .journey-copy strong{min-height:62px;text-wrap:balance}
+.illustrated-roadmap .journey-copy>span.journey-task{min-height:64px}
+.illustrated-roadmap .journey-copy>span.journey-result{min-height:84px;margin-top:12px}
+.journey-result>span{text-wrap:balance}
+@media(max-width:1100px){.illustrated-roadmap .journey-copy>span.journey-task{min-height:96px}.illustrated-roadmap .journey-copy>span.journey-result{min-height:100px}}
+@media(max-width:760px){.illustrated-roadmap .journey-copy strong,.illustrated-roadmap .journey-copy>span.journey-task,.illustrated-roadmap .journey-copy>span.journey-result{min-height:0}.illustrated-roadmap .journey-copy>span.journey-result{margin-top:16px}}
