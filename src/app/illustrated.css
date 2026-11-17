@@ -280,7 +280,7 @@ body{background:#fff8ef}
 .phase-copy .phase-deliverable{font-size:17px;line-height:1.75;color:#43304e;margin-top:18px}
 .phase-deliverable strong{color:#9a4962;margin-right:8px}
 @media(max-width:1100px){.illustrated-roadmap .drawn-journey ol{gap:25px}.illustrated-roadmap .journey-drawing{width:185px;height:185px}.illustrated-roadmap .journey-copy strong{font-size:23px;min-height:70px}.illustrated-roadmap .journey-copy>span.journey-task{font-size:16px;min-height:112px}.illustrated-roadmap .journey-copy>span.journey-result{font-size:16px;min-height:110px}}
-@media(max-width:760px){
+@media(max-width:900px){
 .illustrated-roadmap .drawn-journey{margin-top:30px}
 .illustrated-roadmap .drawn-journey ol{display:grid;grid-template-columns:minmax(0,1fr);gap:36px}
 .illustrated-roadmap .drawn-curve.curve-wide{display:none}
@@ -304,4 +304,42 @@ body{background:#fff8ef}
 .illustrated-roadmap .journey-copy>span.journey-result{min-height:84px;margin-top:12px}
 .journey-result>span{text-wrap:balance}
 @media(max-width:1100px){.illustrated-roadmap .journey-copy>span.journey-task{min-height:96px}.illustrated-roadmap .journey-copy>span.journey-result{min-height:100px}}
-@media(max-width:760px){.illustrated-roadmap .journey-copy strong,.illustrated-roadmap .journey-copy>span.journey-task,.illustrated-roadmap .journey-copy>span.journey-result{min-height:0}.illustrated-roadmap .journey-copy>span.journey-result{margin-top:16px}}
+@media(max-width:900px){.illustrated-roadmap .journey-copy strong,.illustrated-roadmap .journey-copy>span.journey-task,.illustrated-roadmap .journey-copy>span.journey-result{min-height:0}.illustrated-roadmap .journey-copy>span.journey-result{margin-top:16px}}
+
+/* Resized desktop windows retain readable copy instead of squeezing wide layouts. */
+.hero-intro,.package-offer,.package-picture,.package-faq>*,.support-stories article{min-width:0}
+.hero-layout{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+.package-layout{grid-template-columns:repeat(2,minmax(0,1fr))}
+.package-faq{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+@media(min-width:901px) and (max-width:1100px){
+.hero-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.hero-intro h1{font-size:clamp(62px,6.7vw,74px)}
+.hero-explain{font-size:16px}
+.illustrated-roadmap .journey-copy>span.journey-task{min-height:84px}
+.illustrated-roadmap .journey-copy>span.journey-result{min-height:90px}
+}
+@media(min-width:601px) and (max-width:900px){
+.hero-layout{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:20px;padding-top:42px;padding-bottom:105px;min-height:0}
+.hero-intro h1{font-size:clamp(48px,7.6vw,65px)}
+.hero-message{font-size:clamp(24px,3.3vw,29px)}
+.hero-explain{font-size:16px}
+.hero-drawing{margin-right:0}
+.hero-enroll{gap:16px}
+.support-stories{grid-template-columns:minmax(0,1fr);gap:34px;max-width:680px;margin-left:auto;margin-right:auto}
+.support-stories article,.support-stories article:nth-child(2){display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:0 28px;align-items:center;padding-top:0}
+.support-picture{grid-row:1/3;height:210px;margin:0}
+.support-stories h3{align-self:end;font-size:26px;margin-bottom:12px}
+.support-stories p{align-self:start;font-size:17px;max-width:none}
+.package-layout{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:24px}
+.package-picture img{height:auto;max-height:360px}
+.package-faq{grid-template-columns:minmax(0,1fr);gap:20px}
+.faq-illustrated-intro{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.faq-illustrated-intro img{height:150px;width:150px;margin:0}
+.faq-illustrated-intro h3{margin:0;font-size:30px}
+.phase-content{grid-template-columns:180px minmax(0,1fr)}
+.phase-art img{height:210px}
+}
+@media(min-width:601px) and (max-width:700px){
+.package-layout{grid-template-columns:minmax(0,1fr)}
+.package-picture img{height:280px;margin:auto}
+}
