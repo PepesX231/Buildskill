@@ -19,7 +19,9 @@ const lessons=[
 export function WireframeCourse(){
  const [slide,setSlide]=useState(0),[paused,setPaused]=useState(false),[onScreen,setOnScreen]=useState(false);
  const highlight=useRef<HTMLDivElement>(null);
- const reasonRail=useRef<HTMLDivElement>(null);const [reason,setReason]=useState(0);
+ const reasonRail=useRef<HTMLDivElement>(null);const [reason,setReason]=useState(0);const [reasonStops,setReasonStops]=useState<number[]>([0]);
+ const syncReason=(el:HTMLDivElement,stops:number[])=>{const max=el.scrollWidth-el.clientWidth;if(max<=1||el.scrollLeft<=1){setReason(0);return;}if(el.scrollLeft>=max-2){setReason(stops.length-1);return;}let chosen=0;stops.forEach((left,i)=>{if(Math.abs(left-el.scrollLeft)<Math.abs(stops[chosen]-el.scrollLeft))chosen=i;});setReason(chosen);};
+ useEffect(()=>{const el=reasonRail.current;if(!el)return;const update=()=>{const cards=Array.from(el.children) as HTMLElement[];const origin=cards[0]?.offsetLeft||0,max=Math.max(0,el.scrollWidth-el.clientWidth);const stops=cards.map(c=>Math.min(max,Math.max(0,c.offsetLeft-origin))).filter((left,i,all)=>i===0||Math.abs(left-all[i-1])>2);setReasonStops(stops);syncReason(el,stops);};update();const observer=new ResizeObserver(update);observer.observe(el);Array.from(el.children).forEach(c=>observer.observe(c));return()=>observer.disconnect();},[]);
  useEffect(()=>{
    const el=highlight.current;if(!el)return;const observer=new IntersectionObserver(([e])=>setOnScreen(e.isIntersecting),{threshold:.35});observer.observe(el);return()=>observer.disconnect();
  },[]);
@@ -27,7 +29,7 @@ export function WireframeCourse(){
    if(paused||!onScreen)return;const motion=window.matchMedia("(prefers-reduced-motion: reduce)");if(motion.matches)return;
    const timer=setInterval(()=>{if(!document.hidden&&!motion.matches)setSlide(s=>(s+1)%lessons.length);},7500);return()=>clearInterval(timer);
  },[paused,onScreen]);
- const pickReason=(i:number)=>{const rail=reasonRail.current,card=rail?.children[i] as HTMLElement|undefined;if(rail&&card)rail.scrollTo({left:card.offsetLeft-(rail.children[0] as HTMLElement).offsetLeft,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth"});};
+ const pickReason=(i:number)=>{reasonRail.current?.scrollTo({left:reasonStops[i],behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth"});};
  return <main id="main" className="wire-course">
  <CourseHero />
 
@@ -52,14 +54,14 @@ export function WireframeCourse(){
  <p className="expert-note">ผู้เชี่ยวชาญและวันนัดหมายของแต่ละเดือนให้ทีมแจ้งรายละเอียด</p>
  </section>
 
- <section className="wire-why" id="why" aria-labelledby="why-title"><div className="wire-wrap"><h2 id="why-title">ทำไมต้องเรียน<br/>Project Build Skill</h2><div ref={reasonRail} className="wire-reasons" onScroll={()=>{const el=reasonRail.current;if(!el)return;let chosen=0,dist=Infinity;Array.from(el.children).forEach((c,i)=>{const d=Math.abs((c as HTMLElement).offsetLeft-(el.children[0] as HTMLElement).offsetLeft-el.scrollLeft);if(d<dist){dist=d;chosen=i;}});setReason(chosen);}}>
+ <section className="wire-why" id="why" aria-labelledby="why-title"><div className="wire-wrap"><h2 id="why-title">ทำไมต้องเรียน<br/>Project Build Skill</h2><div ref={reasonRail} className="wire-reasons" onScroll={e=>syncReason(e.currentTarget,reasonStops)}>
  {[
  ["สร้างงานของตัวเอง","ฝึกทำให้จบสักครั้ง","เริ่มจากโจทย์ที่ทำไหว เรียนรู้กระบวนการตั้งแต่ไอเดียจนส่งงานได้"],
  ["สะสมงานของตัวเอง","เริ่มเก็บหลักฐานตั้งแต่ตอนทำ","มีทั้งต้นแบบ บันทึกการพัฒนา บทบาท และผลทดสอบให้ใช้เรียบเรียงพอร์ต"],
  ["ได้ลองทำงานกับคนอื่น","ฝึกทีมก่อนเจองานที่ใหญ่ขึ้น","แบ่งหน้าที่ รับฟีดแบ็ก และรวมงานให้เป็นโปรเจกต์เดียวกัน"],
  ["พร้อมอธิบายสิ่งที่ยื่น","มีเรื่องให้เล่าจากประสบการณ์","เข้าใจว่าทำไมเลือกโจทย์นี้ ทำอะไรเอง เจอปัญหาอะไร และเรียนรู้อะไรจากงาน"]
  ].map(([label,title,text],i)=><article key={label}><span>{label}</span><h3>{title}</h3><p>{text}</p></article>)}
- </div><div className="wire-reason-dots" role="group" aria-label="เลือกเหตุผลที่เรียน Project Build Skill">{[0,1,2,3].map(i=><button type="button" key={i} aria-label={`ดูเหตุผลข้อ ${i+1}`} aria-pressed={reason===i} onClick={()=>pickReason(i)}><span /></button>)}</div>
+ </div><div className="wire-reason-dots" style={reasonStops.length<2?{display:"none"}:undefined} role="group" aria-label="เลือกตำแหน่งรายการเหตุผล">{reasonStops.map((left,i)=><button type="button" key={left} aria-label={`ดูตำแหน่ง ${i+1} จาก ${reasonStops.length}`} aria-pressed={reason===i} onClick={()=>pickReason(i)}><span /></button>)}</div>
  <CourseOffer />
  <details className="wire-practical" id="faq"><summary>วันเรียน ราคา และสิ่งที่ควรรู้ก่อนสมัคร</summary><div><p>19,990 บาทเป็นราคาหลักสูตรตลอด 12 เดือน ทีมจะยืนยันวัน–เวลา รูปแบบเรียน อุปกรณ์ ค่าแข่งขันหรือเดินทาง และเงื่อนไขชำระเงิน/คืนเงินก่อนสมัคร</p><p>เหมาะกับเด็ก ม.ปลาย ทั้งคนที่ยังไม่มีผลงาน มีงานแล้วแต่ไม่มั่นใจ และคนที่เรียนเองมา ใช้ AI ช่วยได้โดยต้องเข้าใจ ทดสอบ และอธิบายสิ่งที่สร้างได้</p><p>การลง NSC, TICTA หรือ TGS ขึ้นอยู่กับงาน คุณสมบัติ และกำหนดรับสมัคร น้อง ม.6 ควรแจ้งรอบยื่นพอร์ตและกำหนดส่งให้ทีมตรวจความเหมาะสมของระยะเวลาก่อนสมัคร ไม่มีการรับประกันรางวัลหรือผลเข้ามหาวิทยาลัย</p></div></details>
  </div></section>
