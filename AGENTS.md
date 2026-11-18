@@ -13,3 +13,5 @@ The latest supplied wireframe and DESIGN.md override earlier page sequence, pale
 
 - The owner confirmed business people and university lecturers are actually invited every month. State that clearly without inventing identities or exact dates.
 - Use the topic explorer grouped by month and selected track. Every available image must match the selected topic; do not substitute a game poster for an app, IoT, portfolio or expert-session image. See MISSING_MEDIA.md for requested assets.
+
+- Latest owner refinement: use the exact new hero headline without subtitle, a three-scene course view, detailed phase topic choices and a track-selectable closing. Clearly labelled real-media placeholders are explicitly permitted. Keep MISSING_MEDIA.md current. Do not invent a month-by-month official syllabus from the expanded phase examples.

@@ -1,17 +1,51 @@
-# Real images requested from course team
+# ภาพที่ยังต้องเติม — Project Build Skill
 
-Do not fill these gaps with generated mockups, unrelated community posters or private material. Until matching assets are authorized, the topic panel shows actual curriculum text without a substitute image.
+หน้าเว็บแสดงกรอบ “รอภาพจริงจากทีม” ตรงจุดที่ยังไม่มีภาพตรงกับข้อความ ไม่ใช้ภาพคนแทนพอร์ต หรือโปสเตอร์แทนเซสชันผู้เชี่ยวชาญ
 
-- Game planning: actual game sketch or design document.
-- Game testing: playtest photograph or bug report with before/after captures.
-- Programmer: real OOP code with a short explanation of what it controls.
-- Art: real Shader/Material editor and its before/after visual result.
-- Web/app: problem definition or screen sketch, actual code structure and app testing evidence.
-- IoT: actual wiring, device and program/readings, integrated prototype, field test. All IoT-specific media currently missing.
-- Development: user test, feedback notes, pitch slides and live business presentation.
-- Portfolio: authorized real pages with personal details redacted. The previously blocked Drive source remains blocked until specifically authorized.
-- Experts: actual photo or clip of sessions with invited business people and university lecturers, with permission to publish. Neither a project poster nor a generic class photo demonstrates this.
+## ภาพสำคัญที่ควรส่งก่อน
 
-Available matched media: real SLASH//SPEED gameplay; real REVOICE UI; genuine Hamster Hub community activity photograph; public Veggie Dash NSC presentation poster for the game presentation topic only.
+| จุดบนเว็บ | ภาพ/คลิปที่ต้องการ | ภาพควรแสดงอะไร |
+| --- | --- | --- |
+| หน้าแรก | คลิปกระบวนการเรียนจริง 20–30 วินาที | ลงมือทำหน้าจอ → คุยงานกับทีม → รับคำแนะนำ → สาธิตงาน ถ่ายงานและผู้เรียนจริง |
+| ไฮไลต์ทักษะ | โค้ด OOP และผล Shader จริง | โค้ดพร้อมคำอธิบายหน้าที่ / ภาพก่อน–หลังปรับแสง สี หรือวัสดุ |
+| ไฮไลต์ทดสอบ | คนใช้กำลังทดลองผลงาน | เห็นทั้งคนใช้และสิ่งที่ทดลอง พร้อมบันทึกปัญหาที่พบ |
+| ไฮไลต์พอร์ต | หน้าผลงานในเล่มพอร์ตที่อนุญาตเผยแพร่สาธารณะ | โจทย์ บทบาท วิธีทำ ผลทดสอบ ปิดข้อมูลส่วนตัวก่อนส่ง |
+| ผู้เชี่ยวชาญฝั่งธุรกิจ | ภาพหรือคลิปพิตช์กับนักธุรกิจจริง | เห็นผู้เรียนนำเสนอและผู้ให้คำแนะนำ ไม่ใช้ภาพบรรยายทั่วไปแทน |
+| ผู้เชี่ยวชาญฝั่งมหาวิทยาลัย | ภาพอาจารย์ช่วยดูผลงานจริง | เห็นเดโม/ชิ้นงานและการให้คำแนะนำ ระบุชื่อได้เมื่อเจ้าตัวอนุญาต |
 
-Owner confirmed both business people and university lecturers are invited. Do not water that down to an unconfirmed opportunity; do not invent names, institutions or dates.
+## ภาพประกอบหัวข้อในแผนเรียน
+
+หัวข้อที่มีกรอบรอภาพระบุคำขอเฉพาะไว้บนหน้าเว็บแล้ว หลายหัวข้อใช้ชุดหลักฐานเดียวกันได้ถ้าภาพแสดงสิ่งนั้นจริง ไม่จำเป็นต้องถ่าย 72 ภาพแยกกัน
+
+| สาย / ช่วง | ชุดภาพที่ยังขาด |
+| --- | --- |
+| เกม เดือน 1 | สเก็ตช์คอนเซปต์, กติกา/เอกสารออกแบบ, แผนงานย่อย, ภาพเพื่อนทดลองพร้อมบันทึกปัญหา, เดโมสุดท้ายคู่รายการแก้ปัญหา |
+| เกม เดือน 2–3 | Class Diagram/แผนเชื่อมระบบ, โค้ด OOP ที่อธิบายได้, โค้ดเชื่อมระบบเกม, ภาพ Shader ก่อน–หลัง, ตัวอย่างวัสดุ/แสง, หลักฐานรวมงานทีม, บันทึกตรวจและแก้งาน |
+| เว็บ/แอป เดือน 1 | ปัญหาคนใช้, ขอบเขตฟีเจอร์, User Flow, หน้าจอที่ลงมือออกแบบ, บันทึกทดสอบการใช้งาน |
+| เว็บ/แอป เดือน 2–3 | โครงสร้างระบบ/ข้อมูล, โค้ดส่วนที่รับผิดชอบ, หน้าจอที่เชื่อมกัน, หลักฐานรวมงานทีม, บันทึกตรวจการใช้งาน |
+| IoT เดือน 1 | โจทย์และปัญหาที่แก้, แผนการทำงานอุปกรณ์, การอ่านค่าจริง, การตอบสนองของอุปกรณ์, หน้าจอหรือผลแสดงค่า, ภาพทดสอบพร้อมผลวัด |
+| IoT เดือน 2–3 | แผนเชื่อมส่วนต่าง ๆ, วงจร/อุปกรณ์จริง, โค้ดควบคุม, หลักฐานรวมฮาร์ดแวร์กับโปรแกรม, คลิปสาธิตและผลทดสอบ |
+| ทุกสาย เดือน 4–12 | ภาพวางโจทย์และกลุ่มผู้ใช้, แผนงาน/รายการฟีเจอร์, ผู้ใช้ทดลองจริง, บันทึกฟีดแบ็กหรือบั๊ก, ภาพงานก่อน–หลังแก้, Business Idea/สไลด์คุณค่า, เซสชันพิตช์จริง, หน้าผลงานในเล่มพอร์ต, ภาพสรุปกระบวนการ/นำเสนอ |
+| เว็บ/แอป เดือน 4–12 เพิ่มเติม | สื่อนำเสนอจริงของโครงการเว็บ/แอป |
+| IoT เดือน 4–12 เพิ่มเติม | คลิปเดโมอุปกรณ์ทำงานจริง และสื่อนำเสนอจริงของโครงการ IoT |
+
+## ภาพจริงที่ใช้ได้แล้ว
+
+| แหล่ง | ใช้สื่อสารอะไร | ขอบเขต |
+| --- | --- | --- |
+| SLASH//SPEED ของดินสอ | เกมที่เปิดให้คนเล่นได้ / เดโมเกม | ผลงานคอมมูนิตี้ ไม่กล่าวว่าเป็นผลลัพธ์ของรุ่นที่ยังไม่เริ่ม |
+| photo-class จาก Hamster Hub | บรรยากาศกิจกรรมและทำงานร่วมกัน | ไม่กล่าวว่าเป็นเซสชันนักธุรกิจหรืออาจารย์ |
+| ภาพนำเสนอ REVOICE | ตัวอย่างเว็บ/แอปที่สาธิตได้ | มีหน้าคนนำเสนอประกอบ ไม่ใช่ภาพหน้าจอล้วน |
+| โปสเตอร์ Veggie Dash NSC 2024 | ตัวอย่างสื่อนำเสนอโครงงานเกม | ไม่ใช่หน้าพอร์ต ไม่ใช่ภาพพิตช์หรือรับคำแนะนำ |
+
+## รูปแบบไฟล์และการจัดภาพ
+
+- คลิปเดโม: MP4 แนวนอน 16:9 ตัดช่วงที่เห็นการทำงานหลักชัด ไม่มีข้อมูลส่วนตัวบนจอ
+- ภาพหน้าจอ/โค้ด: อย่างน้อย 1600 px ด้านยาว พร้อมบอกว่าจุดไหนสำคัญ เพื่อวางภาพไม่ตัดส่วนที่ต้องอธิบาย
+- ภาพกิจกรรม/ผู้เชี่ยวชาญ: แนวนอน 4:3 หรือ 16:9 เห็นคนและงานในเฟรมเดียวกัน
+- พอร์ต/โปสเตอร์: ส่งไฟล์แนวตั้งเต็มหน้า เว็บแสดงแบบ contain เพื่ออ่านและเห็นชิ้นงานครบ
+- ระบุชื่อผลงาน เจ้าของ บทบาท คำอธิบาย และสิทธิ์เผยแพร่ของแต่ละภาพ
+
+ไฟล์พอร์ตใน Drive ที่เคยให้ตรวจยังไม่ถูกนำมาเผยแพร่บนเว็บไซต์สาธารณะ การอนุญาตให้อ่านไม่ใช่การอนุญาตเผยแพร่หน้าหรือภาพที่สกัดจากเอกสารนั้น
+
+หน้าปิดการขายใช้ตัวเลือกสายและสรุปสิ่งที่ได้รับ จึงไม่ต้องเติมรูปตกแต่ง รูปที่เพิ่มภายหลังควรเป็นผลงานหรือประสบการณ์ที่เกี่ยวข้องจริงเท่านั้น
