@@ -627,3 +627,5 @@ html{scroll-padding-top:82px}
 }
 
 .explorer-shell{scroll-margin-top:0}@media(max-width:700px){.explorer-shell{scroll-margin-top:0}.explorer-detail{scroll-margin-top:0}}
+
+.proof-slide-presentation .proof-slide-media>img{display:block;width:100%;height:100%;object-fit:contain;transform:none;padding:15px 25px 32px}.proof-slide-presentation .proof-slide-media::after{display:none}
