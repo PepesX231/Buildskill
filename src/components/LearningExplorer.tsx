@@ -15,15 +15,15 @@ export function LearningExplorer(){
  const {track,setTrack}=useCourse();
  const [choices,setChoices]=useState<Record<TrackKey,[number,number]>>({game:[0,3],app:[0,3],iot:[0,0]});
  const [phaseIndex,topicIndex]=choices[track],groups=learningPaths[track],phase=groups[phaseIndex],topic=phase.topics[topicIndex];
- const panel=useRef<HTMLDivElement>(null),list=useRef<HTMLElement>(null),reveal=useRef(false);
+ const shell=useRef<HTMLDivElement>(null),panel=useRef<HTMLDivElement>(null),list=useRef<HTMLElement>(null),reveal=useRef(false);
  const chooseTopic=(index:number)=>{reveal.current=true;setChoices(v=>({...v,[track]:[phaseIndex,index]}));};
- useEffect(()=>{if(!reveal.current)return;reveal.current=false;const frame=requestAnimationFrame(()=>{if(window.matchMedia("(max-width:700px)").matches){panel.current?.scrollIntoView({block:"start",behavior:window.matchMedia("(prefers-reduced-motion:reduce)").matches?"instant":"smooth"});panel.current?.focus({preventScroll:true});}});return()=>cancelAnimationFrame(frame);},[track,phaseIndex,topicIndex]);
+ useEffect(()=>{if(!reveal.current)return;reveal.current=false;const frame=requestAnimationFrame(()=>{panel.current?.scrollTo({top:0});if(window.matchMedia("(max-width:700px)").matches){panel.current?.scrollIntoView({block:"start",behavior:window.matchMedia("(prefers-reduced-motion:reduce)").matches?"instant":"smooth"});panel.current?.focus({preventScroll:true});}else{shell.current?.scrollIntoView({block:"start",behavior:window.matchMedia("(prefers-reduced-motion:reduce)").matches?"instant":"smooth"});}});return()=>cancelAnimationFrame(frame);},[track,phaseIndex,topicIndex]);
  return <section className="learning-explorer wire-wrap" id="roadmap" aria-labelledby="route-title">
  <div className="route-intro"><h2 id="route-title">จาก “ชอบคอม”<br/>สู่คนที่สร้างมันได้</h2><p>เลือกสาย เลือกช่วง แล้วสำรวจหัวข้อที่ได้ฝึก<br/>ผ่านการทำโปรเจกต์ของตัวเอง</p></div>
- <div className="route-selector"><span>อยากสร้างอะไร?</span><div className="route-track-options" role="group" aria-label="เลือกสายเพื่อดูเส้นทาง">{(Object.keys(tracks) as TrackKey[]).map(k=><button key={k} type="button" aria-pressed={track===k} onClick={()=>setTrack(k)}>{k==="app"?"เว็บ / แอป":tracks[k].name}</button>)}</div></div>
+ <div className="route-selector"><span>อยากสร้างอะไร?</span><div className="route-track-options" role="group" aria-label="เลือกสายเพื่อดูเส้นทาง">{(Object.keys(tracks) as TrackKey[]).map(k=><button key={k} type="button" aria-pressed={track===k} onClick={()=>{reveal.current=true;setTrack(k);}}>{k==="app"?"เว็บ / แอป":tracks[k].name}</button>)}</div></div>
  <p className="explorer-hint">ตัวอย่างงานและทักษะที่ฝึกในแต่ละช่วง · ทีมช่วยวางโจทย์ตามพื้นฐานและสิ่งที่อยากสร้าง</p>
- <div className="explorer-shell">
- <div className="explorer-phase-controls" role="group" aria-label="เลือกช่วงเดือน">{groups.map((g,i)=><button key={g.period} type="button" aria-pressed={phaseIndex===i} onClick={()=>setChoices(v=>({...v,[track]:[i,0]}))}>{g.period}<small>{i===0?"งานเดี่ยว":i===1?"งานทีม":"โปรเจกต์หลัก"}</small></button>)}</div>
+ <div ref={shell} className="explorer-shell">
+ <div className="explorer-phase-controls" role="group" aria-label="เลือกช่วงเดือน">{groups.map((g,i)=><button key={g.period} type="button" aria-pressed={phaseIndex===i} onClick={()=>{reveal.current=true;setChoices(v=>({...v,[track]:[i,0]}));}}>{g.period}<small>{i===0?"งานเดี่ยว":i===1?"งานทีม":"โปรเจกต์หลัก"}</small></button>)}</div>
  <div className="explorer-workspace">
  <nav ref={list} id="learning-topics" className="explorer-topics" aria-label={`หัวข้อเรียนสาย${tracks[track].name} ${phase.period}`} onKeyDown={e=>{if(e.key!=="ArrowDown"&&e.key!=="ArrowUp")return;e.preventDefault();const buttons=list.current?.querySelectorAll<HTMLButtonElement>("button");if(!buttons?.length)return;const active=Array.from(buttons).indexOf(document.activeElement as HTMLButtonElement);buttons[(active+(e.key==="ArrowDown"?1:buttons.length-1))%buttons.length]?.focus();}}>
  <h3 className="explorer-phase-title">{phase.title}</h3><p className="explorer-topic-count">{phase.topics.length} หัวข้อให้สำรวจ</p>
