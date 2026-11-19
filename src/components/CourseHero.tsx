@@ -14,12 +14,18 @@ const scenes=[
 export function CourseHero(){
  const [scene,setScene]=useState(0);
  return <section className="course-product-hero" aria-labelledby="wire-title">
+ <div className="hero-art-cover wire-wrap">
+ <div className="hero-art-copy">
  <div className="course-product-heading"><p>Project Build Skill</p><h1 id="wire-title">เปลี่ยนความชอบ<br/>เป็นฝีมือให้โลกรู้</h1></div>
+ <p className="hero-art-facts">เกม · เว็บ / แอป · IoT <span>คอร์ส 12 เดือนสำหรับ ม.ปลาย</span></p>
  <div className="course-first-action"><a className="wire-blue-button" href="#roadmap">เลือกสิ่งที่อยากสร้าง</a><a href="#pricing">ดูราคาและรายละเอียด</a></div>
+ </div>
+ <img className="hero-art-image" src={assetPath("/assets/background/creator-atlas.jpg")} width={1672} height={941} alt="" fetchPriority="high"/>
+ </div>
  <div className="course-product-view">
  <div className="course-scene-controls" role="group" aria-label="ดูประสบการณ์ในคอร์ส">{scenes.map((s,i)=><button key={s.title} type="button" aria-pressed={scene===i} onClick={()=>setScene(i)}>{s.title}</button>)}</div>
  <figure className={`course-product-scene scene-${scene}`}>{scene===0?<DemonstrationVideo src={assetPath("/assets/demo/slash-gameplay.mp4")} poster={assetPath("/assets/demo/slash-gameplay.webp")} label="เกม SLASH//SPEED ที่นักเรียนในคอมมูนิตี้ Hamster Hub สร้าง"/>:<img src={scene===1?"https://pepesx231.github.io/Hamterco/img/photo-class.webp":"https://img.itch.zone/aW1nLzE4NTI1OTg1LnBuZw==/original/td7IEw.png"} alt={scene===1?"ผู้เรียนและผู้สอนในกิจกรรมจริงของ Hamster Hub":"โปสเตอร์ NSC 2024 ของทีม Veggie Dash ตัวอย่างการนำเสนอโครงงาน"} width={scene===1?1000:1742} height={scene===1?550:2488}/>}<figcaption>{scenes[scene].caption}</figcaption></figure>
  </div>
- <div className="course-product-offer"><span>12 เดือน · <strong>19,990 บาท</strong></span><EnrollButton className="wire-blue-button">สนใจเรียน</EnrollButton><a href="#roadmap">ดูสิ่งที่จะได้ลงมือทำ</a></div>
+ <div className="course-product-offer"><span>12 เดือน · <strong>19,990 บาท</strong></span><EnrollButton className="wire-blue-button">สนใจเรียน</EnrollButton></div>
  </section>;
 }

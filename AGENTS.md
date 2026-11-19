@@ -1,6 +1,6 @@
 # Latest owner layout
 
-The latest supplied wireframe and DESIGN.md override earlier page sequence, palette and mentor-section restrictions. Follow the supplied black/white/blue layout and gray closing card rail. Keep the original hamster navigation mark.
+The latest supplied wireframe and DESIGN.md override earlier page sequence, palette and mentor-section restrictions. Follow the updated Hamster Hub art direction in DESIGN.md throughout the page, including the backgrounds, panels, navigation and closing. Keep the original hamster navigation mark.
 
 - No decorative English slogans, numbered section prefixes, stars or ornamental arrows.
 - Meaningful Thai headings, actual course name, course facts and functional controls are allowed.

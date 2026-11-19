@@ -46,13 +46,13 @@ export function WireframeCourse(){
  <div className="wire-gallery-controls"><button type="button" className="gallery-arrow" aria-label="เนื้อหาก่อนหน้า" onClick={()=>{setPaused(true);setSlide(v=>(v+lessons.length-1)%lessons.length);}}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><div role="group" aria-label="เลือกเนื้อหาเรียน">{lessons.map((l,i)=><button type="button" key={l.kind} aria-label={l.title.replace("\n"," ")} aria-pressed={slide===i} onClick={()=>{setSlide(i);setPaused(true);}}><span /></button>)}</div><button type="button" className="wire-play" aria-label={paused?"เล่นสไลด์อัตโนมัติ":"หยุดสไลด์อัตโนมัติ"} onClick={()=>setPaused(!paused)}>{paused?<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 9 6-9 6z" /></svg>:<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4h3v12H6zm6 0h3v12h-3z" /></svg>}</button><button type="button" className="gallery-arrow" aria-label="เนื้อหาถัดไป" onClick={()=>{setPaused(true);setSlide(v=>(v+1)%lessons.length);}}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div>
  </section>
 
- <LearningExplorer />
+ <div className="course-roadmap-paper"><LearningExplorer /></div>
 
- <section className="expert-section wire-wrap" id="mentors" aria-labelledby="mentor-title">
- <div className="wire-centered-heading"><h2 id="mentor-title">นักธุรกิจและอาจารย์มหาวิทยาลัย<br/>มาช่วยขัดผลงานทุกเดือน</h2><span>เราเชิญทั้งสองมุมมองมาดูงาน ให้น้องได้ลองพิตช์ รับคำแนะนำ และกลับไปพัฒนาโปรเจกต์ต่อ</span></div>
- <div className="expert-perspectives"><article><MediaPlaceholder title="ภาพเซสชันพิตช์กับนักธุรกิจ"/><p>มุมมองจากนักธุรกิจ</p><h3>ใครจะใช้<br/>ทำไมเขาถึงเลือกงานเรา</h3><ul><li>คุยเรื่องปัญหา คนใช้ และคุณค่าของโปรเจกต์</li><li>ฝึกเล่า Business Idea และพิตช์ให้คนฟังเข้าใจ</li></ul></article><article><MediaPlaceholder title="ภาพอาจารย์ให้คำแนะนำผลงาน"/><p>มุมมองจากอาจารย์มหาวิทยาลัย</p><h3>วิธีคิดชัดแค่ไหน<br/>ผลงานควรพัฒนาตรงไหน</h3><ul><li>นำเดโมและวิธีทำมาอธิบายเพื่อรับคำแนะนำ</li><li>นำข้อเสนอแนะกลับไปเลือกสิ่งที่ควรปรับต่อ</li></ul></article></div>
+ <div className="course-review-paper"><section className="expert-section wire-wrap" id="mentors" aria-labelledby="mentor-title">
+ <div className="wire-centered-heading expert-art-intro"><div><h2 id="mentor-title">นักธุรกิจและอาจารย์มหาวิทยาลัย<br/>มาช่วยขัดผลงานทุกเดือน</h2><span>เราเชิญทั้งสองมุมมองมาดูงาน ให้น้องได้ลองพิตช์ รับคำแนะนำ และกลับไปพัฒนาโปรเจกต์ต่อ</span></div><img src={assetPath("/assets/illustrations/compare-mentor.webp")} alt="" width={900} height={600} loading="lazy"/></div>
+ <div className="expert-perspectives"><article><p>มุมมองจากนักธุรกิจ</p><h3>ใครจะใช้<br/>ทำไมเขาถึงเลือกงานเรา</h3><ul><li>คุยเรื่องปัญหา คนใช้ และคุณค่าของโปรเจกต์</li><li>ฝึกเล่า Business Idea และพิตช์ให้คนฟังเข้าใจ</li></ul></article><article><p>มุมมองจากอาจารย์มหาวิทยาลัย</p><h3>วิธีคิดชัดแค่ไหน<br/>ผลงานควรพัฒนาตรงไหน</h3><ul><li>นำเดโมและวิธีทำมาอธิบายเพื่อรับคำแนะนำ</li><li>นำข้อเสนอแนะกลับไปเลือกสิ่งที่ควรปรับต่อ</li></ul></article></div>
  <p className="expert-note">ผู้เชี่ยวชาญและวันนัดหมายของแต่ละเดือนให้ทีมแจ้งรายละเอียด</p>
- </section>
+ </section></div>
 
  <section className="wire-why" id="why" aria-labelledby="why-title"><div className="wire-wrap"><h2 id="why-title">ทำไมต้องเรียน<br/>Project Build Skill</h2><div ref={reasonRail} className="wire-reasons" onScroll={e=>syncReason(e.currentTarget,reasonStops)}>
  {[
@@ -60,7 +60,7 @@ export function WireframeCourse(){
  ["สะสมงานของตัวเอง","เริ่มเก็บหลักฐานตั้งแต่ตอนทำ","มีทั้งต้นแบบ บันทึกการพัฒนา บทบาท และผลทดสอบให้ใช้เรียบเรียงพอร์ต"],
  ["ได้ลองทำงานกับคนอื่น","ฝึกทีมก่อนเจองานที่ใหญ่ขึ้น","แบ่งหน้าที่ รับฟีดแบ็ก และรวมงานให้เป็นโปรเจกต์เดียวกัน"],
  ["พร้อมอธิบายสิ่งที่ยื่น","มีเรื่องให้เล่าจากประสบการณ์","เข้าใจว่าทำไมเลือกโจทย์นี้ ทำอะไรเอง เจอปัญหาอะไร และเรียนรู้อะไรจากงาน"]
- ].map(([label,title,text],i)=><article key={label}><span>{label}</span><h3>{title}</h3><p>{text}</p></article>)}
+ ].map(([label,title,text],i)=><article key={label}><img src={assetPath(`/assets/illustrations/${["journey-solo.webp","journey-launch.webp","journey-team.webp","package-finish.webp"][i]}`)} alt="" loading="lazy"/><span>{label}</span><h3>{title}</h3><p>{text}</p></article>)}
  </div><div className="wire-reason-dots" style={reasonStops.length<2?{display:"none"}:undefined} role="group" aria-label="เลือกตำแหน่งรายการเหตุผล">{reasonStops.map((left,i)=><button type="button" key={left} aria-label={`ดูตำแหน่ง ${i+1} จาก ${reasonStops.length}`} aria-pressed={reason===i} onClick={()=>pickReason(i)}><span /></button>)}</div>
  <CourseOffer />
  <details className="wire-practical" id="faq"><summary>วันเรียน ราคา และสิ่งที่ควรรู้ก่อนสมัคร</summary><div><p>19,990 บาทเป็นราคาหลักสูตรตลอด 12 เดือน ทีมจะยืนยันวัน–เวลา รูปแบบเรียน อุปกรณ์ ค่าแข่งขันหรือเดินทาง และเงื่อนไขชำระเงิน/คืนเงินก่อนสมัคร</p><p>เหมาะกับเด็ก ม.ปลาย ทั้งคนที่ยังไม่มีผลงาน มีงานแล้วแต่ไม่มั่นใจ และคนที่เรียนเองมา ใช้ AI ช่วยได้โดยต้องเข้าใจ ทดสอบ และอธิบายสิ่งที่สร้างได้</p><p>การลง NSC, TICTA หรือ TGS ขึ้นอยู่กับงาน คุณสมบัติ และกำหนดรับสมัคร น้อง ม.6 ควรแจ้งรอบยื่นพอร์ตและกำหนดส่งให้ทีมตรวจความเหมาะสมของระยะเวลาก่อนสมัคร ไม่มีการรับประกันรางวัลหรือผลเข้ามหาวิทยาลัย</p></div></details>

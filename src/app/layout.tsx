@@ -7,6 +7,7 @@ import "./background-art.css";
 import "./product.css";
 import "./experience.css";
 import "./wire-layout.css";
+import "./hamster-theme.css";
 
 export const metadata: Metadata = {
   title: "Project Build Skill | Hamster Hub",

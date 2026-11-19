@@ -26,7 +26,7 @@ export function LearningExplorer(){
  <p className="explorer-hint">ตัวอย่างงานและทักษะที่ฝึกในแต่ละช่วง · ทีมช่วยวางโจทย์ตามพื้นฐานและสิ่งที่อยากสร้าง</p>
  <div ref={shell} className="explorer-shell">
  <div className="explorer-phase-controls" role="group" aria-label="เลือกช่วงเดือน">{groups.map((g,i)=><button key={g.period} type="button" aria-pressed={phaseIndex===i} onClick={()=>setChoices(v=>({...v,[track]:[i,0]}))}>{g.period}<small>{i===0?"งานเดี่ยว":i===1?"งานทีม":"โปรเจกต์หลัก"}</small></button>)}</div>
- <div className="route-outcome"><div><p>{phase.period} · สาย{tracks[track].name}</p><h3>{outcomes[track][phaseIndex]}</h3><a href="#learning-topics">ดูสิ่งที่จะได้ฝึกในช่วงนี้ →</a></div><img src={assetPath(`/assets/illustrations/${phaseArt[phaseIndex]}`)} alt="" loading="lazy"/></div>
+ <div className="route-outcome" data-phase={phaseIndex}><div><p>{phase.period} · สาย{tracks[track].name}</p><h3>{outcomes[track][phaseIndex]}</h3><a href="#learning-topics">ดูสิ่งที่จะได้ฝึกในช่วงนี้</a></div><img src={assetPath(`/assets/illustrations/${phaseArt[phaseIndex]}`)} alt="" loading="lazy"/></div>
  <div className="explorer-workspace">
  <nav ref={list} id="learning-topics" className="explorer-topics" aria-label={`หัวข้อเรียนสาย${tracks[track].name} ${phase.period}`} onKeyDown={e=>{if(e.key!=="ArrowDown"&&e.key!=="ArrowUp")return;e.preventDefault();const buttons=list.current?.querySelectorAll<HTMLButtonElement>("button");if(!buttons?.length)return;const active=Array.from(buttons).indexOf(document.activeElement as HTMLButtonElement);buttons[(active+(e.key==="ArrowDown"?1:buttons.length-1))%buttons.length]?.focus();}}>
  <h3 className="explorer-phase-title">{phase.title}</h3><p className="explorer-topic-count">{phase.topics.length} หัวข้อให้สำรวจ</p>
