@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
+import { assetPath } from "@/lib/assets";
 import "./base.css";
 import "./illustrated.css";
 import "./navigation.css";
@@ -22,6 +23,13 @@ export const metadata: Metadata = {
   },
 };
 
+const courseArt = Object.fromEntries(
+  ["stage", "spotlight", "paper", "blue", "pink", "apricot", "note"].map((name) => [
+    `--art-${name}`,
+    `url("${assetPath(`/assets/background/prints/${name}.jpg`)}")`,
+  ]),
+) as CSSProperties;
+
 export default function RootLayout({ children }: { children: ReactNode }) {
-  return <html lang="th"><body>{children}</body></html>;
+  return <html lang="th"><body style={courseArt}>{children}</body></html>;
 }

@@ -310,3 +310,140 @@ dialog .prepared-message { background: #f2e3f4; border: 1px solid #ccb2d1; }
 }
 
 .hero-art-facts { margin-bottom: 20px; }
+
+/* Illustrated chapter covers. Local washes keep the text readable over the print. */
+.course-product-hero {
+  background-color: #20132c;
+  background-image: linear-gradient(180deg, #20132c20 0%, #20132c24 38%, #20132c 80%), var(--art-stage);
+  background-position: center top;
+  background-size: 100% min(66vw, 920px);
+  background-repeat: no-repeat;
+}
+.hero-art-cover { padding-bottom: clamp(40px, 5vw, 72px); }
+.hero-art-copy {
+  position: relative;
+  isolation: isolate;
+}
+.hero-art-copy::before {
+  position: absolute;
+  z-index: -1;
+  inset: -22px -30px;
+  content: "";
+  background: radial-gradient(ellipse at 28% 45%, #20132ced 16%, #20132caa 61%, transparent 78%);
+  pointer-events: none;
+}
+.hero-art-image {
+  border: 6px solid var(--print-paper);
+  box-shadow: 10px 10px 0 #22172ecc;
+  transform: rotate(1.25deg);
+}
+.course-product-scene {
+  border-color: #b385ad;
+  box-shadow: 6px 6px 0 #160e20;
+}
+.proof-highlights {
+  background: linear-gradient(180deg, #34204755, #342047 78%), var(--art-spotlight) center top / 100% auto no-repeat #342047;
+}
+.proof-slide {
+  box-shadow: 4px 5px 0 #160b24;
+}
+.proof-slide-copy {
+  background-image: linear-gradient(90deg, #29173a 70%, #29173a00);
+}
+.real-media-placeholder {
+  background: linear-gradient(#2d1d40dd,#2d1d40e8), var(--art-blue) center / cover;
+}
+.course-roadmap-paper {
+  background:
+    linear-gradient(180deg, #fff4e408 0%, #fff4e4 85%) top / 100% clamp(430px, 50vw, 790px) no-repeat,
+    var(--art-paper) center top / 100% clamp(430px, 50vw, 790px) no-repeat,
+    var(--print-paper);
+}
+.course-roadmap-paper .route-intro {
+  background: #fff4e4e0;
+  padding: 16px 21px;
+  border-left: 5px solid var(--print-blue);
+}
+.course-roadmap-paper .explorer-shell {
+  background: linear-gradient(#fffaf1e8,#fffaf1ed), var(--art-note) center / cover;
+}
+.route-outcome {
+  background:
+    linear-gradient(90deg, var(--phase-paper) 0%, var(--phase-paper) 45%, transparent 100%),
+    var(--phase-art, var(--art-pink)) center / cover;
+}
+.route-outcome[data-phase="1"] { --phase-art: var(--art-blue); }
+.route-outcome[data-phase="2"] { --phase-art: var(--art-apricot); }
+.route-outcome img {
+  filter: drop-shadow(3px 5px 0 #22172e27);
+}
+.explorer-output {
+  background: linear-gradient(90deg, #ffeccb 60%, #ffeccbd4), var(--art-apricot) center / cover;
+}
+.course-review-paper {
+  background: linear-gradient(180deg, #14246771, #142467e8), var(--art-blue) center / cover;
+}
+.expert-perspectives article {
+  background: linear-gradient(90deg, #fff1daea, #fff1daf7), var(--art-note) center / cover;
+}
+.expert-perspectives article + article {
+  background: linear-gradient(90deg, #e5ebfff4, #e5ebffe5), var(--art-blue) center / cover;
+}
+.wire-why {
+  background:
+    linear-gradient(180deg, #ffe5ed22 0%, #ffe5ed 95%) top / 100% clamp(430px, 50vw, 850px) no-repeat,
+    var(--art-pink) center top / 100% clamp(430px, 50vw, 850px) no-repeat,
+    #ffe5ed;
+}
+.wire-reasons > article {
+  background: linear-gradient(180deg, #fff4e422, #fff4e4 56%), var(--art-apricot) top center / auto 190px no-repeat #fff4e4;
+}
+.wire-reasons > article:nth-child(2n) {
+  background: linear-gradient(180deg, #e7eaff20, #e7eaff 56%), var(--art-blue) top center / auto 190px no-repeat #e7eaff;
+}
+.course-choice-heading {
+  padding: clamp(18px, 4vw, 44px);
+  background: linear-gradient(90deg, #ffe5ed 8%, #ffe5edce 48%, #ffe5ed0c), var(--art-pink) center / cover;
+  border: 2px solid var(--print-ink);
+  border-radius: 12px 3px 12px 3px;
+  box-shadow: 6px 6px 0 #c888aa;
+}
+.course-choice-offer .investment-action {
+  background: linear-gradient(140deg, #fff4e4 50%, #fff4e4b8 100%), var(--art-apricot) bottom / cover;
+}
+.wire-practical {
+  background: linear-gradient(90deg, #fff4e4ea, #fff4e4f4), var(--art-note) center / cover;
+}
+dialog {
+  background: linear-gradient(90deg, #fff4e4f0, #fff4e4ed), var(--art-note) center / cover;
+}
+@media (max-width: 700px) {
+  .course-product-hero {
+    background-size: auto 560px;
+    background-position: 63% top;
+  }
+  .hero-art-copy::before { inset: -16px -17px; }
+  .hero-art-image {
+    border-width: 4px;
+    box-shadow: 5px 5px 0 #22172ecc;
+    transform: none;
+  }
+  .proof-highlights { background-size: auto 530px; }
+  .proof-slide-copy { background-image: none; }
+  .course-roadmap-paper {
+    background-size: auto 620px;
+    background-position: center top;
+  }
+  .course-roadmap-paper .route-intro { padding-inline: 12px; }
+  .route-outcome {
+    background-image: linear-gradient(90deg, var(--phase-paper) 56%, #fff4e44a), var(--phase-art, var(--art-pink));
+  }
+}
+
+.site-header, .course-footer {
+  background: linear-gradient(90deg, #22172ef5, #22172ed6), var(--art-spotlight) center / cover;
+}
+.site-header .site-contact,
+.course-product-hero .wire-blue-button {
+  box-shadow: 3px 3px 0 #8f355e;
+}
